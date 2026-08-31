@@ -109,7 +109,7 @@
                                     <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 12 km | In Stock (150 Pcs)</div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,249</span>
+                                    <span class="text-sm font-extrabold text-[#172033] block">&#8377;1,249</span>
                                     <span class="text-[10px] text-emerald-600 font-mono font-bold">&lt; 15 Min Reply</span>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@
                                     <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 24 km | In Stock (45 Pcs)</div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,290</span>
+                                    <span class="text-sm font-extrabold text-[#172033] block">&#8377;1,290</span>
                                     <span class="text-[10px] text-[#1677FF] font-mono font-bold">20 Min Reply</span>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                     <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 31 km | Limited Stock</div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,320</span>
+                                    <span class="text-sm font-extrabold text-[#172033] block">&#8377;1,320</span>
                                     <span class="text-[10px] text-slate-500 font-mono font-bold">30 Min Reply</span>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
                     </div>
 
                     <div class="p-4 bg-red-100 rounded-2xl border border-red-200 text-xs text-red-950 font-bold">
-                        Impact: 12 to 48 hours of plant downtime costing ₹50,000+ per hour in lost manufacturing.
+                        Impact: 12 to 48 hours of plant downtime costing &#8377;50,000+ per hour in lost manufacturing.
                     </div>
                 </div>
 
@@ -515,7 +515,7 @@
                         <div>Supplier: National Industrial Spares</div>
                     </div>
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">₹42,500</span>
+                        <span class="text-lg font-black text-[#172033]">&#8377;42,500</span>
                         <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
                     </div>
                 </div>
@@ -535,7 +535,7 @@
                         <div>Supplier: Precision Motion Co</div>
                     </div>
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">₹68,000</span>
+                        <span class="text-lg font-black text-[#172033]">&#8377;68,000</span>
                         <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
                     </div>
                 </div>
@@ -555,7 +555,7 @@
                         <div>Supplier: Apex Bearings Ltd</div>
                     </div>
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">₹1,850</span>
+                        <span class="text-lg font-black text-[#172033]">&#8377;1,850</span>
                         <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
                     </div>
                 </div>
@@ -575,7 +575,7 @@
                         <div>Supplier: ElectroDrive Systems</div>
                     </div>
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">₹34,200</span>
+                        <span class="text-lg font-black text-[#172033]">&#8377;34,200</span>
                         <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
                     </div>
                 </div>
@@ -621,7 +621,7 @@
                             <td><span class="badge-verified"><i class="fa-solid fa-check text-[10px] mr-1"></i> Admin Verified</span></td>
                             <td class="font-mono text-[#172033]">12 km</td>
                             <td><span class="text-emerald-700 font-bold">In Stock (150 Pcs)</span></td>
-                            <td class="font-bold text-[#172033] font-mono text-base">₹42,500</td>
+                            <td class="font-bold text-[#172033] font-mono text-base">&#8377;42,500</td>
                             <td class="font-mono text-[#1677FF] font-bold">15 Mins</td>
                             <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-3">Issue RFQ</a></td>
                         </tr>
@@ -633,7 +633,7 @@
                             <td><span class="badge-verified"><i class="fa-solid fa-check text-[10px] mr-1"></i> Admin Verified</span></td>
                             <td class="font-mono text-[#172033]">24 km</td>
                             <td><span class="text-emerald-700 font-bold">In Stock (45 Pcs)</span></td>
-                            <td class="font-bold text-[#172033] font-mono text-base">₹43,100</td>
+                            <td class="font-bold text-[#172033] font-mono text-base">&#8377;43,100</td>
                             <td class="font-mono text-[#1677FF] font-bold">20 Mins</td>
                             <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-3">Issue RFQ</a></td>
                         </tr>
@@ -645,7 +645,7 @@
                             <td><span class="badge-verified"><i class="fa-solid fa-check text-[10px] mr-1"></i> Admin Verified</span></td>
                             <td class="font-mono text-[#172033]">31 km</td>
                             <td><span class="text-amber-700 font-bold">Limited Stock (8 Pcs)</span></td>
-                            <td class="font-bold text-[#172033] font-mono text-base">₹44,000</td>
+                            <td class="font-bold text-[#172033] font-mono text-base">&#8377;44,000</td>
                             <td class="font-mono text-[#1677FF] font-bold">30 Mins</td>
                             <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-3">Issue RFQ</a></td>
                         </tr>
@@ -742,7 +742,7 @@
 
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA] text-xs font-mono">
                         <span class="text-[#526174]">Experience: <strong class="text-[#172033]">8 Years</strong></span>
-                        <span class="text-lg font-black text-cyan-800">₹1,200/hr</span>
+                        <span class="text-lg font-black text-cyan-800">&#8377;1,200/hr</span>
                     </div>
                 </div>
 
@@ -768,7 +768,7 @@
 
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA] text-xs font-mono">
                         <span class="text-[#526174]">Experience: <strong class="text-[#172033]">10 Years</strong></span>
-                        <span class="text-lg font-black text-[#1677FF]">₹1,500/hr</span>
+                        <span class="text-lg font-black text-[#1677FF]">&#8377;1,500/hr</span>
                     </div>
                 </div>
 
@@ -794,7 +794,7 @@
 
                     <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA] text-xs font-mono">
                         <span class="text-[#526174]">Experience: <strong class="text-[#172033]">6 Years</strong></span>
-                        <span class="text-lg font-black text-amber-800">₹1,000/hr</span>
+                        <span class="text-lg font-black text-amber-800">&#8377;1,000/hr</span>
                     </div>
                 </div>
             </div>
@@ -995,3 +995,4 @@
         }
     </script>
 </asp:Content>
+

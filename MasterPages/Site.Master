@@ -24,7 +24,7 @@
 <body class="h-full flex flex-col font-['Inter',sans-serif] antialiased text-[#172033] bg-[#F8FAFC] selection:bg-[#1677FF] selection:text-white">
     <form id="form1" runat="server" class="flex flex-col min-h-full">
         <!-- Top Emergency Hotline Bar -->
-        <div class="bg-amber-500/10 border-b border-amber-500/20 text-[#172033] text-xs py-2 px-4 sm:px-6 flex justify-between items-center relative z-50">
+        <div id="topHotlineBar" class="bg-amber-500/10 border-b border-amber-500/20 text-[#172033] text-xs py-2 px-4 sm:px-6 flex justify-between items-center relative z-50">
             <div class="max-w-8xl mx-auto w-full flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <span class="inline-flex items-center gap-2 text-white font-extrabold px-2.5 py-0.5 rounded-md bg-[#F97316] text-[11px] uppercase tracking-wider shadow-xs">
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Premium Floating Light Glass Header (Height: 64px - 72px) -->
-        <header id="mainHeader" class="sticky top-0 z-40 transition-all duration-300 glass-header-light relative">
+        <header id="mainHeader" class="w-full transition-all duration-300 glass-header-light z-50">
             <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16 lg:h-18">
                     <!-- Brand Logo -->
@@ -124,6 +124,9 @@
                 </div>
             </div>
         </header>
+
+        <!-- Layout Spacer for Fixed Header Mode -->
+        <div id="headerSpacer" style="display: none;" class="h-16 lg:h-18"></div>
 
         <!-- Main Body Content Placeholder -->
         <main class="flex-1">
@@ -209,26 +212,34 @@
         </footer>
     </form>
 
-    <!-- Lightweight Performance JS for Navbar Scroll & Drawer Listeners -->
+    <!-- Always-Visible Fixed Header Logic on Scroll Up & Down -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var header = document.getElementById('mainHeader');
+            var spacer = document.getElementById('headerSpacer');
             var ticking = false;
             
             if (header) {
+                function updateHeaderPosition() {
+                    if (window.scrollY > 35) {
+                        header.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'glass-header-light-scrolled', 'shadow-md');
+                        if (spacer) spacer.style.display = 'block';
+                    } else {
+                        header.classList.remove('fixed', 'top-0', 'left-0', 'w-full', 'glass-header-light-scrolled', 'shadow-md');
+                        if (spacer) spacer.style.display = 'none';
+                    }
+                    ticking = false;
+                }
+
                 window.addEventListener('scroll', function () {
                     if (!ticking) {
-                        window.requestAnimationFrame(function () {
-                            if (window.scrollY > 30) {
-                                header.classList.add('glass-header-light-scrolled');
-                            } else {
-                                header.classList.remove('glass-header-light-scrolled');
-                            }
-                            ticking = false;
-                        });
+                        window.requestAnimationFrame(updateHeaderPosition);
                         ticking = true;
                     }
                 }, { passive: true });
+                
+                // Initial check on load
+                updateHeaderPosition();
             }
 
             var btnMobile = document.getElementById('btnMobileToggle');
