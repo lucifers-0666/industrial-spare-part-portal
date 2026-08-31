@@ -1,0 +1,13 @@
+{
+  "name": "industrial-spare-part-portal-tailwind",
+  "version": "1.0.0",
+  "description": "Tailwind CSS compilation pipeline for ASP.NET Web Forms project",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ../Content/css/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ../Content/css/site.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
