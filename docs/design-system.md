@@ -72,3 +72,4 @@ The design system establishes a **Light Industrial Technology Language**:
   @apply text-xs font-mono font-bold tracking-wider text-[#B87333] bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded-md;
 }
 ```
+

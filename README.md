@@ -120,3 +120,4 @@ The platform features a **Light Industrial B2B Technology Design System**:
 ## 🎓 Academic Note
 
 This project is an **MCA Final-Year Academic Project**. While the frontend presentation utilizes modern B2B technology standards, the backend architecture deliberately maintains clean, explainable ASP.NET Web Forms, ADO.NET, and SQL Server conventions for viva evaluation.
+

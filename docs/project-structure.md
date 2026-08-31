@@ -113,3 +113,4 @@ public User GetUserByEmail(string email)
 Authentication is controlled via `SessionHelper.cs` and `BasePage.cs`:
 - Active session variables: `UserID`, `FullName`, `UserRole`, `UserEmail`.
 - Page access rules are enforced in `Page_Init` of section master pages (`Admin.Master`, `Factory.Master`, `Supplier.Master`, `Technician.Master`). Unauthenticated or unauthorized requests redirect to `~/Account/AccessDenied.aspx`.
+

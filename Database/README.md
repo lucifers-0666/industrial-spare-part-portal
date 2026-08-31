@@ -44,3 +44,4 @@ sqlcmd -S "(localdb)\MSSQLLocalDB" -d "IndustrialSparePartDB" -i "Seed/02_SeedDa
 - **Email**: `admin@sparepartportal.com`
 - **Password**: `Admin@123`
 - **Security**: Password stored as a salted SHA-256 hash in the `Users` table.
+

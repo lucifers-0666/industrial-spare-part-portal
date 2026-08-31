@@ -102,3 +102,4 @@ FACTORY MACHINE BREAKDOWN
 - **Database Engine**: Microsoft SQL Server LocalDB (`(localdb)\MSSQLLocalDB`).
 - **Security**: Salted SHA-256 password hashing (`PasswordHasher.cs`), ASP.NET Forms Authentication, and session state security (`SessionHelper.cs`).
 - **Frontend Presentation**: Tailwind CSS, custom CSS design system tokens, and Vanilla JavaScript (zero SPA framework dependencies for viva explainability).
+
