@@ -33,7 +33,7 @@
                     </h1>
 
                     <p class="text-lg sm:text-xl text-[#526174] max-w-2xl leading-relaxed font-normal">
-                        Help factories discover industrial spare parts, compare verified suppliers, request quotations, and get technical support from one connected platform.
+                        Find spare parts, compare verified suppliers, request quotations and connect with technical support from one connected industrial platform.
                     </p>
 
                     <!-- Primary & Emergency CTAs -->
@@ -46,23 +46,31 @@
                         </a>
                     </div>
 
-                    <!-- Platform Key Metrics Row -->
+                    <!-- Platform Feature Proof Indicators (Replaces Numerical Stats) -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-[#D9E1EA]">
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs">
-                            <span class="text-2xl sm:text-3xl font-black text-[#172033] block">10,000+</span>
-                            <span class="text-xs text-[#526174] font-medium">Verified OEM Parts</span>
+                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
+                            <div class="text-[#1677FF] font-bold text-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-barcode"></i> Part Discovery
+                            </div>
+                            <span class="text-xs text-[#526174] font-medium block">Instant OEM Part Mapping</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs">
-                            <span class="text-2xl sm:text-3xl font-black text-emerald-600 block">100%</span>
-                            <span class="text-xs text-[#526174] font-medium">Verified Suppliers</span>
+                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
+                            <div class="text-emerald-700 font-bold text-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-warehouse"></i> Supplier Compare
+                            </div>
+                            <span class="text-xs text-[#526174] font-medium block">Verified Inventory & Stock</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs">
-                            <span class="text-2xl sm:text-3xl font-black text-[#1677FF] block">&lt; 15 Mins</span>
-                            <span class="text-xs text-[#526174] font-medium">Avg RFQ Response</span>
+                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
+                            <div class="text-[#F97316] font-bold text-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt"></i> Emergency Desk
+                            </div>
+                            <span class="text-xs text-[#526174] font-medium block">24/7 Breakdown Dispatch</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs">
-                            <span class="text-2xl sm:text-3xl font-black text-[#F97316] block">24/7</span>
-                            <span class="text-xs text-[#526174] font-medium">Emergency Dispatch</span>
+                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
+                            <div class="text-cyan-700 font-bold text-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-wrench"></i> Field Technicians
+                            </div>
+                            <span class="text-xs text-[#526174] font-medium block">Certified On-Duty Services</span>
                         </div>
                     </div>
                 </div>
@@ -101,8 +109,8 @@
                                     <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 12 km | In Stock (150 Pcs)</div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,850</span>
-                                    <span class="text-[10px] text-emerald-600 font-mono font-bold">15 Min Reply</span>
+                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,249</span>
+                                    <span class="text-[10px] text-emerald-600 font-mono font-bold">&lt; 15 Min Reply</span>
                                 </div>
                             </div>
 
@@ -115,7 +123,7 @@
                                     <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 24 km | In Stock (45 Pcs)</div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,920</span>
+                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,290</span>
                                     <span class="text-[10px] text-[#1677FF] font-mono font-bold">20 Min Reply</span>
                                 </div>
                             </div>
@@ -129,7 +137,7 @@
                                     <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 31 km | Limited Stock</div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,980</span>
+                                    <span class="text-sm font-extrabold text-[#172033] block">₹1,320</span>
                                     <span class="text-[10px] text-slate-500 font-mono font-bold">30 Min Reply</span>
                                 </div>
                             </div>
@@ -155,7 +163,7 @@
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
                     Machine Down? Traditional Procurement Costs Valuable Time.
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed">
+                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
                     When critical plant machinery halts, manual phone calls, unverified stock levels, and unknown part numbers slow down production recovery.
                 </p>
             </div>
@@ -179,7 +187,7 @@
 
                     <div class="space-y-4 text-sm text-[#172033]">
                         <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-[#F97316] fa-xmark text-red-600 text-base shrink-0 mt-1"></i>
+                            <i class="fa-solid fa-xmark text-red-600 text-base shrink-0 mt-1"></i>
                             <div><strong>Unknown Part Numbers:</strong> Maintenance team guesses replacement specifications without OEM cross-referencing.</div>
                         </div>
                         <div class="flex items-start gap-3">
@@ -244,7 +252,56 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 3: WHY WE ARE DIFFERENT (CENTRAL FACTORY ECOSYSTEM GRAPH)            -->
+    <!-- SECTION 3: BUSINESS VALUE ("WHY INDUSTRIAL PROCUREMENT NEEDS A CONNECTED PLATFORM")-->
+    <!-- ============================================================================ -->
+    <section class="py-24 bg-[#F1F5F9] border-b border-[#D9E1EA]">
+        <div class="max-w-8xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="copper-badge"><i class="fa-solid fa-briefcase"></i> Business Impact</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
+                    Why Industrial Procurement Needs a Connected Platform
+                </h2>
+                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
+                    Connecting all 3 sides of the industrial maintenance lifecycle into a single transparent ecosystem.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-[#D9E1EA] shadow-xs space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-[#1677FF] flex items-center justify-center font-bold text-2xl">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#172033]">For Factories & Buyers</h3>
+                    <p class="text-sm text-[#526174] leading-relaxed">
+                        Instantly locate exact OEM spares, compare verified supplier pricing and distance, issue RFQs, and book on-duty repair specialists to eliminate downtime.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-[#D9E1EA] shadow-xs space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-2xl">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#172033]">For Verified Suppliers</h3>
+                    <p class="text-sm text-[#526174] leading-relaxed">
+                        Access direct industrial demand from active factories, submit competitive RFQ bids, and fulfill high-priority breakdown orders with GSTIN credibility.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-[#D9E1EA] shadow-xs space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-2xl">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#172033]">For Service Technicians</h3>
+                    <p class="text-sm text-[#526174] leading-relaxed">
+                        Gain direct visibility for field service requests, showcase technical skills (Hydraulics, CNC, VFDs), set hourly rates, and manage on-duty availability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- SECTION 4: WHY WE ARE DIFFERENT (CENTRAL FACTORY ECOSYSTEM GRAPH)            -->
     <!-- ============================================================================ -->
     <section class="py-24 bg-[#F8FAFC] border-b border-[#D9E1EA]" id="differentiators">
         <div class="max-w-8xl mx-auto px-6 lg:px-12">
@@ -253,7 +310,7 @@
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
                     More Than a Spare-Part Marketplace.
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed">
+                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
                     We connect the entire industrial resolution path—from machine problem to part search, supplier comparison, emergency dispatch, and technician installation.
                 </p>
             </div>
@@ -270,7 +327,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Feature 1 -->
                     <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-blue-100 text-[#1677FF] flex items-center justify-center font-bold text-lg">
@@ -283,7 +339,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 2 -->
                     <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-emerald-500 transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
@@ -296,7 +351,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 3 -->
                     <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-amber-500 transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
@@ -309,7 +363,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 4 -->
                     <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#F97316] transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-orange-100 text-[#F97316] flex items-center justify-center font-bold text-lg">
@@ -322,7 +375,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 5 -->
                     <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-cyan-500 transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-lg">
@@ -335,7 +387,6 @@
                         </p>
                     </div>
 
-                    <!-- Feature 6 -->
                     <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-indigo-500 transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg">
@@ -353,47 +404,46 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 4: HOW IT WORKS (LIGHT CONTINUOUS TIMELINE)                          -->
+    <!-- SECTION 5: HOW IT WORKS (LIGHT CONTINUOUS TIMELINE)                          -->
     <!-- ============================================================================ -->
-    <section class="py-24 bg-[#F1F5F9] border-b border-[#D9E1EA]" id="how-it-works">
+    <section class="py-24 bg-white border-b border-[#D9E1EA]" id="how-it-works">
         <div class="max-w-8xl mx-auto px-6 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-route"></i> Simple Timeline</span>
+                <span class="copper-badge"><i class="fa-solid fa-route"></i> Resolution Timeline</span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
                     From Problem to Resolution in 6 Continuous Steps
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed">
+                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
                     Designed for industrial speed and clarity. Follow our continuous resolution timeline to restore plant capacity.
                 </p>
             </div>
 
-            <!-- Continuous Horizontal 6-Step Pipeline (Desktop) / Vertical Timeline (Mobile) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
+                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
                     <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 01</span>
                     <h3 class="text-base font-bold text-[#172033]">01. Search</h3>
                     <p class="text-xs text-[#526174] leading-relaxed">Enter exact part number, machine model, or category.</p>
                 </div>
 
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
+                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
                     <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 02</span>
                     <h3 class="text-base font-bold text-[#172033]">02. Compare</h3>
                     <p class="text-xs text-[#526174] leading-relaxed">Compare verified supplier availability, price, and distance.</p>
                 </div>
 
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
+                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
                     <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 03</span>
                     <h3 class="text-base font-bold text-[#172033]">03. Request</h3>
                     <p class="text-xs text-[#526174] leading-relaxed">Issue RFQ for bidding or trigger Emergency Dispatch.</p>
                 </div>
 
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
+                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
                     <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 04</span>
                     <h3 class="text-base font-bold text-[#172033]">04. Connect</h3>
                     <p class="text-xs text-[#526174] leading-relaxed">Receive instant supplier bids & book field technicians.</p>
                 </div>
 
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
+                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
                     <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 05</span>
                     <h3 class="text-base font-bold text-[#172033]">05. Procure</h3>
                     <p class="text-xs text-[#526174] leading-relaxed">Select optimal quote and confirm purchase order.</p>
@@ -409,12 +459,12 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 5: INDUSTRIAL SPARE-PART SEARCH (LIGHT PRODUCT SHOWCASE INTERFACE)  -->
+    <!-- SECTION 6: INDUSTRIAL SPARE-PART SEARCH (LIGHT PRODUCT SHOWCASE INTERFACE)  -->
     <!-- ============================================================================ -->
-    <section class="py-24 bg-white border-b border-[#D9E1EA]" id="parts-catalog">
+    <section class="py-24 bg-[#F8FAFC] border-b border-[#D9E1EA]" id="parts-catalog">
         <div class="max-w-8xl mx-auto px-6 lg:px-12">
             <!-- Search Input Box Showcase -->
-            <div class="bg-[#F8FAFC] p-4 rounded-3xl border border-[#D9E1EA] shadow-md mb-12 max-w-4xl space-y-3">
+            <div class="bg-white p-4 rounded-3xl border border-[#D9E1EA] shadow-md mb-12 max-w-4xl space-y-3">
                 <div class="flex items-center gap-2 border-b border-[#D9E1EA] pb-3 text-xs font-bold text-[#172033]">
                     <span class="copper-tag">SEARCH BY</span>
                     <span class="text-[#1677FF]"><i class="fa-solid fa-barcode"></i> Part Number</span>
@@ -426,7 +476,7 @@
                 <div class="flex flex-col sm:flex-row gap-3">
                     <div class="relative flex-1">
                         <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400 text-base"></i>
-                        <asp:TextBox ID="txtSearchQuery" runat="server" CssClass="w-full pl-12 pr-4 py-3.5 text-[#172033] placeholder-slate-400 text-sm font-medium focus:outline-none bg-white rounded-xl border border-[#D9E1EA]" Placeholder="Search catalog e.g., 6204 Bearing, CNC Lathe, PART-HYD-001..."></asp:TextBox>
+                        <asp:TextBox ID="txtSearchQuery" runat="server" CssClass="w-full pl-12 pr-4 py-3.5 text-[#172033] placeholder-slate-400 text-sm font-medium focus:outline-none bg-[#F8FAFC] rounded-xl border border-[#D9E1EA]" Placeholder="Search catalog e.g., 6204 Bearing, CNC Lathe, PART-HYD-001..."></asp:TextBox>
                     </div>
                     <asp:Button ID="btnSearch" runat="server" Text="Search Catalog" OnClick="btnSearch_Click" CssClass="btn-primary py-3.5 px-8 text-sm font-extrabold rounded-xl shrink-0" />
                 </div>
@@ -434,17 +484,17 @@
 
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
-                    <span class="copper-badge mb-3"><i class="fa-solid fa-magnifying-glass"></i> Live Inventory Preview</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-[#172033]">Explore Industrial Spare Parts</h2>
+                    <span class="copper-badge mb-3"><i class="fa-solid fa-magnifying-glass"></i> Inventory Showcase</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-[#172033]">Search Industrial Spare Parts</h2>
                     <p class="text-sm text-[#526174] mt-1">Real OEM components indexed by verified regional suppliers.</p>
                 </div>
 
                 <!-- Category Filter Buttons -->
                 <div class="flex flex-wrap gap-2 text-xs font-bold">
                     <button type="button" class="px-4 py-2 rounded-xl bg-[#1677FF] text-white shadow-xs" onclick="filterParts('all')">All Categories</button>
-                    <button type="button" class="px-4 py-2 rounded-xl bg-slate-100 border border-[#D9E1EA] text-[#172033] hover:bg-slate-200" onclick="filterParts('hydraulics')">Hydraulics</button>
-                    <button type="button" class="px-4 py-2 rounded-xl bg-slate-100 border border-[#D9E1EA] text-[#172033] hover:bg-slate-200" onclick="filterParts('motors')">Motors & Drives</button>
-                    <button type="button" class="px-4 py-2 rounded-xl bg-slate-100 border border-[#D9E1EA] text-[#172033] hover:bg-slate-200" onclick="filterParts('bearings')">Bearings</button>
+                    <button type="button" class="px-4 py-2 rounded-xl bg-white border border-[#D9E1EA] text-[#172033] hover:bg-slate-100" onclick="filterParts('hydraulics')">Hydraulics</button>
+                    <button type="button" class="px-4 py-2 rounded-xl bg-white border border-[#D9E1EA] text-[#172033] hover:bg-slate-100" onclick="filterParts('motors')">Motors & Drives</button>
+                    <button type="button" class="px-4 py-2 rounded-xl bg-white border border-[#D9E1EA] text-[#172033] hover:bg-slate-100" onclick="filterParts('bearings')">Bearings</button>
                 </div>
             </div>
 
@@ -534,16 +584,16 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 6: SUPPLIER COMPARISON (ENTERPRISE PROCUREMENT SOFTWARE TABLE)       -->
+    <!-- SECTION 7: SUPPLIER COMPARISON (ENTERPRISE PROCUREMENT SOFTWARE TABLE)       -->
     <!-- ============================================================================ -->
-    <section class="py-24 bg-[#F8FAFC] border-b border-[#D9E1EA]" id="supplier-comparison">
+    <section class="py-24 bg-white border-b border-[#D9E1EA]" id="supplier-comparison">
         <div class="max-w-8xl mx-auto px-6 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-code-compare"></i> Procurement Software Interface</span>
+                <span class="copper-badge"><i class="fa-solid fa-code-compare"></i> Software Comparison</span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
                     Compare Verified Suppliers Before You Procure
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed">
+                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
                     Software-level comparison across distance, stock availability, GSTIN verification status, and response time.
                 </p>
             </div>
@@ -606,7 +656,7 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 7: EMERGENCY PROCUREMENT (LIGHT WARM BACKGROUND WITH ORANGE ACCENTS) -->
+    <!-- SECTION 8: EMERGENCY PROCUREMENT (LIGHT WARM BACKGROUND WITH ORANGE ACCENTS) -->
     <!-- ============================================================================ -->
     <section class="py-24 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-amber-500/10 text-[#172033] border-b border-[#D9E1EA] relative overflow-hidden" id="emergency">
         <div class="max-w-8xl mx-auto px-6 lg:px-12 relative z-10">
@@ -621,7 +671,7 @@
                             MACHINE DOWN? Start an Emergency Procurement Request.
                         </h2>
 
-                        <p class="text-base sm:text-lg text-[#526174] leading-relaxed font-normal">
+                        <p class="text-base sm:text-lg text-[#526174] leading-relaxed font-normal max-w-2xl">
                             When critical production machinery halts, our Emergency System instantly broadcasts your breakdown requirement to all nearby verified suppliers and available field technicians for priority fulfillment.
                         </p>
 
@@ -655,7 +705,7 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 8: TECHNICIAN NETWORK (LIGHT SERVICE PROVIDER CARDS)                 -->
+    <!-- SECTION 9: TECHNICIAN NETWORK (LIGHT SERVICE PROVIDER CARDS)                 -->
     <!-- ============================================================================ -->
     <section class="py-24 bg-white border-b border-[#D9E1EA]" id="technicians">
         <div class="max-w-8xl mx-auto px-6 lg:px-12">
@@ -664,7 +714,7 @@
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
                     Parts + Technical Expertise in One Platform
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed">
+                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
                     Finding the spare part is only half the battle. Book certified field technicians specializing in hydraulic press repair, CNC lathe servicing, and VFD programming.
                 </p>
             </div>
@@ -752,7 +802,7 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 9: TRUST & VERIFICATION STANDARDS                                   -->
+    <!-- SECTION 10: TRUST & VERIFICATION STANDARDS                                  -->
     <!-- ============================================================================ -->
     <section class="py-24 bg-[#F8FAFC] border-b border-[#D9E1EA]">
         <div class="max-w-8xl mx-auto px-6 lg:px-12">
@@ -762,7 +812,7 @@
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
                         Built Around Verified Industrial Connections
                     </h2>
-                    <p class="text-base text-[#526174] leading-relaxed">
+                    <p class="text-base text-[#526174] leading-relaxed max-w-xl">
                         We prioritize operational integrity and legal verification. Every supplier and technician undergoes strict background checks before receiving verified status.
                     </p>
 
@@ -839,7 +889,7 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 10: PLATFORM ECOSYSTEM DIAGRAM                                       -->
+    <!-- SECTION 11: PLATFORM ECOSYSTEM DIAGRAM                                       -->
     <!-- ============================================================================ -->
     <section class="py-24 bg-white text-[#172033] border-b border-[#D9E1EA]" id="ecosystem">
         <div class="max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-4">
@@ -896,9 +946,9 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 11: FINAL CONVERSION CTA ("KEEP PRODUCTION MOVING")                 -->
+    <!-- SECTION 12: FINAL CONVERSION CTA ("KEEP PRODUCTION MOVING")                 -->
     <!-- ============================================================================ -->
-    <section class="py-24 bg-[#F8FAFC] text-[#172033] text-center border-b border-[#D9E1EA] relative overflow-hidden">
+    <section class="py-24 bg-[#F1F5F9] text-[#172033] text-center border-b border-[#D9E1EA] relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 lg:px-12 space-y-8 relative z-10">
             <span class="copper-badge"><i class="fa-solid fa-rocket"></i> Get Started Today</span>
             <h2 class="text-4xl sm:text-5xl font-black text-[#172033] tracking-tight">
@@ -919,8 +969,12 @@
         </div>
     </section>
 
-    <!-- Client-Side Script for Search Auto-Fill & Category Filter -->
+    <!-- Client-Side Script for Indian Rupee Formatting & Filters -->
     <script>
+        function formatRupee(amount) {
+            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
+        }
+
         function setSearch(val) {
             var txt = document.getElementById('<%= txtSearchQuery.ClientID %>');
             if (txt) {
@@ -941,4 +995,3 @@
         }
     </script>
 </asp:Content>
-

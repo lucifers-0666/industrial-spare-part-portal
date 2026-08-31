@@ -9,17 +9,25 @@
     --color-surface-white: #FFFFFF;
     --color-text-primary: #172033;
     --color-text-secondary: #526174;
-    --color-[#D9E1EA]: #D9E1EA;
+    --color-border-light: #D9E1EA;
     --color-blue-primary: #1677FF;
     --color-blue-hover: #0958D9;
     --color-orange-emergency: #F97316;
     --color-copper-accent: #B87333;
+    --color-charcoal-footer: #273444;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #172033;
+    background-color: #F8FAFC;
+    font-display: swap;
   }
 }
 
 /* Light Glassmorphism & Header Styling */
 .glass-header-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #D9E1EA;
@@ -31,13 +39,6 @@
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid #C4D1DF;
   box-shadow: 0 4px 20px -5px rgba(23, 32, 51, 0.08);
-}
-
-.glass-card-light {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid #D9E1EA;
 }
 
 /* Background Grids & Light Industrial Pattern */
@@ -63,7 +64,7 @@
 
 /* Button & Form Utilities */
 .btn-primary {
-  @apply bg-[#1677FF] hover:bg-[#0958D9] text-white font-bold px-6 py-3.5 rounded-xl transition-all duration-200 inline-flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-sm tracking-wide;
+  @apply bg-[#1677FF] hover:bg-[#0958D9] text-white font-bold px-6 py-3.5 rounded-xl transition-all duration-200 inline-flex items-center justify-center gap-2.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 text-sm tracking-wide;
 }
 
 .btn-secondary {
@@ -122,4 +123,3 @@
 .badge-info {
   @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-300;
 }
-
