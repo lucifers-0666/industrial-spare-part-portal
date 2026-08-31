@@ -1,0 +1,54 @@
+# ============================================================================
+# ASP.NET Web Forms & Visual Studio Ignore Rules
+# ============================================================================
+
+# Build results
+[Bb]in/
+[Bb]uild/
+[Oo]bj/
+[Lld]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rms/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Lld]og/
+[Ll]ogs/
+
+# Visual Studio 2015/2017/2019/2022 cache and user settings
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userlibraries
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Node / Tailwind CSS dependencies & logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ASP.NET temporary files
+App_Data/*.ldf
+App_Data/*.mdf
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets & Environment configuration
+*.env
+*.pem
+*.key
