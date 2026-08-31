@@ -24,8 +24,8 @@
 <body class="h-full flex flex-col font-['Inter',sans-serif] antialiased text-[#172033] bg-[#F8FAFC] selection:bg-[#1677FF] selection:text-white">
     <form id="form1" runat="server" class="flex flex-col min-h-full">
         <!-- Top Emergency Hotline Bar -->
-        <div class="bg-amber-500/10 border-b border-amber-500/20 text-[#172033] text-xs py-2 px-6 flex justify-between items-center relative z-50">
-            <div class="max-w-8xl mx-auto w-full flex justify-between items-center px-4 sm:px-6">
+        <div class="bg-amber-500/10 border-b border-amber-500/20 text-[#172033] text-xs py-2 px-4 sm:px-6 flex justify-between items-center relative z-50">
+            <div class="max-w-8xl mx-auto w-full flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <span class="inline-flex items-center gap-2 text-white font-extrabold px-2.5 py-0.5 rounded-md bg-[#F97316] text-[11px] uppercase tracking-wider shadow-xs">
                         <i class="fa-solid fa-triangle-exclamation text-xs animate-pulse text-white"></i>
@@ -46,11 +46,11 @@
         </div>
 
         <!-- Premium Floating Light Glass Header (Height: 64px - 72px) -->
-        <header id="mainHeader" class="sticky top-0 z-40 transition-all duration-300 glass-header-light">
+        <header id="mainHeader" class="sticky top-0 z-40 transition-all duration-300 glass-header-light relative">
             <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16 lg:h-18">
                     <!-- Brand Logo -->
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 shrink-0">
                         <a href="~/Default.aspx" runat="server" class="flex items-center gap-2.5 group">
                             <div class="w-10 h-10 rounded-xl bg-[#1677FF] flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
                                 <i class="fa-solid fa-gears text-lg text-white"></i>
@@ -58,15 +58,15 @@
                             <div>
                                 <div class="flex items-center gap-1.5">
                                     <span class="text-xl font-black tracking-tight text-[#172033] leading-none">SPARE<span class="text-[#1677FF]">FINDER</span></span>
-                                    <span class="copper-tag text-[9px] py-0 px-1">B2B PLATFORM</span>
+                                    <span class="copper-tag text-[9px] py-0 px-1 hidden sm:inline-block">B2B PLATFORM</span>
                                 </div>
                                 <span class="text-[10px] font-bold text-[#526174] tracking-wider uppercase block mt-0.5">Industrial Procurement Network</span>
                             </div>
                         </a>
                     </div>
 
-                    <!-- Desktop Navigation Links -->
-                    <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#172033]">
+                    <!-- Desktop Navigation Links (Visible on lg/xl displays) -->
+                    <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-semibold text-[#172033]">
                         <a href="~/Default.aspx" runat="server" class="text-[#1677FF] bg-blue-50 px-3 py-1.5 rounded-lg font-bold transition-colors">Home</a>
                         <a href="#how-it-works" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">How It Works</a>
                         <a href="#differentiators" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">Why Us</a>
@@ -79,7 +79,7 @@
                     </nav>
 
                     <!-- Authentication Action Buttons -->
-                    <div class="hidden sm:flex items-center gap-3">
+                    <div class="hidden md:flex items-center gap-3 shrink-0">
                         <asp:PlaceHolder ID="phAnonymous" runat="server">
                             <a href="~/Account/Login.aspx" runat="server" class="text-xs font-bold text-[#172033] hover:text-[#1677FF] px-3 py-2 transition-colors">
                                 Sign In
@@ -96,7 +96,7 @@
                         </asp:PlaceHolder>
                     </div>
 
-                    <!-- Mobile Menu Button -->
+                    <!-- Mobile Toggle Button (Visible on screens < lg) -->
                     <div class="flex lg:hidden items-center gap-2">
                         <button type="button" id="btnMobileToggle" class="p-2.5 rounded-xl bg-slate-100 text-[#172033] border border-[#D9E1EA] hover:bg-slate-200 transition-colors focus:outline-none" aria-label="Toggle Navigation">
                             <i class="fa-solid fa-bars text-lg" id="iconMenu"></i>
@@ -105,8 +105,8 @@
                 </div>
             </div>
 
-            <!-- Mobile Drawer Navigation -->
-            <div id="mobileDrawer" class="hidden lg:hidden bg-white border-b border-[#D9E1EA] px-6 pt-4 pb-6 space-y-4 shadow-xl">
+            <!-- Mobile Drawer Overlay (Positioned Absolutely Below Header, Initially Hidden) -->
+            <div id="mobileDrawer" style="display: none;" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-[#D9E1EA] px-6 py-6 space-y-4 shadow-xl z-50">
                 <nav class="flex flex-col space-y-2 text-sm font-semibold text-[#172033]">
                     <a href="~/Default.aspx" runat="server" class="px-3.5 py-2 rounded-xl bg-blue-50 text-[#1677FF]">Home</a>
                     <a href="#how-it-works" class="px-3.5 py-2 rounded-xl hover:bg-slate-100">How It Works</a>
@@ -209,7 +209,7 @@
         </footer>
     </form>
 
-    <!-- Lightweight Performance JS for Navbar Scroll Listener -->
+    <!-- Lightweight Performance JS for Navbar Scroll & Drawer Listeners -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var header = document.getElementById('mainHeader');
@@ -235,7 +235,11 @@
             var mobileDrawer = document.getElementById('mobileDrawer');
             if (btnMobile && mobileDrawer) {
                 btnMobile.addEventListener('click', function () {
-                    mobileDrawer.classList.toggle('hidden');
+                    if (mobileDrawer.style.display === 'none' || mobileDrawer.style.display === '') {
+                        mobileDrawer.style.display = 'block';
+                    } else {
+                        mobileDrawer.style.display = 'none';
+                    }
                 });
             }
         });
