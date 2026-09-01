@@ -1,46 +1,45 @@
-(function () {
-    "use strict";
+/* ============================================================================
+   INDUSTRIAL SPARE-PART PORTAL — PUBLIC SHELL JAVASCRIPT
+   ============================================================================ */
 
-    var header = document.getElementById("headerWrapper");
-    var toggle = document.getElementById("btnMobileToggle");
-    var drawer = document.getElementById("mobileDrawer");
-    var icon = document.getElementById("iconMenu");
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Mobile Menu Drawer Toggle
+    var btnMobile = document.getElementById('btnMobileToggle');
+    var mobileDrawer = document.getElementById('mobileDrawer');
+    if (btnMobile && mobileDrawer) {
+        btnMobile.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (mobileDrawer.style.display === 'none' || mobileDrawer.style.display === '') {
+                mobileDrawer.style.display = 'block';
+            } else {
+                mobileDrawer.style.display = 'none';
+            }
+        });
 
-    function setDrawer(open) {
-        if (!drawer || !toggle) return;
-        drawer.classList.toggle("is-open", open);
-        drawer.setAttribute("aria-hidden", open ? "false" : "true");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-        if (icon) icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
-    }
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (mobileDrawer.style.display === 'block' && !mobileDrawer.contains(e.target) && !btnMobile.contains(e.target)) {
+                mobileDrawer.style.display = 'none';
+            }
+        });
 
-    if (toggle) {
-        toggle.addEventListener("click", function () {
-            setDrawer(!drawer.classList.contains("is-open"));
+        // Close on Escape key press
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileDrawer.style.display === 'block') {
+                mobileDrawer.style.display = 'none';
+            }
         });
     }
 
-    if (drawer) {
-        var links = drawer.querySelectorAll("a");
-        for (var i = 0; i < links.length; i++) {
-            links[i].addEventListener("click", function () { setDrawer(false); });
-        }
+    // 2. Sticky Header Scrolled Visual State Listener
+    var headerWrapper = document.getElementById('headerWrapper');
+    if (headerWrapper) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 20) {
+                headerWrapper.classList.add('shadow-md');
+            } else {
+                headerWrapper.classList.remove('shadow-md');
+            }
+        });
     }
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") setDrawer(false);
-    });
-
-    window.addEventListener("resize", function () {
-        if (window.innerWidth >= 1024) setDrawer(false);
-    }, { passive: true });
-
-    /* Visual state only. Sticky positioning is controlled entirely by CSS. */
-    function updateHeaderState() {
-        if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
-    }
-
-    updateHeaderState();
-    window.addEventListener("scroll", updateHeaderState, { passive: true });
-}());
+});

@@ -884,30 +884,6 @@
         </div>
     </section>
 
-    <!-- ============================================================================ -->
-    <!-- SECTION 12: FINAL CALL TO ACTION ("KEEP PRODUCTION MOVING")                 -->
-    <!-- ============================================================================ -->
-    <section class="py-20 bg-[#F1F5F9] text-[#172033] text-center border-b border-[#D9E1EA] relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 lg:px-12 space-y-8 relative z-10">
-            <span class="copper-badge"><i class="fa-solid fa-rocket"></i> Get Started</span>
-            <h2 class="text-4xl sm:text-5xl font-black text-[#172033] tracking-tight">
-                Keep Production Moving.
-            </h2>
-            <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                Discover industrial parts, compare supplier options, and manage procurement requests through one platform.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
-                <a href="#parts-catalog" class="btn-primary text-base py-4 px-8 font-extrabold shadow-md">
-                    <i class="fa-solid fa-magnifying-glass"></i> Explore Spare Parts
-                </a>
-                <a href="~/Account/Register.aspx" runat="server" class="btn-secondary text-base py-4 px-8 font-extrabold bg-white text-[#172033] hover:bg-slate-100">
-                    <i class="fa-solid fa-user-plus"></i> Register Portal Account
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Client-Side Script for Indian Rupee Formatting & Filters -->
     <script>
         function formatRupee(amount) {
