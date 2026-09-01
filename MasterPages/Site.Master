@@ -1,14 +1,15 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="IndustrialSparePartPortal.MasterPages.SiteMaster" %>
 
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-[#F8FAFC]">
+<html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
-    <title><%: Page.Title %> - Industrial Spare-Part Finder & Emergency Procurement Portal</title>
-    <link href="~/Content/css/site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/css/site-shell.css" rel="stylesheet" type="text/css" />
+    <meta name="theme-color" content="#1677FF" />
+    <title><%: Page.Title %> - SPAREFINDER</title>
+    <link href="<%= ResolveUrl("~/Content/css/site.css?v=20260901") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/css/site-shell.css?v=20260901-v2") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/css/public-pages.css?v=20260901") %>" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,20 +17,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
-<body class="h-full font-['Inter',sans-serif] antialiased">
+<body>
     <form id="form1" runat="server">
-        <div id="headerWrapper" class="site-header">
+        <!-- PUBLIC SHELL v2: the actual header element is sticky; no JS is required for positioning. -->
+        <header id="headerWrapper" class="site-header" data-shell-version="2026.09.01-v2">
             <div class="site-utility">
                 <div class="site-container site-utility-inner">
                     <div class="site-utility-message">
                         <span class="site-utility-badge"><i class="fa-solid fa-bolt"></i> Emergency Procurement</span>
                         <span class="site-utility-divider">|</span>
-                        <span class="site-utility-text">Industrial spare-part discovery, supplier comparison & technical support</span>
+                        <span class="site-utility-text">Industrial spare-part discovery, supplier comparison &amp; technical support</span>
                     </div>
-                    <span class="site-demo-contact">Demo Contact: <strong>1800-000-0000</strong></span>
+                    <span class="site-demo-contact">Demo contact: <strong>1800-000-0000</strong></span>
                 </div>
             </div>
-            <header id="mainHeader" class="site-navbar">
+
+            <div class="site-navbar">
                 <div class="site-container site-navbar-inner">
                     <a href="~/Default.aspx" runat="server" class="site-brand" aria-label="SPAREFINDER home">
                         <span class="site-brand-mark"><i class="fa-solid fa-gears"></i></span>
@@ -38,15 +41,17 @@
                             <span class="site-brand-subtitle">Industrial Procurement Network</span>
                         </span>
                     </a>
+
                     <nav class="site-desktop-nav" aria-label="Primary navigation">
                         <a class="site-nav-link is-active" href="~/Default.aspx" runat="server">Home</a>
-                        <a class="site-nav-link" href="#how-it-works">How It Works</a>
-                        <a class="site-nav-link" href="#differentiators">Why Us</a>
-                        <a class="site-nav-link" href="#parts-catalog">Spare Parts</a>
-                        <a class="site-nav-link" href="#supplier-comparison">Suppliers</a>
-                        <a class="site-nav-link" href="#technicians">Technicians</a>
-                        <a class="site-nav-link site-nav-link-emergency" href="#emergency"><i class="fa-solid fa-bolt"></i> Emergency</a>
+                        <a class="site-nav-link" href="~/Public/HowItWorks.aspx" runat="server">How It Works</a>
+                        <a class="site-nav-link" href="~/Public/WhyUs.aspx" runat="server">Why Us</a>
+                        <a class="site-nav-link" href="~/Public/Parts.aspx" runat="server">Spare Parts</a>
+                        <a class="site-nav-link" href="~/Public/Suppliers.aspx" runat="server">Suppliers</a>
+                        <a class="site-nav-link" href="~/Public/Technicians.aspx" runat="server">Technicians</a>
+                        <a class="site-nav-link site-nav-link-emergency" href="~/Public/Emergency.aspx" runat="server"><i class="fa-solid fa-bolt"></i> Emergency</a>
                     </nav>
+
                     <div class="site-nav-actions">
                         <asp:PlaceHolder ID="phAnonymous" runat="server">
                             <a href="~/Account/Login.aspx" runat="server" class="site-signin">Sign In</a>
@@ -57,40 +62,46 @@
                             <a href="~/Account/Logout.aspx" runat="server" class="site-signin site-signout">Logout</a>
                         </asp:PlaceHolder>
                     </div>
+
                     <button type="button" id="btnMobileToggle" class="site-mobile-toggle" aria-label="Open navigation" aria-controls="mobileDrawer" aria-expanded="false">
                         <i class="fa-solid fa-bars" id="iconMenu"></i>
                     </button>
                 </div>
+
                 <div id="mobileDrawer" class="site-mobile-drawer" aria-hidden="true">
                     <nav class="site-mobile-nav" aria-label="Mobile navigation">
                         <a href="~/Default.aspx" runat="server" class="is-active">Home</a>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#differentiators">Why Us</a>
-                        <a href="#parts-catalog">Spare Parts</a>
-                        <a href="#supplier-comparison">Suppliers</a>
-                        <a href="#technicians">Technicians</a>
-                        <a href="#emergency" class="is-emergency"><i class="fa-solid fa-bolt"></i> Emergency Procurement</a>
+                        <a href="~/Public/HowItWorks.aspx" runat="server">How It Works</a>
+                        <a href="~/Public/WhyUs.aspx" runat="server">Why Us</a>
+                        <a href="~/Public/Parts.aspx" runat="server">Spare Parts</a>
+                        <a href="~/Public/Suppliers.aspx" runat="server">Suppliers</a>
+                        <a href="~/Public/Technicians.aspx" runat="server">Technicians</a>
+                        <a href="~/Public/Emergency.aspx" runat="server" class="is-emergency"><i class="fa-solid fa-bolt"></i> Emergency Procurement</a>
                     </nav>
                     <div class="site-mobile-actions">
                         <a href="~/Account/Login.aspx" runat="server" class="site-mobile-secondary">Sign In</a>
                         <a href="~/Account/Register.aspx" runat="server" class="site-mobile-primary">Register Portal</a>
                     </div>
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
+
         <main class="site-main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
         </main>
-        <footer class="site-footer">
+
+        <!-- PUBLIC FOOTER v2: this is the only visitor footer. -->
+        <footer id="siteFooter" class="site-footer" data-footer-version="2026.09.01-v2">
             <div class="site-container">
                 <section class="site-footer-cta" aria-label="Emergency procurement call to action">
-                    <div>
+                    <div class="site-footer-cta-copy">
                         <span class="site-footer-kicker"><i class="fa-solid fa-bolt"></i> URGENT PROCUREMENT</span>
-                        <h2>Need an industrial spare part?</h2>
-                        <p>Start a demo emergency request and explore the sourcing workflow.</p>
+                        <h2>Machine stopped? Start with the part.</h2>
+                        <p>Use the emergency sourcing workflow to describe a required part and review the next procurement step.</p>
                     </div>
-                    <a href="#emergency" class="site-footer-cta-button">Start Emergency Request <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="~/Public/Emergency.aspx" runat="server" class="site-footer-cta-button">Start Emergency Request <i class="fa-solid fa-arrow-right"></i></a>
                 </section>
+
                 <div class="site-footer-grid">
                     <div class="site-footer-brand">
                         <div class="site-footer-brand-row">
@@ -100,41 +111,48 @@
                                 <div class="site-footer-brand-subtitle">Industrial Procurement Network</div>
                             </div>
                         </div>
-                        <p>A project platform concept for industrial spare-part discovery, supplier comparison, quotation requests, emergency sourcing and technician discovery.</p>
-                        <span class="site-footer-demo-label">Demonstration website — sample data only</span>
+                        <p>Industrial spare-part discovery, supplier comparison, quotation requests, emergency procurement and technician discovery in one visitor platform.</p>
+                        <span class="site-footer-demo-label"><i class="fa-solid fa-circle-info"></i> Demonstration platform · sample information</span>
                     </div>
+
                     <div class="site-footer-column">
-                        <h3>Platform</h3>
-                        <a href="#parts-catalog">Spare Parts</a>
-                        <a href="#supplier-comparison">Supplier Comparison</a>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#differentiators">Why Us</a>
-                        <a href="#technicians">Technicians</a>
+                        <h3>Explore</h3>
+                        <a href="~/Public/Parts.aspx" runat="server">Spare Parts</a>
+                        <a href="~/Public/Suppliers.aspx" runat="server">Suppliers</a>
+                        <a href="~/Public/Technicians.aspx" runat="server">Technicians</a>
+                        <a href="~/Public/HowItWorks.aspx" runat="server">How It Works</a>
                     </div>
+
                     <div class="site-footer-column">
                         <h3>Procurement</h3>
-                        <a href="#parts-catalog">Part Discovery</a>
-                        <a href="#supplier-comparison">RFQ / Quotations</a>
-                        <a href="#emergency">Emergency Requests</a>
-                        <a href="#emergency">Request Tracking</a>
-                        <a href="#differentiators">Service History</a>
+                        <a href="~/Public/Emergency.aspx" runat="server">Emergency Request</a>
+                        <a href="~/Public/Parts.aspx" runat="server">Part Discovery</a>
+                        <a href="~/Public/Suppliers.aspx" runat="server">Compare Suppliers</a>
+                        <a href="~/Account/Register.aspx" runat="server">Request Access</a>
                     </div>
+
                     <div class="site-footer-column">
-                        <h3>Account</h3>
+                        <h3>Portal</h3>
                         <a href="~/Account/Login.aspx" runat="server">Sign In</a>
                         <a href="~/Account/Register.aspx" runat="server">Register</a>
-                        <a href="#technicians">Technical Support</a>
-                        <a href="#contact">Contact</a>
+                        <a href="~/Public/WhyUs.aspx" runat="server">Why SPAREFINDER</a>
+                        <a href="~/Public/Emergency.aspx" runat="server">Contact / Help</a>
                     </div>
                 </div>
+
                 <div class="site-footer-bottom">
-                    <span>© 2026 SPAREFINDER Industrial Procurement Network. Project demonstration.</span>
-                    <div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#contact">Contact</a></div>
+                    <span>© 2026 SPAREFINDER · Industrial procurement portal demonstration.</span>
+                    <div>
+                        <a href="~/Public/WhyUs.aspx" runat="server">Platform Information</a>
+                        <a href="~/Public/HowItWorks.aspx" runat="server">How It Works</a>
+                        <a href="~/Account/Login.aspx" runat="server">Portal Login</a>
+                    </div>
                 </div>
             </div>
         </footer>
+
         <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
     </form>
-    <script src="<%= ResolveUrl("~/Content/js/site-shell.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Content/js/site-shell.js?v=20260901-v2") %>"></script>
 </body>
 </html>
