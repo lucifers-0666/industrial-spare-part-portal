@@ -1,278 +1,140 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="IndustrialSparePartPortal.MasterPages.SiteMaster" %>
 
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-[#F8FAFC] scroll-smooth">
+<html lang="en" class="h-full bg-[#F8FAFC]">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
     <title><%: Page.Title %> - Industrial Spare-Part Finder & Emergency Procurement Portal</title>
-    
-    <!-- Compiled Tailwind CSS & Industrial Design System -->
     <link href="~/Content/css/site.css" rel="stylesheet" type="text/css" />
-    
-    <!-- FontAwesome 6 Icons -->
+    <link href="~/Content/css/site-shell.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
-    <!-- Google Fonts Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
-<body class="h-full flex flex-col font-['Inter',sans-serif] antialiased text-[#172033] bg-[#F8FAFC] selection:bg-[#1677FF] selection:text-white">
-    <form id="form1" runat="server" class="flex flex-col min-h-full">
-
-        <!-- ============================================================================ -->
-        <!-- STICKY HEADER WRAPPER (SIMPLIFIED & STICKY AT TOP: 0)                        -->
-        <!-- ============================================================================ -->
-        <div id="headerWrapper" class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[#D9E1EA] shadow-xs">
-            
-            <!-- 1. Top Utility Strip -->
-            <div class="bg-amber-500/10 border-b border-amber-500/20 text-[#172033] text-xs py-2 px-4 sm:px-6">
-                <div class="max-w-8xl mx-auto w-full flex justify-between items-center">
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex items-center gap-2 text-white font-extrabold px-2.5 py-0.5 rounded-md bg-[#F97316] text-[11px] uppercase tracking-wider shadow-xs">
-                            <i class="fa-solid fa-triangle-exclamation text-xs animate-pulse text-white"></i>
-                            <span>Emergency Procurement Desk</span>
-                        </span>
-                        <span class="hidden md:inline text-slate-300">|</span>
-                        <span class="hidden md:inline text-[#526174] text-xs font-semibold">
-                            Connecting Industrial Plants, Suppliers & Technical Support
-                        </span>
+<body class="h-full font-['Inter',sans-serif] antialiased">
+    <form id="form1" runat="server">
+        <div id="headerWrapper" class="site-header">
+            <div class="site-utility">
+                <div class="site-container site-utility-inner">
+                    <div class="site-utility-message">
+                        <span class="site-utility-badge"><i class="fa-solid fa-bolt"></i> Emergency Procurement</span>
+                        <span class="site-utility-divider">|</span>
+                        <span class="site-utility-text">Industrial spare-part discovery, supplier comparison & technical support</span>
                     </div>
-                    <div class="flex items-center gap-4 text-[#172033] text-xs font-medium">
-                        <a href="tel:18000000000" class="hover:text-[#1677FF] transition-colors font-mono font-bold text-xs flex items-center gap-1.5 text-[#172033]">
-                            <i class="fa-solid fa-phone text-[#F97316]"></i> Demo Support: 1800-000-0000
-                        </a>
-                    </div>
+                    <span class="site-demo-contact">Demo Contact: <strong>1800-000-0000</strong></span>
                 </div>
             </div>
-
-            <!-- 2. Main Navigation Bar (Height: 64px - 72px) -->
-            <header id="mainHeader" class="w-full relative">
-                <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between items-center h-16 lg:h-18">
-                        <!-- Brand Logo -->
-                        <div class="flex items-center gap-3 shrink-0">
-                            <a href="~/Default.aspx" runat="server" class="flex items-center gap-2.5 group">
-                                <div class="w-10 h-10 rounded-xl bg-[#1677FF] flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-                                    <i class="fa-solid fa-gears text-lg text-white"></i>
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-xl font-black tracking-tight text-[#172033] leading-none">SPARE<span class="text-[#1677FF]">FINDER</span></span>
-                                        <span class="copper-tag text-[9px] py-0 px-1 hidden sm:inline-block">B2B PLATFORM</span>
-                                    </div>
-                                    <span class="text-[10px] font-bold text-[#526174] tracking-wider uppercase block mt-0.5">Industrial Procurement Network</span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Desktop Navigation Links (Visible ONLY on lg/xl displays >= 1024px) -->
-                        <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-semibold text-[#172033]">
-                            <a href="~/Default.aspx" runat="server" class="text-[#1677FF] bg-blue-50 px-3 py-1.5 rounded-lg font-bold transition-colors">Home</a>
-                            <a href="#how-it-works" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">How It Works</a>
-                            <a href="#differentiators" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">Why Us</a>
-                            <a href="#parts-catalog" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">Spare Parts</a>
-                            <a href="#supplier-comparison" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">Suppliers</a>
-                            <a href="#technicians" class="text-[#526174] hover:text-[#1677FF] hover:bg-slate-100 px-3 py-1.5 rounded-lg transition-colors">Technicians</a>
-                            <a href="#emergency" class="text-[#F97316] hover:text-orange-600 font-extrabold transition-colors px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-                                <i class="fa-solid fa-bolt text-xs"></i> Emergency
-                            </a>
-                        </nav>
-
-                        <!-- Authentication Action Buttons (Visible on md/lg displays) -->
-                        <div class="hidden md:flex items-center gap-3 shrink-0">
-                            <asp:PlaceHolder ID="phAnonymous" runat="server">
-                                <a href="~/Account/Login.aspx" runat="server" class="text-xs font-bold text-[#172033] hover:text-[#1677FF] px-3 py-2 transition-colors">
-                                    Sign In
-                                </a>
-                                <a href="~/Account/Register.aspx" runat="server" class="btn-primary text-xs py-2.5 px-4 font-extrabold">
-                                    <i class="fa-solid fa-user-plus text-xs"></i> Register Portal
-                                </a>
-                            </asp:PlaceHolder>
-                            <asp:PlaceHolder ID="phAuthenticated" runat="server" Visible="false">
-                                <a id="lnkDashboard" runat="server" href="#" class="btn-secondary text-xs py-2 px-3 font-bold">
-                                    <i class="fa-solid fa-gauge-high"></i> Dashboard
-                                </a>
-                                <a href="~/Account/Logout.aspx" runat="server" class="text-xs text-red-600 hover:text-red-700 font-bold px-2 py-1">Logout</a>
-                            </asp:PlaceHolder>
-                        </div>
-
-                        <!-- Mobile Toggle Button (Strictly HIDDEN on desktop >= 1024px via lg:hidden) -->
-                        <div class="flex lg:hidden items-center gap-2">
-                            <button type="button" id="btnMobileToggle" class="p-2.5 rounded-xl bg-slate-100 text-[#172033] border border-[#D9E1EA] hover:bg-slate-200 transition-colors focus:outline-none" aria-label="Toggle Navigation">
-                                <i class="fa-solid fa-bars text-lg" id="iconMenu"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Drawer Overlay (Positioned Absolutely Below Header, Initially Hidden) -->
-                <div id="mobileDrawer" style="display: none;" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-[#D9E1EA] px-6 py-6 space-y-4 shadow-xl z-50">
-                    <nav class="flex flex-col space-y-2 text-sm font-semibold text-[#172033]">
-                        <a href="~/Default.aspx" runat="server" class="px-3.5 py-2 rounded-xl bg-blue-50 text-[#1677FF]">Home</a>
-                        <a href="#how-it-works" class="px-3.5 py-2 rounded-xl hover:bg-slate-100">How It Works</a>
-                        <a href="#differentiators" class="px-3.5 py-2 rounded-xl hover:bg-slate-100">Why Us</a>
-                        <a href="#parts-catalog" class="px-3.5 py-2 rounded-xl hover:bg-slate-100">Spare Parts</a>
-                        <a href="#supplier-comparison" class="px-3.5 py-2 rounded-xl hover:bg-slate-100">Suppliers</a>
-                        <a href="#technicians" class="px-3.5 py-2 rounded-xl hover:bg-slate-100">Technicians</a>
-                        <a href="#emergency" class="px-3.5 py-2 rounded-xl bg-orange-500/10 text-[#F97316] font-extrabold border border-orange-500/20">
-                            <i class="fa-solid fa-bolt mr-2"></i> Emergency Procurement
-                        </a>
+            <header id="mainHeader" class="site-navbar">
+                <div class="site-container site-navbar-inner">
+                    <a href="~/Default.aspx" runat="server" class="site-brand" aria-label="SPAREFINDER home">
+                        <span class="site-brand-mark"><i class="fa-solid fa-gears"></i></span>
+                        <span class="site-brand-copy">
+                            <span class="site-brand-name">SPARE<span>FINDER</span></span>
+                            <span class="site-brand-subtitle">Industrial Procurement Network</span>
+                        </span>
+                    </a>
+                    <nav class="site-desktop-nav" aria-label="Primary navigation">
+                        <a class="site-nav-link is-active" href="~/Default.aspx" runat="server">Home</a>
+                        <a class="site-nav-link" href="#how-it-works">How It Works</a>
+                        <a class="site-nav-link" href="#differentiators">Why Us</a>
+                        <a class="site-nav-link" href="#parts-catalog">Spare Parts</a>
+                        <a class="site-nav-link" href="#supplier-comparison">Suppliers</a>
+                        <a class="site-nav-link" href="#technicians">Technicians</a>
+                        <a class="site-nav-link site-nav-link-emergency" href="#emergency"><i class="fa-solid fa-bolt"></i> Emergency</a>
                     </nav>
-                    <div class="pt-3 border-t border-[#D9E1EA] flex flex-col gap-2">
-                        <a href="~/Account/Login.aspx" runat="server" class="btn-secondary w-full justify-center text-xs py-2.5 font-bold">Sign In</a>
-                        <a href="~/Account/Register.aspx" runat="server" class="btn-primary w-full justify-center text-xs py-2.5 font-extrabold">Register Portal Account</a>
+                    <div class="site-nav-actions">
+                        <asp:PlaceHolder ID="phAnonymous" runat="server">
+                            <a href="~/Account/Login.aspx" runat="server" class="site-signin">Sign In</a>
+                            <a href="~/Account/Register.aspx" runat="server" class="site-register"><i class="fa-solid fa-user-plus"></i> Register</a>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="phAuthenticated" runat="server" Visible="false">
+                            <a id="lnkDashboard" runat="server" href="#" class="site-register"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+                            <a href="~/Account/Logout.aspx" runat="server" class="site-signin site-signout">Logout</a>
+                        </asp:PlaceHolder>
+                    </div>
+                    <button type="button" id="btnMobileToggle" class="site-mobile-toggle" aria-label="Open navigation" aria-controls="mobileDrawer" aria-expanded="false">
+                        <i class="fa-solid fa-bars" id="iconMenu"></i>
+                    </button>
+                </div>
+                <div id="mobileDrawer" class="site-mobile-drawer" aria-hidden="true">
+                    <nav class="site-mobile-nav" aria-label="Mobile navigation">
+                        <a href="~/Default.aspx" runat="server" class="is-active">Home</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#differentiators">Why Us</a>
+                        <a href="#parts-catalog">Spare Parts</a>
+                        <a href="#supplier-comparison">Suppliers</a>
+                        <a href="#technicians">Technicians</a>
+                        <a href="#emergency" class="is-emergency"><i class="fa-solid fa-bolt"></i> Emergency Procurement</a>
+                    </nav>
+                    <div class="site-mobile-actions">
+                        <a href="~/Account/Login.aspx" runat="server" class="site-mobile-secondary">Sign In</a>
+                        <a href="~/Account/Register.aspx" runat="server" class="site-mobile-primary">Register Portal</a>
                     </div>
                 </div>
             </header>
         </div>
-
-        <!-- Main Body Content Placeholder -->
-        <main class="flex-1">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+        <main class="site-main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
         </main>
-
-        <!-- ============================================================================ -->
-        <!-- CLEAN B2B INDUSTRIAL FOOTER (#172033 DARK INDUSTRIAL SLATE)                 -->
-        <!-- ============================================================================ -->
-        <footer class="bg-[#172033] text-slate-300 text-sm border-t border-slate-700 mt-auto">
-            
-            <!-- Main Footer Links Grid (4 Clean B2B Columns) -->
-            <div class="max-w-8xl mx-auto px-6 lg:px-12 py-14">
-                
-                <!-- Row 1: Brand & Tagline -->
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-10 border-b border-slate-700/80 mb-10">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-[#1677FF] flex items-center justify-center text-white shadow-md shrink-0">
-                            <i class="fa-solid fa-gears text-xl text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-2xl font-black tracking-tight text-white block">SPARE<span class="text-[#3B91FF]">FINDER</span></span>
-                            <span class="text-xs text-slate-400 font-medium">Industrial Spare-Part Finder & Emergency Procurement Network</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3 text-xs">
-                        <span class="copper-tag"><i class="fa-solid fa-layer-group text-amber-500 mr-1"></i> B2B Industrial Network</span>
-                    </div>
-                </div>
-
-                <!-- Row 2: 4 Navigation Columns -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                    
-                    <!-- Column 1: Explore -->
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-[#1677FF]"></span> EXPLORE
-                        </h4>
-                        <ul class="space-y-2 text-xs font-medium text-slate-300">
-                            <li><a href="~/Default.aspx" runat="server" class="hover:text-white transition-colors">Home Page</a></li>
-                            <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
-                            <li><a href="#parts-catalog" class="hover:text-white transition-colors">Spare Parts Catalog</a></li>
-                            <li><a href="#supplier-comparison" class="hover:text-white transition-colors">Supplier Directory</a></li>
-                            <li><a href="#technicians" class="hover:text-white transition-colors">Technician Network</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 2: Services -->
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> SERVICES
-                        </h4>
-                        <ul class="space-y-2 text-xs font-medium text-slate-300">
-                            <li><a href="#parts-catalog" class="hover:text-white transition-colors">Industrial Part Discovery</a></li>
-                            <li><a href="#supplier-comparison" class="hover:text-white transition-colors">Supplier Price & Stock Compare</a></li>
-                            <li><a href="#parts-catalog" class="hover:text-white transition-colors">Quotation Requests (RFQ)</a></li>
-                            <li><a href="#emergency" class="hover:text-white transition-colors">Emergency Breakdown Sourcing</a></li>
-                            <li><a href="#technicians" class="hover:text-white transition-colors">Field Technician Discovery</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: Support -->
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-[#F97316]"></span> SUPPORT
-                        </h4>
-                        <ul class="space-y-2 text-xs font-medium text-slate-300">
-                            <li><a href="~/Account/Login.aspx" runat="server" class="hover:text-white transition-colors">Portal Sign In</a></li>
-                            <li><a href="~/Account/Register.aspx" runat="server" class="hover:text-white transition-colors">Register Account</a></li>
-                            <li><a href="~/Public/About.aspx" runat="server" class="hover:text-white transition-colors">About Platform</a></li>
-                            <li><a href="~/Public/Contact.aspx" runat="server" class="hover:text-white transition-colors">Contact Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 4: Architecture -->
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> ARCHITECTURE
-                        </h4>
-                        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 space-y-1 text-xs font-mono text-slate-300">
-                            <div class="text-white font-bold mb-1">ASP.NET Web Forms System</div>
-                            <div>• C# Code-Behind Pattern</div>
-                            <div>• ADO.NET SQL Data Layer</div>
-                            <div>• Master Page Shared Layout</div>
-                            <div>• Tailwind CSS Presentation</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 3: Footer Emergency Strip -->
-                <div class="bg-gradient-to-r from-slate-800/90 to-slate-800/50 border border-slate-700 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-                    <div class="space-y-1 text-left">
-                        <div class="text-sm font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-bolt text-[#F97316]"></i> Need an urgent spare part?
-                        </div>
-                        <p class="text-xs text-slate-400">Submit an urgent request to broadcast your part or machine details.</p>
-                    </div>
-                    <div class="flex items-center gap-4 shrink-0">
-                        <a href="tel:18000000000" class="text-xs font-mono text-slate-300 hover:text-white hidden sm:inline-block">
-                            Demo Support: 1800-000-0000
-                        </a>
-                        <a href="~/Account/Login.aspx?redirect=emergency" runat="server" class="btn-emergency text-xs py-2.5 px-5 font-extrabold">
-                            <i class="fa-solid fa-bolt"></i> Start Emergency Request
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Row 4: Bottom Copyright Bar -->
-                <div class="border-t border-slate-700/80 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+        <footer class="site-footer">
+            <div class="site-container">
+                <section class="site-footer-cta" aria-label="Emergency procurement call to action">
                     <div>
-                        <p class="font-medium text-slate-300">© <%: DateTime.Now.Year %> SPAREFINDER Industrial Procurement Network. All rights reserved.</p>
+                        <span class="site-footer-kicker"><i class="fa-solid fa-bolt"></i> URGENT PROCUREMENT</span>
+                        <h2>Need an industrial spare part?</h2>
+                        <p>Start a demo emergency request and explore the sourcing workflow.</p>
                     </div>
-                    <div class="flex items-center gap-6 text-slate-300 text-xs font-medium">
-                        <a href="#" class="hover:text-white">Privacy</a>
-                        <a href="#" class="hover:text-white">Terms</a>
-                        <a href="~/Public/Contact.aspx" runat="server" class="hover:text-white">Contact</a>
+                    <a href="#emergency" class="site-footer-cta-button">Start Emergency Request <i class="fa-solid fa-arrow-right"></i></a>
+                </section>
+                <div class="site-footer-grid">
+                    <div class="site-footer-brand">
+                        <div class="site-footer-brand-row">
+                            <span class="site-brand-mark site-footer-brand-mark"><i class="fa-solid fa-gears"></i></span>
+                            <div>
+                                <div class="site-footer-brand-name">SPARE<span>FINDER</span></div>
+                                <div class="site-footer-brand-subtitle">Industrial Procurement Network</div>
+                            </div>
+                        </div>
+                        <p>A project platform concept for industrial spare-part discovery, supplier comparison, quotation requests, emergency sourcing and technician discovery.</p>
+                        <span class="site-footer-demo-label">Demonstration website — sample data only</span>
                     </div>
+                    <div class="site-footer-column">
+                        <h3>Platform</h3>
+                        <a href="#parts-catalog">Spare Parts</a>
+                        <a href="#supplier-comparison">Supplier Comparison</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#differentiators">Why Us</a>
+                        <a href="#technicians">Technicians</a>
+                    </div>
+                    <div class="site-footer-column">
+                        <h3>Procurement</h3>
+                        <a href="#parts-catalog">Part Discovery</a>
+                        <a href="#supplier-comparison">RFQ / Quotations</a>
+                        <a href="#emergency">Emergency Requests</a>
+                        <a href="#emergency">Request Tracking</a>
+                        <a href="#differentiators">Service History</a>
+                    </div>
+                    <div class="site-footer-column">
+                        <h3>Account</h3>
+                        <a href="~/Account/Login.aspx" runat="server">Sign In</a>
+                        <a href="~/Account/Register.aspx" runat="server">Register</a>
+                        <a href="#technicians">Technical Support</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="site-footer-bottom">
+                    <span>© 2026 SPAREFINDER Industrial Procurement Network. Project demonstration.</span>
+                    <div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#contact">Contact</a></div>
                 </div>
             </div>
         </footer>
+        <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
     </form>
-
-    <!-- Mobile Drawer JS Listener -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var btnMobile = document.getElementById('btnMobileToggle');
-            var mobileDrawer = document.getElementById('mobileDrawer');
-            if (btnMobile && mobileDrawer) {
-                btnMobile.addEventListener('click', function () {
-                    if (mobileDrawer.style.display === 'none' || mobileDrawer.style.display === '') {
-                        mobileDrawer.style.display = 'block';
-                    } else {
-                        mobileDrawer.style.display = 'none';
-                    }
-                });
-            }
-        });
-    </script>
-
-    <!-- SweetAlert2 Script -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
-    </asp:ContentPlaceHolder>
+    <script src="<%= ResolveUrl("~/Content/js/site-shell.js") %>"></script>
 </body>
 </html>
