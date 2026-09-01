@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Factory.Master.cs" Inherits="IndustrialSparePartPortal.MasterPages.FactoryMaster" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Factory.Master.cs" Inherits="IndustrialSparePartPortal.MasterPages.FactoryMaster" %>
 
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-slate-50">
@@ -76,7 +76,7 @@
         <!-- Footer -->
         <footer class="bg-white border-t border-slate-200 py-6 text-xs text-slate-500 mt-auto">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p>Â© <%: DateTime.Now.Year %> Industrial Spare-Part Finder & Procurement Portal</p>
+                <p>© <%: DateTime.Now.Year %> Industrial Spare-Part Finder & Procurement Portal</p>
                 <div class="flex items-center gap-4">
                     <a href="~/Factory/Profile/CompanyProfile.aspx" runat="server" class="hover:text-blue-600">Company Profile</a>
                     <a href="~/Factory/Complaints/RaiseComplaint.aspx" runat="server" class="hover:text-blue-600">Support & Disputes</a>
@@ -87,8 +87,5 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
     </asp:ContentPlaceHolder>
-    <!-- Agentation Visual Feedback Integration -->
-    <script src="<%= ResolveUrl("~/Scripts/agentation.bundle.js") %>"></script>
 </body>
 </html>
-

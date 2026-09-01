@@ -1,9 +1,9 @@
-using System;
-using System.Data;
-using System.Data.SqlClient;
 using IndustrialSparePartPortal.App_Code.Database;
 using IndustrialSparePartPortal.App_Code.Models;
 using IndustrialSparePartPortal.App_Code.Repositories.Interfaces;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace IndustrialSparePartPortal.App_Code.Repositories.Implementations
 {

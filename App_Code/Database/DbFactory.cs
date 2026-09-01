@@ -1,8 +1,6 @@
-using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 
 namespace IndustrialSparePartPortal.App_Code.Database
 {
@@ -12,7 +10,7 @@ namespace IndustrialSparePartPortal.App_Code.Database
     public static class DbFactory
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["IndustrialSparePartDB"] != null
-            ? ConfigurationManager.ConnectionStrings["IndustrialSparePartDB"].ConnectionString 
+            ? ConfigurationManager.ConnectionStrings["IndustrialSparePartDB"].ConnectionString
             : "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=IndustrialSparePartDB;Integrated Security=True;TrustServerCertificate=True;";
 
         public static SqlConnection GetConnection()

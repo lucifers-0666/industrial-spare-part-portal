@@ -1,5 +1,5 @@
-using System.Data;
 using IndustrialSparePartPortal.App_Code.Models;
+using System.Data;
 
 namespace IndustrialSparePartPortal.App_Code.Repositories.Interfaces
 {
