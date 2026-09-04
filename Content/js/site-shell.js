@@ -36,8 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (headerWrapper) {
         window.addEventListener('scroll', function () {
             if (window.scrollY > 20) {
+                headerWrapper.classList.add('is-scrolled');
                 headerWrapper.classList.add('shadow-md');
             } else {
+                headerWrapper.classList.remove('is-scrolled');
                 headerWrapper.classList.remove('shadow-md');
             }
         });
