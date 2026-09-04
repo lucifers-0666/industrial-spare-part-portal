@@ -1,8 +1,93 @@
-<%@ Page Title="Industrial Spare Parts" Language="C#" MasterPageFile="~/MasterPages/Site.Master" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<section class="public-page">
-<div class="public-hero"><div class="site-container"><span class="public-kicker"><i class="fa-solid fa-cubes"></i> Spare-part discovery</span><h1>Search industrial parts by what you <span>already know.</span></h1><p>Explore the public catalog concept by part number, machine name and category, then move into supplier comparison or quotation requests.</p><div class="public-actions"><a class="public-button" href="~/Account/Register.aspx" runat="server">Register Portal</a><a class="public-button orange" href="~/Public/Emergency.aspx" runat="server">Need a part urgently?</a></div></div></div>
-<section class="public-section"><div class="site-container"><div class="public-section-head"><span class="public-kicker">Sample catalog</span><h2>Industrial categories</h2><p>Representative categories for the visitor experience. Actual inventory will come from the supplier workflow later.</p></div><div class="public-grid"><article class="public-card"><div class="public-icon"><i class="fa-solid fa-droplet"></i></div><h3>Hydraulic components</h3><p>Pumps, valves, cylinders, fittings and related machine components.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-gears"></i></div><h3>Mechanical parts</h3><p>Bearings, couplings, gears, shafts and maintenance components.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-bolt"></i></div><h3>Electrical parts</h3><p>Motors, drives, switches, sensors and industrial electrical components.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-temperature-half"></i></div><h3>Process equipment</h3><p>Instrumentation and components used across industrial process environments.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-filter"></i></div><h3>Filtration</h3><p>Filters and replacement elements organized for easier requirement discovery.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-wrench"></i></div><h3>Maintenance essentials</h3><p>Common replacement and workshop items used in industrial maintenance.</p></article></div></div></section>
-<section class="public-section alt"><div class="site-container"><div class="public-section-head"><span class="public-kicker">Sample results</span><h2>Example part comparison</h2></div><div class="public-table-wrap"><table class="public-table"><thead><tr><th>Part</th><th>Category</th><th>Availability</th><th>Indicative Price</th><th>Action</th></tr></thead><tbody><tr><td><strong>Hydraulic Pump 25 LPM</strong></td><td>Hydraulic</td><td>Sample stock</td><td>₹12,450</td><td>Compare</td></tr><tr><td><strong>AC Drive 7.5 kW</strong></td><td>Electrical</td><td>Sample stock</td><td>₹18,900</td><td>Compare</td></tr><tr><td><strong>Deep Groove Bearing 6205</strong></td><td>Mechanical</td><td>Sample stock</td><td>₹1,250</td><td>Compare</td></tr></tbody></table></div></div></section>
-</section>
+<%@ Page Title="Spare Parts Catalog" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="Parts.aspx.cs" Inherits="IndustrialSparePartPortal.Public.Parts" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="page-header-banner text-center space-y-3">
+        <span class="copper-badge"><i class="fa-solid fa-barcode"></i> Industrial Catalog</span>
+        <h1 class="text-3xl sm:text-4xl font-black text-[#172033]">Search & Discover Industrial Spare Parts</h1>
+        <p class="text-sm text-[#526174] max-w-2xl mx-auto">Explore sample indexed spare parts by OEM part number, machine model, or component category.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-16 space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Part 1 -->
+            <div class="content-card space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="copper-tag">PART-HYD-001</span>
+                    <span class="badge-verified">In Stock</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#172033] text-base">High-Pressure Hydraulic Pump 250Bar</h4>
+                    <p class="text-xs text-[#526174] mt-1">Machine: Hydraulic Press 500T</p>
+                </div>
+                <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
+                    <div>Supplier: Demo Supplier A</div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
+                    <span class="text-lg font-black text-[#172033]">&#8377;42,500</span>
+                    <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
+                </div>
+            </div>
+
+            <!-- Part 2 -->
+            <div class="content-card space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="copper-tag">PART-MOT-002</span>
+                    <span class="badge-verified">4 Units Left</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#172033] text-base">3-Phase AC Servo Motor 7.5kW</h4>
+                    <p class="text-xs text-[#526174] mt-1">Machine: CNC Lathe X200</p>
+                </div>
+                <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
+                    <div>Supplier: Demo Supplier B</div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
+                    <span class="text-lg font-black text-[#172033]">&#8377;68,000</span>
+                    <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
+                </div>
+            </div>
+
+            <!-- Part 3 -->
+            <div class="content-card space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="copper-tag">PART-BRG-003</span>
+                    <span class="badge-verified">In Stock</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#172033] text-base">Deep Groove Ball Bearing 6210-2RS</h4>
+                    <p class="text-xs text-[#526174] mt-1">Machine: Universal Industrial Shaft</p>
+                </div>
+                <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
+                    <div>Supplier: Demo Supplier C</div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
+                    <span class="text-lg font-black text-[#172033]">&#8377;1,850</span>
+                    <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
+                </div>
+            </div>
+
+            <!-- Part 4 -->
+            <div class="content-card space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="copper-tag">PART-ELE-004</span>
+                    <span class="badge-verified">2 Units Left</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#172033] text-base">Industrial VFD Inverter 15kW</h4>
+                    <p class="text-xs text-[#526174] mt-1">Machine: Air Compressor 75HP</p>
+                </div>
+                <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
+                    <div>Supplier: Demo Supplier A</div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
+                    <span class="text-lg font-black text-[#172033]">&#8377;34,200</span>
+                    <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+

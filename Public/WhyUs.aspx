@@ -1,6 +1,39 @@
-<%@ Page Title="Why SPAREFINDER" Language="C#" MasterPageFile="~/MasterPages/Site.Master" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<section class="public-page"><div class="public-hero"><div class="site-container"><span class="public-kicker"><i class="fa-solid fa-compass"></i> Platform concept</span><h1>More than a spare-part list: a connected <span>industrial resolution path.</span></h1><p>The project combines part discovery, supplier comparison, quotation requests, emergency procurement and technician discovery instead of treating each need as a separate website.</p><div class="public-actions"><a class="public-button" href="~/Public/HowItWorks.aspx" runat="server">How It Works</a><a class="public-button orange" href="~/Public/Parts.aspx" runat="server">Explore Parts</a></div></div></div>
-<section class="public-section"><div class="site-container"><div class="public-section-head"><span class="public-kicker">Key differences</span><h2>What the platform is designed to connect.</h2></div><div class="public-grid"><article class="public-card"><div class="public-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h3>Requirement-first discovery</h3><p>Start from the industrial requirement rather than forcing users to know a supplier before they search.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-scale-balanced"></i></div><h3>Supplier comparison</h3><p>Bring price, availability, location and quotation information into a comparable view.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-bolt"></i></div><h3>Emergency procurement</h3><p>Separate urgent breakdown requests from normal procurement so the workflow reflects the situation.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-user-gear"></i></div><h3>Technical expertise</h3><p>Connect spare-part procurement with technician discovery when the problem needs field expertise.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-list-check"></i></div><h3>Status tracking</h3><p>Represent requests, quotations and orders as trackable states instead of disconnected messages.</p></article><article class="public-card"><div class="public-icon"><i class="fa-solid fa-layer-group"></i></div><h3>Role-based ecosystem</h3><p>Factories, suppliers, technicians and administrators have different responsibilities in the application.</p></article></div></div></section>
-<section class="public-section alt"><div class="site-container"><div class="public-section-head"><span class="public-kicker">Scope</span><h2>Built for the MCA project definition.</h2><p>The visitor experience explains the business problem and product workflow without exposing internal implementation details.</p></div><div class="public-stat-row"><div class="public-stat"><strong>4</strong><span>Core roles</span></div><div class="public-stat"><strong>6</strong><span>Procurement steps</span></div><div class="public-stat"><strong>3</strong><span>Primary discovery paths</span></div><div class="public-stat"><strong>1</strong><span>Connected portal concept</span></div></div></div></section></section>
+<%@ Page Title="Why Us - Ecosystem Differentiators" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="WhyUs.aspx.cs" Inherits="IndustrialSparePartPortal.Public.WhyUs" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="page-header-banner text-center space-y-3">
+        <span class="copper-badge"><i class="fa-solid fa-layer-group"></i> Ecosystem Integration</span>
+        <h1 class="text-3xl sm:text-4xl font-black text-[#172033]">More Than a Spare-Part Marketplace</h1>
+        <p class="text-sm text-[#526174] max-w-2xl mx-auto">Discover why connecting factories, suppliers, and technicians on one platform accelerates procurement.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-16 space-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="content-card space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-blue-100 text-[#1677FF] flex items-center justify-center font-bold text-2xl">
+                    <i class="fa-solid fa-industry"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#172033]">Factories & Industrial Buyers</h3>
+                <p class="text-xs text-[#526174] leading-relaxed">Designed to enable factories to discover spare parts, compare supplier options, submit quotation requests, and find nearby technical expertise.</p>
+            </div>
+            <div class="content-card space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-2xl">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#172033]">Spare-Part Suppliers</h3>
+                <p class="text-xs text-[#526174] leading-relaxed">Designed to allow suppliers to manage inventory, display stock availability, respond to quotation requests, and fulfill urgent procurement needs.</p>
+            </div>
+            <div class="content-card space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-2xl">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#172033]">Technicians & Service Providers</h3>
+                <p class="text-xs text-[#526174] leading-relaxed">Designed to connect technical specialists with industrial buyers seeking on-site installation, maintenance, and machine repair services.</p>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+

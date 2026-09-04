@@ -1,8 +1,48 @@
-<%@ Page Title="How It Works" Language="C#" MasterPageFile="~/MasterPages/Site.Master" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<section class="public-page">
-  <div class="public-hero"><div class="site-container"><span class="public-kicker"><i class="fa-solid fa-route"></i> Procurement workflow</span><h1>From machine problem to a <span>clear procurement path.</span></h1><p>SPAREFINDER brings part discovery, supplier comparison, quotation requests and technical support into one simple visitor workflow.</p><div class="public-actions"><a class="public-button" href="~/Public/Parts.aspx" runat="server">Explore Spare Parts <i class="fa-solid fa-arrow-right"></i></a><a class="public-button orange" href="~/Public/Emergency.aspx" runat="server">Emergency Request</a></div></div></div>
-  <section class="public-section"><div class="site-container"><div class="public-section-head"><span class="public-kicker">01 → 06</span><h2>Six practical procurement steps</h2><p>The platform is designed around the actual sequence a factory follows when a part is needed.</p></div><div class="public-grid"><article class="public-card"><div class="public-icon">01</div><h3>Describe the requirement</h3><p>Search using part number, machine name, category or a basic requirement description.</p></article><article class="public-card"><div class="public-icon">02</div><h3>Review available parts</h3><p>Review sample part information including specification, indicative price and availability.</p></article><article class="public-card"><div class="public-icon">03</div><h3>Compare suppliers</h3><p>Compare supplier options using location, availability, price and procurement information.</p></article><article class="public-card"><div class="public-icon">04</div><h3>Request a quotation</h3><p>Send a structured quotation request instead of repeating the same requirement manually.</p></article><article class="public-card"><div class="public-icon">05</div><h3>Connect technical help</h3><p>Find technicians by skill, location and availability when the requirement needs field expertise.</p></article><article class="public-card"><div class="public-icon">06</div><h3>Track the request</h3><p>Follow the request, quotation and order journey through status-based portal workflows.</p></article></div></div></section>
-  <section class="public-section alt"><div class="site-container"><div class="public-section-head"><span class="public-kicker">Designed for clarity</span><h2>One requirement, fewer disconnected steps.</h2><p>The public portal explains the workflow before a user enters the role-based application.</p></div><ul class="public-list"><li><i class="fa-solid fa-check"></i><span>Factories can discover industrial parts without starting from a supplier list.</span></li><li><i class="fa-solid fa-check"></i><span>Suppliers can be compared using consistent information instead of isolated listings.</span></li><li><i class="fa-solid fa-check"></i><span>Emergency requests are treated as a distinct procurement path.</span></li><li><i class="fa-solid fa-check"></i><span>Technician discovery is part of the same industrial resolution journey.</span></li></ul></div></section>
-</section>
+<%@ Page Title="How It Works - Procurement Workflow" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="HowItWorks.aspx.cs" Inherits="IndustrialSparePartPortal.Public.HowItWorks" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="page-header-banner text-center space-y-3">
+        <span class="copper-badge"><i class="fa-solid fa-route"></i> Industrial Workflow</span>
+        <h1 class="text-3xl sm:text-4xl font-black text-[#172033]">How Industrial Procurement Works</h1>
+        <p class="text-sm text-[#526174] max-w-2xl mx-auto">Discover the 6-step workflow connecting industrial plants, verified suppliers, and certified technicians.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="content-card space-y-3">
+                <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 01</span>
+                <h3 class="text-lg font-bold text-[#172033]">01. Spare-Part Search</h3>
+                <p class="text-xs text-[#526174]">Search by OEM part number, machine model, or category. Cross-reference part specifications across indexed inventories.</p>
+            </div>
+            <div class="content-card space-y-3">
+                <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 02</span>
+                <h3 class="text-lg font-bold text-[#172033]">02. Supplier Comparison</h3>
+                <p class="text-xs text-[#526174]">Compare supplier options across distance, stock availability, unit pricing, and estimated response times.</p>
+            </div>
+            <div class="content-card space-y-3">
+                <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 03</span>
+                <h3 class="text-lg font-bold text-[#172033]">03. Quotation Request (RFQ)</h3>
+                <p class="text-xs text-[#526174]">Issue formal RFQs or broadcast emergency breakdown sourcing alerts to registered regional suppliers.</p>
+            </div>
+            <div class="content-card space-y-3">
+                <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 04</span>
+                <h3 class="text-lg font-bold text-[#172033]">04. Connect & Match</h3>
+                <p class="text-xs text-[#526174]">Receive supplier quotation responses and discover field service technicians for installation and repair.</p>
+            </div>
+            <div class="content-card space-y-3">
+                <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 05</span>
+                <h3 class="text-lg font-bold text-[#172033]">05. Order Procurement</h3>
+                <p class="text-xs text-[#526174]">Confirm quote selections, specify delivery terms, and issue purchase orders securely through the portal.</p>
+            </div>
+            <div class="content-card space-y-3 bg-emerald-50/50 border-emerald-200">
+                <span class="text-xs font-mono font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md">STEP 06</span>
+                <h3 class="text-lg font-bold text-[#172033]">06. Fulfillment Tracking</h3>
+                <p class="text-xs text-[#526174]">Track order status, delivery progress, and service technician visit schedules until resolution.</p>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+

@@ -3,7 +3,13 @@ module.exports = {
   content: [
     "../**/*.aspx",
     "../**/*.master",
+    "../**/*.Master",
+    "../MasterPages/**/*.Master",
+    "../MasterPages/**/*.master",
+    "../Public/**/*.aspx",
+    "../Account/**/*.aspx",
     "../**/*.cs",
+    "../Content/**/*.js",
     "../Scripts/**/*.js"
   ],
   theme: {
