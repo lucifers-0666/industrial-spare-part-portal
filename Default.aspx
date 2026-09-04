@@ -38,40 +38,40 @@
 
                     <!-- Primary & Emergency CTAs -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                        <a href="#parts-catalog" class="btn-primary text-base py-4 px-8 font-extrabold shadow-md">
+                        <a href="~/Public/Parts.aspx" runat="server" class="btn-primary text-base py-4 px-8 font-extrabold shadow-md">
                             <i class="fa-solid fa-magnifying-glass"></i> Find Spare Parts
                         </a>
-                        <a href="#emergency" class="btn-emergency text-base py-4 px-8 font-extrabold orange-accent-glow">
+                        <a href="~/Public/Emergency.aspx" runat="server" class="btn-emergency text-base py-4 px-8 font-extrabold orange-accent-glow">
                             <i class="fa-solid fa-bolt"></i> Emergency Procurement
                         </a>
                     </div>
 
-                    <!-- Capability Indicators (No Fake Stat Counters) -->
+                    <!-- Capability Indicators (Links to dedicated Public pages) -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-[#D9E1EA]">
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
-                            <div class="text-[#1677FF] font-bold text-sm flex items-center gap-1.5">
+                        <a href="~/Public/Parts.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-[#1677FF] transition-all block group">
+                            <div class="text-[#1677FF] font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
                                 <i class="fa-solid fa-barcode"></i> Part Discovery
                             </div>
                             <span class="text-xs text-[#526174] font-medium block">OEM & Machine Search</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
-                            <div class="text-emerald-700 font-bold text-sm flex items-center gap-1.5">
+                        </a>
+                        <a href="~/Public/Suppliers.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-emerald-500 transition-all block group">
+                            <div class="text-emerald-700 font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
                                 <i class="fa-solid fa-warehouse"></i> Supplier Compare
                             </div>
                             <span class="text-xs text-[#526174] font-medium block">Price & Stock Matrix</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
-                            <div class="text-[#F97316] font-bold text-sm flex items-center gap-1.5">
+                        </a>
+                        <a href="~/Public/Emergency.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-[#F97316] transition-all block group">
+                            <div class="text-[#F97316] font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
                                 <i class="fa-solid fa-bolt"></i> Urgent Requests
                             </div>
                             <span class="text-xs text-[#526174] font-medium block">Breakdown Sourcing</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1">
-                            <div class="text-cyan-700 font-bold text-sm flex items-center gap-1.5">
+                        </a>
+                        <a href="~/Public/Technicians.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-cyan-500 transition-all block group">
+                            <div class="text-cyan-700 font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
                                 <i class="fa-solid fa-wrench"></i> Technical Support
                             </div>
                             <span class="text-xs text-[#526174] font-medium block">Field Service Profiles</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -145,7 +145,7 @@
 
                         <div class="pt-3 border-t border-[#D9E1EA] flex items-center justify-between text-xs text-[#526174]">
                             <span>Available Technicians: <strong class="text-[#172033]">Sample Profiles Available</strong></span>
-                            <a href="#supplier-comparison" class="text-[#1677FF] hover:underline font-bold">Compare Options →</a>
+                            <a href="~/Public/Suppliers.aspx" runat="server" class="text-[#1677FF] hover:underline font-bold">Compare Options →</a>
                         </div>
                     </div>
                 </div>
