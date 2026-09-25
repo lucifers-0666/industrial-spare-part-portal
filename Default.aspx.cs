@@ -14,11 +14,11 @@ namespace IndustrialSparePartPortal
             string query = txtSearchQuery.Text.Trim();
             if (!string.IsNullOrEmpty(query))
             {
-                Response.Redirect("~/Public/SearchParts.aspx?q=" + Server.UrlEncode(query));
+                Response.Redirect("~/Public/Parts.aspx?q=" + Server.UrlEncode(query));
             }
             else
             {
-                Response.Redirect("~/Public/SearchParts.aspx");
+                Response.Redirect("~/Public/Parts.aspx");
             }
         }
     }

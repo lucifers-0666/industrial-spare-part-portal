@@ -5,44 +5,44 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Quick Analytics Stat Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div class="card flex items-center gap-4 border-l-4 border-l-blue-600">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl shrink-0">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+        <div class="surface-card p-5 flex items-center gap-4 border-l-4 border-l-[#1D4ED8]">
+            <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#1D4ED8] border border-blue-200 flex items-center justify-center text-lg shrink-0">
                 <i class="fa-solid fa-users"></i>
             </div>
             <div>
-                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Total Registered Users</span>
-                <span class="text-2xl font-bold text-slate-900" id="lblTotalUsers" runat="server">24</span>
+                <span class="text-[11px] font-mono uppercase text-[#64748B] block">Total Registered Users</span>
+                <span class="text-2xl font-black text-[#0F172A] font-mono" id="lblTotalUsers" runat="server">24</span>
             </div>
         </div>
 
-        <div class="card flex items-center gap-4 border-l-4 border-l-emerald-600">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+        <div class="surface-card p-5 flex items-center gap-4 border-l-4 border-l-[#059669]">
+            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-[#059669] border border-emerald-200 flex items-center justify-center text-lg shrink-0">
                 <i class="fa-solid fa-warehouse"></i>
             </div>
             <div>
-                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Verified Suppliers</span>
-                <span class="text-2xl font-bold text-slate-900" id="lblVerifiedSuppliers" runat="server">8</span>
+                <span class="text-[11px] font-mono uppercase text-[#64748B] block">Verified Suppliers</span>
+                <span class="text-2xl font-black text-[#0F172A] font-mono" id="lblVerifiedSuppliers" runat="server">8</span>
             </div>
         </div>
 
-        <div class="card flex items-center gap-4 border-l-4 border-l-red-600">
-            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl shrink-0 animate-pulse">
-                <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="surface-card p-5 flex items-center gap-4 border-l-4 border-l-[#EA580C]">
+            <div class="w-11 h-11 rounded-xl bg-orange-50 text-[#EA580C] border border-orange-200 flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
             </div>
             <div>
-                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Active Emergency Alerts</span>
-                <span class="text-2xl font-bold text-red-600" id="lblActiveEmergency" runat="server">3</span>
+                <span class="text-[11px] font-mono uppercase text-[#64748B] block">Active Emergency Alerts</span>
+                <span class="text-2xl font-black text-[#EA580C] font-mono" id="lblActiveEmergency" runat="server">3</span>
             </div>
         </div>
 
-        <div class="card flex items-center gap-4 border-l-4 border-l-amber-600">
-            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl shrink-0">
+        <div class="surface-card p-5 flex items-center gap-4 border-l-4 border-l-[#B45309]">
+            <div class="w-11 h-11 rounded-xl bg-amber-50 text-[#B45309] border border-amber-200 flex items-center justify-center text-lg shrink-0">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
             </div>
             <div>
-                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Open RFQ Quotations</span>
-                <span class="text-2xl font-bold text-slate-900" id="lblOpenRfqs" runat="server">14</span>
+                <span class="text-[11px] font-mono uppercase text-[#64748B] block">Open RFQ Quotations</span>
+                <span class="text-2xl font-black text-[#0F172A] font-mono" id="lblOpenRfqs" runat="server">14</span>
             </div>
         </div>
     </div>
@@ -50,34 +50,34 @@
     <!-- Main Content Section: System Users Overview & Verification Queue -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-8">
-            <div class="table-container">
-                <div class="px-6 py-4 border-b border-slate-200 flex justify-between items-center bg-slate-50">
-                    <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
-                        <i class="fa-solid fa-users text-blue-600"></i> Platform Registered Users
+            <div class="table-container shadow-xs">
+                <div class="px-6 py-4 border-b border-[#CBD5E1] flex justify-between items-center bg-slate-50">
+                    <h3 class="text-xs font-bold text-[#0F172A] uppercase tracking-wider flex items-center gap-2 m-0">
+                        <i class="fa-solid fa-users text-[#1D4ED8]"></i> Platform Registered User Roster
                     </h3>
-                    <a href="~/Admin/Users/UserList.aspx" runat="server" class="text-xs font-semibold text-blue-600 hover:text-blue-700">View All Users →</a>
+                    <a href="~/Admin/Users/UserList.aspx" runat="server" class="text-xs font-bold text-[#1D4ED8] hover:underline">View All Users →</a>
                 </div>
                 
                 <asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="false" CssClass="table-custom" GridLines="None">
                     <Columns>
-                        <asp:BoundField DataField="UserId" HeaderText="ID" HeaderStyle-CssClass="w-12" />
-                        <asp:BoundField DataField="FullName" HeaderText="User / Company Name" />
-                        <asp:BoundField DataField="Email" HeaderText="Email Address" />
+                        <asp:BoundField DataField="UserId" HeaderText="ID" HeaderStyle-CssClass="w-12 font-mono" ItemStyle-CssClass="font-mono text-xs" />
+                        <asp:BoundField DataField="FullName" HeaderText="Entity / User Name" ItemStyle-CssClass="font-bold text-xs" />
+                        <asp:BoundField DataField="Email" HeaderText="Email Address" ItemStyle-CssClass="font-mono text-xs text-[#64748B]" />
                         <asp:TemplateField HeaderText="Role">
                             <ItemTemplate>
-                                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                                <span class="spec-tag spec-tag-blue text-[10px]">
                                     <%# Eval("RoleName") %>
                                 </span>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Verification">
                             <ItemTemplate>
-                                <span class='<%# Convert.ToBoolean(Eval("IsVerified")) ? "badge-verified" : "badge-pending" %>'>
+                                <span class='<%# Convert.ToBoolean(Eval("IsVerified")) ? "status-pill status-pill-verified text-[10px]" : "status-pill status-pill-demo text-[10px]" %>'>
                                     <%# Convert.ToBoolean(Eval("IsVerified")) ? "Verified" : "Pending" %>
                                 </span>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="CreatedAt" HeaderText="Registered Date" DataFormatString="{0:dd MMM yyyy}" />
+                        <asp:BoundField DataField="CreatedAt" HeaderText="Date Registered" DataFormatString="{0:dd MMM yyyy}" ItemStyle-CssClass="font-mono text-xs text-[#64748B]" />
                     </Columns>
                 </asp:GridView>
             </div>
@@ -85,29 +85,30 @@
 
         <!-- System Governance Quick Actions -->
         <div class="lg:col-span-4 space-y-6">
-            <div class="card">
-                <h3 class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-bolt text-amber-500"></i> Quick Governance Actions
+            <div class="surface-card p-6 space-y-4">
+                <h3 class="text-xs font-bold text-[#0F172A] uppercase tracking-wider flex items-center gap-2 m-0">
+                    <i class="fa-solid fa-bolt text-[#B45309]"></i> Quick Governance Actions
                 </h3>
-                <div class="space-y-3">
-                    <a href="~/Admin/Suppliers/SupplierList.aspx" runat="server" class="btn-secondary w-full justify-start text-xs">
-                        <i class="fa-solid fa-user-check text-emerald-600"></i> Review Pending Supplier Applications
+                <div class="space-y-2.5">
+                    <a href="~/Admin/Suppliers/SupplierList.aspx" runat="server" class="btn-secondary w-full justify-start text-xs py-2 px-3">
+                        <i class="fa-solid fa-user-check text-[#059669]"></i> Review Supplier Applications
                     </a>
-                    <a href="~/Admin/EmergencyRequests/EmergencyMonitor.aspx" runat="server" class="btn-secondary w-full justify-start text-xs border-red-200 hover:bg-red-50 text-red-700">
-                        <i class="fa-solid fa-triangle-exclamation text-red-600"></i> Audit Breakdown Emergency Dispatch
+                    <a href="~/Admin/EmergencyRequests/EmergencyMonitor.aspx" runat="server" class="btn-secondary w-full justify-start text-xs py-2 px-3 border-orange-200 hover:bg-orange-50 text-[#EA580C]">
+                        <i class="fa-solid fa-triangle-exclamation text-[#EA580C]"></i> Audit Emergency Dispatches
                     </a>
-                    <a href="~/Admin/SpareParts/PartCatalog.aspx" runat="server" class="btn-secondary w-full justify-start text-xs">
-                        <i class="fa-solid fa-plus text-blue-600"></i> Add New Master Spare-Part
+                    <a href="~/Admin/SpareParts/PartCatalog.aspx" runat="server" class="btn-secondary w-full justify-start text-xs py-2 px-3">
+                        <i class="fa-solid fa-plus text-[#1D4ED8]"></i> Add New Master Part Record
                     </a>
                 </div>
             </div>
 
-            <div class="card bg-slate-900 text-white border-slate-800">
-                <h3 class="text-sm font-bold mb-2">System Status</h3>
-                <p class="text-xs text-slate-400 mb-4">ASP.NET Web Forms Architecture operating on SQL Server with ADO.NET Data Layer.</p>
+            <div class="surface-card p-6 bg-[#0F172A] text-white border-slate-700 space-y-3">
+                <span class="spec-tag spec-tag-blue text-[10px]">PLATFORM RUNTIME</span>
+                <h3 class="text-sm font-bold m-0 text-white">System Architecture</h3>
+                <p class="text-xs text-slate-300 m-0 leading-relaxed">ASP.NET Web Forms operating on SQL Server with ADO.NET Data Access Layer.</p>
                 <div class="text-[11px] text-slate-400 font-mono space-y-1 bg-slate-950 p-3 rounded-lg border border-slate-800">
                     <div>Environment: .NET Framework 4.8</div>
-                    <div>Database: IndustrialSparePartDB</div>
+                    <div>Database: SQL Server (ADO.NET)</div>
                     <div>Security: BasePage RBAC Enforcement</div>
                 </div>
             </div>

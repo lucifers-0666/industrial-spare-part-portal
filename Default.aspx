@@ -1,905 +1,498 @@
-<%@ Page Title="Industrial Spare-Part Finder & Emergency Procurement Portal" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IndustrialSparePartPortal.Default" %>
+<%@ Page Title="Industrial Spare-Part Procurement & Emergency Sourcing" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IndustrialSparePartPortal.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
-        .light-blue-glow {
-            background: radial-gradient(circle at 50% 50%, rgba(22, 119, 255, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
-        }
-        .orange-accent-glow {
-            box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.25);
-        }
-    </style>
+    <meta name="description" content="Industrial spare-part procurement and emergency sourcing portal connecting factories, suppliers, and certified technicians." />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- ============================================================================ -->
-    <!-- SECTION 1: HERO EXPERIENCE — BRIGHT LIGHT INDUSTRIAL PRODUCT SHOWCASE        -->
+    <!-- 1. EDITORIAL HERO: INDUSTRIAL SOURCING WORKSPACE                             -->
+    <!-- Authentic manufacturing context, sharp typography, direct primary actions    -->
     <!-- ============================================================================ -->
-    <section class="relative bg-[#F8FAFC] text-[#172033] overflow-hidden pt-12 pb-20 lg:pt-16 lg:pb-24 bg-grid-pattern-light border-b border-[#D9E1EA]">
-        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] light-blue-glow pointer-events-none"></div>
-
-        <div class="max-w-8xl mx-auto px-6 lg:px-12 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Column: Hero Content -->
-                <div class="lg:col-span-7 space-y-7 text-left">
-                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-bold bg-blue-50 text-[#1677FF] border border-blue-200 shadow-xs">
-                        <i class="fa-solid fa-layer-group text-[#1677FF]"></i>
-                        <span class="tracking-wider uppercase">INDUSTRIAL PROCUREMENT PLATFORM</span>
+    <section class="relative bg-white border-b border-[#CBD5E1] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Column: Editorial Headline & Value Proposition -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="spec-tag spec-tag-blue">
+                            <i class="fa-solid fa-industry"></i> B2B PROCUREMENT NETWORK
+                        </span>
+                        <span class="spec-tag spec-tag-amber">
+                            MCA DEMONSTRATION WORKSPACE
+                        </span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#172033] leading-none">
-                        Find the Right Industrial Part. <span class="text-[#1677FF]">Faster.</span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F172A] leading-tight m-0">
+                        Precision Industrial Spare Parts &amp; <span class="text-[#1D4ED8]">Emergency Sourcing</span>
                     </h1>
 
-                    <p class="text-base sm:text-lg text-[#526174] max-w-2xl leading-relaxed font-normal">
-                        Find spare parts, compare supplier options, request quotations and connect with technical expertise through one connected industrial procurement platform.
+                    <p class="text-base text-[#475569] leading-relaxed max-w-2xl m-0">
+                        A connected digital procurement ecosystem engineered for manufacturing facilities. Locate verified OEM replacement parts, compare regional supplier quotes, and mobilize on-call field technicians before downtime escalates.
                     </p>
 
-                    <!-- Primary & Emergency CTAs -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                        <a href="~/Public/Parts.aspx" runat="server" class="btn-primary text-base py-4 px-8 font-extrabold shadow-md">
-                            <i class="fa-solid fa-magnifying-glass"></i> Find Spare Parts
+                    <!-- Primary Actions -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                        <a href="~/Public/Parts.aspx" runat="server" class="btn-primary text-sm py-3.5 px-6 font-bold shadow-xs">
+                            <i class="fa-solid fa-magnifying-glass"></i> Browse Parts Catalog
                         </a>
-                        <a href="~/Public/Emergency.aspx" runat="server" class="btn-emergency text-base py-4 px-8 font-extrabold orange-accent-glow">
-                            <i class="fa-solid fa-bolt"></i> Emergency Procurement
+                        <a href="~/Public/Emergency.aspx" runat="server" class="btn-emergency text-sm py-3.5 px-6 font-bold">
+                            <i class="fa-solid fa-bolt"></i> Emergency Breakdown Request
                         </a>
                     </div>
 
-                    <!-- Capability Indicators (Links to dedicated Public pages) -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-[#D9E1EA]">
-                        <a href="~/Public/Parts.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-[#1677FF] transition-all block group">
-                            <div class="text-[#1677FF] font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
-                                <i class="fa-solid fa-barcode"></i> Part Discovery
-                            </div>
-                            <span class="text-xs text-[#526174] font-medium block">OEM & Machine Search</span>
-                        </a>
-                        <a href="~/Public/Suppliers.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-emerald-500 transition-all block group">
-                            <div class="text-emerald-700 font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
-                                <i class="fa-solid fa-warehouse"></i> Supplier Compare
-                            </div>
-                            <span class="text-xs text-[#526174] font-medium block">Price & Stock Matrix</span>
-                        </a>
-                        <a href="~/Public/Emergency.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-[#F97316] transition-all block group">
-                            <div class="text-[#F97316] font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
-                                <i class="fa-solid fa-bolt"></i> Urgent Requests
-                            </div>
-                            <span class="text-xs text-[#526174] font-medium block">Breakdown Sourcing</span>
-                        </a>
-                        <a href="~/Public/Technicians.aspx" runat="server" class="bg-white p-4 rounded-2xl border border-[#D9E1EA] shadow-xs space-y-1 hover:border-cyan-500 transition-all block group">
-                            <div class="text-cyan-700 font-bold text-sm flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
-                                <i class="fa-solid fa-wrench"></i> Technical Support
-                            </div>
-                            <span class="text-xs text-[#526174] font-medium block">Field Service Profiles</span>
-                        </a>
+                    <!-- Operational Telemetry Indicators -->
+                    <div class="pt-6 border-t border-[#E2E8F0] grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+                        <div class="space-y-0.5">
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Regional Hubs</span>
+                            <span class="font-bold text-[#0F172A] text-sm font-mono">8 Industrial Zones</span>
+                        </div>
+                        <div class="space-y-0.5">
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Indexed Parts</span>
+                            <span class="font-bold text-[#0F172A] text-sm font-mono">1,400+ Components</span>
+                        </div>
+                        <div class="space-y-0.5">
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Avg Response</span>
+                            <span class="font-bold text-[#1D4ED8] text-sm font-mono">&lt; 25 Mins (Demo)</span>
+                        </div>
+                        <div class="space-y-0.5">
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Field Techs</span>
+                            <span class="font-bold text-[#059669] text-sm font-mono">Verified On-Site</span>
+                        </div>
                     </div>
+
                 </div>
 
-                <!-- Right Column: Demonstration Product UI Visual -->
+                <!-- Right Column: Authentic Editorial Plant Photography -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white border-2 border-[#D9E1EA] rounded-3xl p-6 shadow-xl space-y-5">
-                        <div class="flex items-center justify-between border-b border-[#D9E1EA] pb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
-                                <span class="text-xs font-bold text-[#172033] uppercase tracking-wider">Demonstration Interface</span>
+                    <div class="relative rounded-2xl overflow-hidden border border-[#CBD5E1] shadow-lg bg-slate-900 group">
+                        <img src="<%= ResolveUrl("~/Content/images/hero_plant_workshop.jpg") %>" 
+                             alt="Modern precision CNC manufacturing workshop and industrial maintenance floor" 
+                             class="w-full h-[360px] sm:h-[420px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                             loading="eager" />
+                        
+                        <!-- Overlay Field Note -->
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/60 to-transparent p-5 text-white">
+                            <div class="flex items-center justify-between text-xs mb-1">
+                                <span class="font-mono text-[11px] text-slate-300"><i class="fa-solid fa-location-dot text-[#38BDF8] mr-1"></i> Continuous Operations Desk</span>
+                                <span class="spec-tag spec-tag-emerald text-[10px]">ACTIVE MONITORING</span>
                             </div>
-                            <span class="copper-tag">SAMPLE PREVIEW</span>
-                        </div>
-
-                        <!-- Product Search Context Card -->
-                        <div class="bg-[#F1F5F9] p-3.5 rounded-2xl border border-[#D9E1EA] space-y-2">
-                            <div class="text-[11px] font-mono text-[#526174] flex justify-between">
-                                <span>Search Query:</span>
-                                <span class="text-[#1677FF] font-bold">Deep Groove Ball Bearing</span>
-                            </div>
-                            <div class="bg-white text-[#172033] px-3.5 py-2.5 rounded-xl text-xs font-mono font-bold flex items-center justify-between border border-[#D9E1EA] shadow-xs">
-                                <span>6204-2RS Ball Bearing</span>
-                                <span class="bg-blue-100 text-[#1677FF] px-2 py-0.5 rounded text-[10px]">OEM MATCHED</span>
-                            </div>
-                        </div>
-
-                        <!-- 3 Demo Supplier Result Rows -->
-                        <div class="space-y-3">
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-[#D9E1EA] flex items-center justify-between hover:border-[#1677FF] transition-all">
-                                <div>
-                                    <div class="text-xs font-bold text-[#172033] flex items-center gap-2">
-                                        Demo Supplier A
-                                        <span class="badge-pending text-[9px] py-0 px-1.5">Verification: Demo</span>
-                                    </div>
-                                    <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 12 km | In Stock (150 Pcs)</div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">&#8377;1,249</span>
-                                    <span class="text-[10px] text-emerald-600 font-mono font-bold">Quotation Ready</span>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-[#D9E1EA] flex items-center justify-between hover:border-[#1677FF] transition-all">
-                                <div>
-                                    <div class="text-xs font-bold text-[#172033] flex items-center gap-2">
-                                        Demo Supplier B
-                                        <span class="badge-pending text-[9px] py-0 px-1.5">Verification: Demo</span>
-                                    </div>
-                                    <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 24 km | In Stock (45 Pcs)</div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">&#8377;1,290</span>
-                                    <span class="text-[10px] text-[#1677FF] font-mono font-bold">Quotation Ready</span>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-50 p-4 rounded-2xl border border-[#D9E1EA] flex items-center justify-between hover:border-[#1677FF] transition-all">
-                                <div>
-                                    <div class="text-xs font-bold text-[#172033] flex items-center gap-2">
-                                        Demo Supplier C
-                                        <span class="badge-pending text-[9px] py-0 px-1.5">Verification: Demo</span>
-                                    </div>
-                                    <div class="text-[11px] text-[#526174] font-mono mt-0.5">Distance: 31 km | Limited Stock</div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-sm font-extrabold text-[#172033] block">&#8377;1,320</span>
-                                    <span class="text-[10px] text-slate-500 font-mono font-bold">Quotation Ready</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-3 border-t border-[#D9E1EA] flex items-center justify-between text-xs text-[#526174]">
-                            <span>Available Technicians: <strong class="text-[#172033]">Sample Profiles Available</strong></span>
-                            <a href="~/Public/Suppliers.aspx" runat="server" class="text-[#1677FF] hover:underline font-bold">Compare Options →</a>
+                            <p class="text-xs text-slate-300 m-0 leading-snug">
+                                Connecting heavy manufacturing plants with regional industrial stockists in Gujarat and Maharashtra.
+                            </p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 2: PROBLEM — MACHINE DOWN? PROCUREMENT SHOULDN'T SLOW YOU DOWN        -->
+    <!-- 2. PRACTICAL SEARCH BAR & LIVE CATALOG ENTRY POINT                           -->
+    <!-- Real ASP.NET search box preserved with unmistakable live vs demo badges      -->
     <!-- ============================================================================ -->
-    <section class="py-20 bg-white border-b border-[#D9E1EA]" id="problem-solution">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-triangle-exclamation"></i> Industrial Bottlenecks</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                    Machine Down? Procurement Shouldn't Slow You Down.
-                </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                    Traditional industrial spare-part sourcing relies on manual phone calls, unverified stock levels, and unknown OEM part numbers.
-                </p>
-            </div>
-
-            <!-- Visual Comparison: Traditional vs Platform Process -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-                <!-- Traditional Process Card -->
-                <div class="bg-red-50/60 border-2 border-red-200 rounded-3xl p-8 lg:p-10 space-y-6">
-                    <div class="flex items-center justify-between border-b border-red-200 pb-4">
-                        <div class="flex items-center gap-3 text-red-800">
-                            <div class="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-2xl font-bold">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-[#172033]">Traditional Process</h3>
-                                <p class="text-xs text-red-700 font-semibold">Fragmented & Manual</p>
-                            </div>
+    <section class="py-12 bg-[#F8FAFC] border-b border-[#CBD5E1]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Interactive Search Card -->
+            <div class="bg-white rounded-2xl border border-[#CBD5E1] p-6 sm:p-8 shadow-xs space-y-5">
+                
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-[#E2E8F0] pb-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="spec-tag spec-tag-blue">DIRECT SPECIFICATION SEARCH</span>
+                            <span class="text-xs text-[#64748B] font-mono">CROSS-REFERENCED BY PART # OR MACHINE MODEL</span>
                         </div>
-                        <span class="bg-red-600 text-white text-xs font-extrabold uppercase px-3 py-1 rounded-md">MANUAL DELAYS</span>
+                        <h2 class="text-xl font-bold text-[#0F172A] mt-1 m-0">Search Indexed Spare-Parts Catalog</h2>
                     </div>
-
-                    <div class="space-y-4 text-sm text-[#172033]">
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Unknown Part Identification:</strong> Maintenance team guesses replacement specifications without OEM cross-referencing.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Manual Supplier Calls:</strong> Calling vendors one-by-one to ask about stock availability and lead times.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Unclear Pricing:</strong> Difficult price comparisons and slow manual quotation collection.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Service Coordination Gaps:</strong> Spare part arrives, but finding qualified technical support requires separate outreach.</div>
-                        </div>
-                    </div>
+                    <a href="~/Public/Parts.aspx" runat="server" class="text-xs font-bold text-[#1D4ED8] hover:underline flex items-center gap-1">
+                        View Complete 1,400+ Part Index →
+                    </a>
                 </div>
 
-                <!-- Platform Process Card -->
-                <div class="bg-blue-50/60 border-2 border-blue-200 rounded-3xl p-8 lg:p-10 space-y-6">
-                    <div class="flex items-center justify-between border-b border-blue-200 pb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-[#1677FF] text-white flex items-center justify-center text-2xl font-bold shadow-sm">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-[#172033]">Platform-Based Process</h3>
-                                <p class="text-xs text-emerald-700 font-semibold">Structured & Connected</p>
-                            </div>
-                        </div>
-                        <span class="bg-emerald-600 text-white text-xs font-extrabold uppercase px-3 py-1 rounded-md">CONNECTED</span>
-                    </div>
-
-                    <div class="space-y-4 text-sm text-[#172033]">
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Part # & Machine Name Search:</strong> Instantly search part numbers or machine models across indexed categories.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Supplier Comparison Matrix:</strong> Compare supplier inventory, pricing, and distance side-by-side.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Quotation & Emergency Requests:</strong> Request standard supplier quotes or submit urgent breakdown sourcing alerts.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-600 text-base shrink-0 mt-1"></i>
-                            <div><strong>Technician Discovery:</strong> Connect with technical service providers based on skill and location alongside parts.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- SECTION 3: WHY THIS PLATFORM ("MORE THAN A SPARE-PART MARKETPLACE")           -->
-    <!-- ============================================================================ -->
-    <section class="py-20 bg-[#F1F5F9] border-b border-[#D9E1EA]" id="differentiators">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-layer-group"></i> Ecosystem Integration</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                    More Than a Spare-Part Marketplace.
-                </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                    The platform is designed to bring multiple participants of the industrial procurement lifecycle together.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-[#D9E1EA] shadow-xs space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-[#1677FF] flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-industry"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#172033]">Factories & Industrial Buyers</h3>
-                    <p class="text-sm text-[#526174] leading-relaxed">
-                        Designed to enable factories to discover spare parts, compare supplier options, submit quotation requests, and find nearby technical expertise.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl border border-[#D9E1EA] shadow-xs space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-warehouse"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#172033]">Spare-Part Suppliers</h3>
-                    <p class="text-sm text-[#526174] leading-relaxed">
-                        Designed to allow suppliers to manage inventory, display stock availability, respond to quotation requests, and fulfill urgent procurement needs.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl border border-[#D9E1EA] shadow-xs space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-wrench"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#172033]">Technicians & Service Providers</h3>
-                    <p class="text-sm text-[#526174] leading-relaxed">
-                        Designed to connect technical specialists with industrial buyers seeking on-site installation, maintenance, and machine repair services.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- SECTION 4: SERVICES OVERVIEW                                                -->
-    <!-- ============================================================================ -->
-    <section class="py-20 bg-white border-b border-[#D9E1EA]" id="services">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-gears"></i> Core Capabilities</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                    Planned Platform Services
-                </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                    A comprehensive overview of planned functional modules designed for the industrial procurement network.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-barcode text-[#1677FF] text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Industrial Part Discovery</h4>
-                    <p class="text-xs text-[#526174]">Search by part number, machine model, or category.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-code-compare text-emerald-700 text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Supplier Comparison</h4>
-                    <p class="text-xs text-[#526174]">Compare price, stock availability, and distance.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-file-signature text-amber-700 text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Quotation Management</h4>
-                    <p class="text-xs text-[#526174]">Issue RFQs and receive supplier quotation responses.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-bolt text-[#F97316] text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Emergency Procurement</h4>
-                    <p class="text-xs text-[#526174]">Submit urgent breakdown sourcing requirements.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-wrench text-cyan-700 text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Technician Discovery</h4>
-                    <p class="text-xs text-[#526174]">Search service providers by skill and location.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-chart-line text-indigo-700 text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Request Tracking</h4>
-                    <p class="text-xs text-[#526174]">Track procurement order and service status.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-clock-rotate-left text-purple-700 text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Service History</h4>
-                    <p class="text-xs text-[#526174]">Maintain past order logs and service visit records.</p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-2 hover:border-[#1677FF] transition-all">
-                    <i class="fa-solid fa-headset text-red-700 text-xl"></i>
-                    <h4 class="font-bold text-[#172033] text-base">Complaint Management</h4>
-                    <p class="text-xs text-[#526174]">Submit dispute tickets for admin assistance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- SECTION 5: HOW IT WORKS (6 CONTINUOUS STEPS)                                -->
-    <!-- ============================================================================ -->
-    <section class="py-20 bg-[#F8FAFC] border-b border-[#D9E1EA]" id="how-it-works">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-route"></i> Procurement Workflow</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                    How Industrial Procurement Works
-                </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                    Follow the continuous 6-step workflow designed to simplify industrial sourcing.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
-                    <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 01</span>
-                    <h3 class="text-base font-bold text-[#172033]">01. Search</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">Search by part number, machine model, or category.</p>
-                </div>
-
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
-                    <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 02</span>
-                    <h3 class="text-base font-bold text-[#172033]">02. Compare</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">Compare supplier availability, price, and distance.</p>
-                </div>
-
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
-                    <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 03</span>
-                    <h3 class="text-base font-bold text-[#172033]">03. Request</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">Issue quotation requests or submit urgent breakdown alerts.</p>
-                </div>
-
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
-                    <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 04</span>
-                    <h3 class="text-base font-bold text-[#172033]">04. Connect</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">Receive supplier responses & discover service technicians.</p>
-                </div>
-
-                <div class="bg-white border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all shadow-xs">
-                    <span class="text-xs font-mono font-bold text-[#1677FF] bg-blue-50 px-2.5 py-1 rounded-md">STEP 05</span>
-                    <h3 class="text-base font-bold text-[#172033]">05. Procure</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">Select the best quote option and confirm order placement.</p>
-                </div>
-
-                <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-2xl space-y-3 shadow-xs">
-                    <span class="text-xs font-mono font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md">STEP 06</span>
-                    <h3 class="text-base font-bold text-[#172033]">06. Track</h3>
-                    <p class="text-xs text-emerald-900 leading-relaxed">Track order and service status until completion.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- SECTION 6: SPARE-PART SEARCH DEMO                                           -->
-    <!-- ============================================================================ -->
-    <section class="py-20 bg-white border-b border-[#D9E1EA]" id="parts-catalog">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <!-- Search Input Box Showcase -->
-            <div class="bg-[#F8FAFC] p-4 rounded-3xl border border-[#D9E1EA] shadow-md mb-12 max-w-4xl space-y-3">
-                <div class="flex items-center gap-2 border-b border-[#D9E1EA] pb-3 text-xs font-bold text-[#172033]">
-                    <span class="copper-tag">SEARCH BY WHAT YOU KNOW</span>
-                    <span class="text-[#1677FF]"><i class="fa-solid fa-barcode"></i> Part Number</span>
-                    <span class="text-slate-300">|</span>
-                    <span class="text-[#526174]"><i class="fa-solid fa-industry"></i> Machine Name</span>
-                    <span class="text-slate-300">|</span>
-                    <span class="text-[#526174]"><i class="fa-solid fa-boxes-stacked"></i> Category</span>
-                </div>
+                <!-- Search Input Group with Preserved Server Controls -->
                 <div class="flex flex-col sm:flex-row gap-3">
                     <div class="relative flex-1">
-                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400 text-base"></i>
-                        <asp:TextBox ID="txtSearchQuery" runat="server" CssClass="w-full pl-12 pr-4 py-3.5 text-[#172033] placeholder-slate-400 text-sm font-medium focus:outline-none bg-white rounded-xl border border-[#D9E1EA]" Placeholder="Search catalog e.g., 6204 Bearing, CNC Lathe, PART-HYD-001..."></asp:TextBox>
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+                        <asp:TextBox ID="txtSearchQuery" runat="server" CssClass="w-full pl-11 pr-4 py-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-xl text-sm text-[#0F172A] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#1D4ED8] transition-all font-medium" Placeholder="Search by OEM Part # (e.g. 6210-2RS, PART-HYD-001) or Machine Model..."></asp:TextBox>
                     </div>
-                    <asp:Button ID="btnSearch" runat="server" Text="Search Catalog" OnClick="btnSearch_Click" CssClass="btn-primary py-3.5 px-8 text-sm font-extrabold rounded-xl shrink-0" />
+                    <asp:Button ID="btnSearch" runat="server" Text="Search Catalog" OnClick="btnSearch_Click" CssClass="btn-primary text-sm py-3 px-8 font-bold shrink-0 cursor-pointer" />
                 </div>
+
+                <!-- Quick Specification Filters -->
+                <div class="flex flex-wrap items-center gap-2 text-xs text-[#64748B] pt-1">
+                    <span class="font-bold text-[#0F172A]">Common Inquiries:</span>
+                    <a href="~/Public/Parts.aspx?q=bearing" runat="server" class="px-2.5 py-1 rounded-md bg-[#F1F5F9] border border-[#E2E8F0] text-[#334155] hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors font-mono">6204-2RS Bearings</a>
+                    <a href="~/Public/Parts.aspx?q=hydraulic" runat="server" class="px-2.5 py-1 rounded-md bg-[#F1F5F9] border border-[#E2E8F0] text-[#334155] hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors font-mono">Hydraulic Pump 250Bar</a>
+                    <a href="~/Public/Parts.aspx?q=servo" runat="server" class="px-2.5 py-1 rounded-md bg-[#F1F5F9] border border-[#E2E8F0] text-[#334155] hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors font-mono">7.5kW AC Servo</a>
+                    <a href="~/Public/Parts.aspx?q=vfd" runat="server" class="px-2.5 py-1 rounded-md bg-[#F1F5F9] border border-[#E2E8F0] text-[#334155] hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-colors font-mono">15kW VFD Inverter</a>
+                </div>
+
             </div>
 
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <span class="copper-badge mb-3"><i class="fa-solid fa-magnifying-glass"></i> Search Demo</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-[#172033]">Search by What You Know</h2>
-                    <p class="text-sm text-[#526174] mt-1">Sample catalog demonstration displaying spare-part indexing.</p>
+            <!-- Featured Component Teaser Grid: Genuine High-Resolution Technical Macro Photography -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
+                
+                <!-- Component Card 1: Roller Bearings -->
+                <div class="surface-card p-6 flex flex-col sm:flex-row gap-5 items-center">
+                    <img src="<%= ResolveUrl("~/Content/images/macro_roller_bearing.jpg") %>" 
+                         alt="Precision spherical roller bearing and steel gears" 
+                         class="w-full sm:w-36 h-36 object-cover rounded-xl border border-[#CBD5E1] shrink-0" 
+                         loading="lazy" />
+                    <div class="space-y-2 flex-1 text-left">
+                        <div class="flex items-center justify-between">
+                            <span class="spec-tag spec-tag-amber">SAMPLE DEMONSTRATION RECORD</span>
+                            <span class="status-pill status-pill-verified text-[11px]"><i class="fa-solid fa-circle-check text-[9px]"></i> Ready Stock</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0F172A] m-0">Spherical Roller Bearing 6210-2RS</h3>
+                        <p class="text-xs text-[#64748B] m-0 leading-relaxed font-mono">
+                            Tolerance: ISO P6 | Bore: 50mm | OD: 90mm | High-load industrial spindle applications.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between border-t border-[#E2E8F0] text-xs">
+                            <span class="font-bold text-[#0F172A] font-mono">&#8377;1,850 <span class="text-[10px] text-[#64748B] font-normal">indicative</span></span>
+                            <a href="~/Public/Parts.aspx" runat="server" class="text-[#1D4ED8] font-bold hover:underline">Inspect Catalog →</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Category Filter Buttons -->
-                <div class="flex flex-wrap gap-2 text-xs font-bold">
-                    <button type="button" class="px-4 py-2 rounded-xl bg-[#1677FF] text-white shadow-xs" onclick="filterParts('all')">All Categories</button>
-                    <button type="button" class="px-4 py-2 rounded-xl bg-slate-100 border border-[#D9E1EA] text-[#172033] hover:bg-slate-200" onclick="filterParts('hydraulics')">Hydraulics</button>
-                    <button type="button" class="px-4 py-2 rounded-xl bg-slate-100 border border-[#D9E1EA] text-[#172033] hover:bg-slate-200" onclick="filterParts('motors')">Motors & Drives</button>
-                    <button type="button" class="px-4 py-2 rounded-xl bg-slate-100 border border-[#D9E1EA] text-[#172033] hover:bg-slate-200" onclick="filterParts('bearings')">Bearings</button>
+                <!-- Component Card 2: Hydraulic High-Pressure Pump -->
+                <div class="surface-card p-6 flex flex-col sm:flex-row gap-5 items-center">
+                    <img src="<%= ResolveUrl("~/Content/images/hydraulic_pump_assembly.jpg") %>" 
+                         alt="Industrial high pressure hydraulic pump test bench" 
+                         class="w-full sm:w-36 h-36 object-cover rounded-xl border border-[#CBD5E1] shrink-0" 
+                         loading="lazy" />
+                    <div class="space-y-2 flex-1 text-left">
+                        <div class="flex items-center justify-between">
+                            <span class="spec-tag spec-tag-amber">SAMPLE DEMONSTRATION RECORD</span>
+                            <span class="status-pill status-pill-verified text-[11px]"><i class="fa-solid fa-circle-check text-[9px]"></i> Ready Stock</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0F172A] m-0">High-Pressure Hydraulic Pump 250Bar</h3>
+                        <p class="text-xs text-[#64748B] m-0 leading-relaxed font-mono">
+                            Flow: 45 L/min | Max: 250 Bar | Compatible with 500T industrial hydraulic forming presses.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between border-t border-[#E2E8F0] text-xs">
+                            <span class="font-bold text-[#0F172A] font-mono">&#8377;42,500 <span class="text-[10px] text-[#64748B] font-normal">indicative</span></span>
+                            <a href="~/Public/Parts.aspx" runat="server" class="text-[#1D4ED8] font-bold hover:underline">Inspect Catalog →</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <!-- Demo Parts Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="partsContainer">
-                <!-- Part 1 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4 part-card" data-cat="hydraulics">
-                    <div class="flex justify-between items-start">
-                        <span class="copper-tag">PART-HYD-001</span>
-                        <span class="badge-verified">In Stock</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-[#172033] text-base">High-Pressure Hydraulic Pump 250Bar</h4>
-                        <p class="text-xs text-[#526174] mt-1">Machine: Hydraulic Press 500T</p>
-                    </div>
-                    <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
-                        <div>Flow: 45 L/min | Pressure: 250 Bar</div>
-                        <div>Supplier: Demo Supplier A</div>
-                    </div>
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">&#8377;42,500</span>
-                        <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
-                    </div>
-                </div>
-
-                <!-- Part 2 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4 part-card" data-cat="motors">
-                    <div class="flex justify-between items-start">
-                        <span class="copper-tag">PART-MOT-002</span>
-                        <span class="badge-verified">4 Units Left</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-[#172033] text-base">3-Phase AC Servo Motor 7.5kW</h4>
-                        <p class="text-xs text-[#526174] mt-1">Machine: CNC Lathe X200</p>
-                    </div>
-                    <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
-                        <div>Power: 7.5kW | RPM: 3000 | 415V</div>
-                        <div>Supplier: Demo Supplier B</div>
-                    </div>
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">&#8377;68,000</span>
-                        <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
-                    </div>
-                </div>
-
-                <!-- Part 3 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4 part-card" data-cat="bearings">
-                    <div class="flex justify-between items-start">
-                        <span class="copper-tag">PART-BRG-003</span>
-                        <span class="badge-verified">In Stock</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-[#172033] text-base">Deep Groove Ball Bearing 6210-2RS</h4>
-                        <p class="text-xs text-[#526174] mt-1">Machine: Universal Industrial Shaft</p>
-                    </div>
-                    <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
-                        <div>Specs: 50mm x 90mm x 20mm</div>
-                        <div>Supplier: Demo Supplier C</div>
-                    </div>
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">&#8377;1,850</span>
-                        <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
-                    </div>
-                </div>
-
-                <!-- Part 4 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4 part-card" data-cat="motors">
-                    <div class="flex justify-between items-start">
-                        <span class="copper-tag">PART-ELE-004</span>
-                        <span class="badge-verified">2 Units Left</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-[#172033] text-base">Industrial VFD Inverter 15kW</h4>
-                        <p class="text-xs text-[#526174] mt-1">Machine: Air Compressor 75HP</p>
-                    </div>
-                    <div class="text-xs text-[#172033] space-y-1 bg-[#F8FAFC] p-3 rounded-xl border border-[#D9E1EA] font-mono">
-                        <div>Input: 3-Phase 415V | 0-400Hz</div>
-                        <div>Supplier: Demo Supplier A</div>
-                    </div>
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA]">
-                        <span class="text-lg font-black text-[#172033]">&#8377;34,200</span>
-                        <a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-4">Request Quote</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 7: SUPPLIER COMPARISON DEMO TABLE                                   -->
+    <!-- 3. WORKFLOW SEQUENCE: BUYER-TO-SUPPLIER-TO-TECHNICIAN TRIANGULATION         -->
+    <!-- Structured process diagram with technical annotations                        -->
     <!-- ============================================================================ -->
-    <section class="py-20 bg-[#F8FAFC] border-b border-[#D9E1EA]" id="supplier-comparison">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-code-compare"></i> Options Comparison</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                    Supplier Comparison Matrix
+    <section class="py-16 bg-white border-b border-[#CBD5E1]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="text-center space-y-2 max-w-2xl mx-auto">
+                <span class="spec-tag spec-tag-blue">PROCUREMENT ARCHITECTURE</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight m-0">
+                    How SPAREFINDER Connects the Industrial Triad
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                    Compare supplier options across distance, stock status, unit pricing, and quotation response time.
+                <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    A synchronized data handshake uniting plant buyers, certified warehouse stockists, and on-site maintenance engineers.
                 </p>
             </div>
 
-            <!-- B2B Procurement Table Interface -->
-            <div class="table-container shadow-md">
+            <!-- Annotated Process Diagram -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
+                
+                <!-- Stage 1: Factory Buyer -->
+                <div class="surface-card p-6 border-l-4 border-l-[#1D4ED8] space-y-4 text-left">
+                    <div class="flex items-center justify-between">
+                        <span class="spec-tag spec-tag-blue">STAGE 01</span>
+                        <div class="w-8 h-8 rounded-lg bg-blue-50 text-[#1D4ED8] flex items-center justify-center font-bold text-sm">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#0F172A] m-0">Factory Requirement</h3>
+                    <p class="text-xs text-[#475569] leading-relaxed m-0">
+                        Plant maintenance logs a stopped machine or maintenance schedule. The buyer queries by OEM part number or issues a structured Request for Quotation (RFQ).
+                    </p>
+                    <div class="bg-[#F8FAFC] p-3 rounded-lg border border-[#E2E8F0] text-[11px] font-mono text-[#334155] space-y-1">
+                        <div>&bull; OEM Specification match</div>
+                        <div>&bull; Urgency classification (Standard / Critical)</div>
+                    </div>
+                </div>
+
+                <!-- Stage 2: Verified Supplier -->
+                <div class="surface-card p-6 border-l-4 border-l-[#059669] space-y-4 text-left">
+                    <div class="flex items-center justify-between">
+                        <span class="spec-tag spec-tag-emerald">STAGE 02</span>
+                        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center font-bold text-sm">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#0F172A] m-0">Supplier Quotation</h3>
+                    <p class="text-xs text-[#475569] leading-relaxed m-0">
+                        Regional stockists receive the RFQ notification, confirm physical shelf inventory, and submit itemized quotations with confirmed lead time.
+                    </p>
+                    <div class="bg-[#F8FAFC] p-3 rounded-lg border border-[#E2E8F0] text-[11px] font-mono text-[#334155] space-y-1">
+                        <div>&bull; Real-time stock reservation</div>
+                        <div>&bull; Freight &amp; transit time transparency</div>
+                    </div>
+                </div>
+
+                <!-- Stage 3: Field Technician -->
+                <div class="surface-card p-6 border-l-4 border-l-[#EA580C] space-y-4 text-left">
+                    <div class="flex items-center justify-between">
+                        <span class="spec-tag spec-tag-orange">STAGE 03</span>
+                        <div class="w-8 h-8 rounded-lg bg-orange-50 text-[#EA580C] flex items-center justify-center font-bold text-sm">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#0F172A] m-0">On-Site Commissioning</h3>
+                    <p class="text-xs text-[#475569] leading-relaxed m-0">
+                        While the part dispatches, nearby specialized technicians (PLC automation, hydraulic alignment, mechanical fitting) are mobilized for rapid installation.
+                    </p>
+                    <div class="bg-[#F8FAFC] p-3 rounded-lg border border-[#E2E8F0] text-[11px] font-mono text-[#334155] space-y-1">
+                        <div>&bull; Skill &amp; machine certification match</div>
+                        <div>&bull; Pre-arrival breakdown triage</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- 4. MEANINGFUL SUPPLIER & PART COMPARISON PREVIEW MATRIX                       -->
+    <!-- Concrete B2B data table layout with actual parameters and honest labeling    -->
+    <!-- ============================================================================ -->
+    <section class="py-16 bg-[#F8FAFC] border-b border-[#CBD5E1]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div class="space-y-1.5 text-left">
+                    <span class="spec-tag spec-tag-amber">DEMONSTRATION COMPARISON DATA</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight m-0">
+                        Supplier Quotation &amp; Availability Matrix
+                    </h2>
+                    <p class="text-xs sm:text-sm text-[#475569] m-0">
+                        Illustrating how procurement managers compare stock, pricing, and distance before confirming order dispatch.
+                    </p>
+                </div>
+                <a href="~/Public/Suppliers.aspx" runat="server" class="btn-secondary text-xs py-2 px-4 font-bold shrink-0">
+                    Open Supplier Directory →
+                </a>
+            </div>
+
+            <!-- Responsive Procurement Table -->
+            <div class="table-container shadow-xs">
                 <table class="table-custom">
                     <thead>
                         <tr>
-                            <th>Supplier Option</th>
-                            <th>Verification Status</th>
-                            <th>Distance</th>
+                            <th>Supplier &amp; Location</th>
+                            <th>Status Badge</th>
                             <th>Stock Status</th>
-                            <th>Unit Price</th>
-                            <th>Response Time</th>
+                            <th>Indicative Price</th>
+                            <th>Fulfillment Lead Time</th>
+                            <th>Distance</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-[#D9E1EA] text-sm font-medium text-[#172033]">
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="font-bold text-[#172033]">
-                                Demo Supplier A
-                                <span class="block text-xs font-normal text-[#526174] font-mono">Location: Pune, MH</span>
+                    <tbody class="divide-y divide-[#E2E8F0] text-xs">
+                        <tr>
+                            <td>
+                                <strong class="text-[#0F172A] block text-sm">Western Spares Distribution Ltd</strong>
+                                <span class="text-[#64748B] font-mono">Pune Industrial Zone, MH</span>
                             </td>
-                            <td><span class="badge-pending"><i class="fa-solid fa-clock text-[10px] mr-1"></i> Verification: Demo</span></td>
-                            <td class="font-mono text-[#172033]">12 km</td>
-                            <td><span class="text-emerald-700 font-bold">In Stock (150 Pcs)</span></td>
-                            <td class="font-bold text-[#172033] font-mono text-base">&#8377;42,500</td>
-                            <td class="font-mono text-[#1677FF] font-bold">~15 Mins</td>
-                            <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-3">Issue RFQ</a></td>
+                            <td><span class="status-pill status-pill-demo">Demo Profile</span></td>
+                            <td><span class="text-[#059669] font-bold"><i class="fa-solid fa-circle-check mr-1"></i> In Stock (45 Pcs)</span></td>
+                            <td class="font-mono font-bold text-sm text-[#0F172A]">&#8377;42,500</td>
+                            <td class="font-mono text-[#1D4ED8]">Same-Day Dispatch</td>
+                            <td class="font-mono text-[#64748B]">12 km</td>
+                            <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-1.5 px-3">Issue RFQ</a></td>
                         </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="font-bold text-[#172033]">
-                                Demo Supplier B
-                                <span class="block text-xs font-normal text-[#526174] font-mono">Location: Mumbai, MH</span>
+                        <tr>
+                            <td>
+                                <strong class="text-[#0F172A] block text-sm">Apex Hydraulic Systems Corp</strong>
+                                <span class="text-[#64748B] font-mono">Sanand GIDC, Ahmedabad, GJ</span>
                             </td>
-                            <td><span class="badge-pending"><i class="fa-solid fa-clock text-[10px] mr-1"></i> Verification: Demo</span></td>
-                            <td class="font-mono text-[#172033]">24 km</td>
-                            <td><span class="text-emerald-700 font-bold">In Stock (45 Pcs)</span></td>
-                            <td class="font-bold text-[#172033] font-mono text-base">&#8377;43,100</td>
-                            <td class="font-mono text-[#1677FF] font-bold">~20 Mins</td>
-                            <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-3">Issue RFQ</a></td>
+                            <td><span class="status-pill status-pill-demo">Demo Profile</span></td>
+                            <td><span class="text-[#059669] font-bold"><i class="fa-solid fa-circle-check mr-1"></i> In Stock (18 Pcs)</span></td>
+                            <td class="font-mono font-bold text-sm text-[#0F172A]">&#8377;43,100</td>
+                            <td class="font-mono text-[#1D4ED8]">Next-Morning Freight</td>
+                            <td class="font-mono text-[#64748B]">28 km</td>
+                            <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-1.5 px-3">Issue RFQ</a></td>
                         </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="font-bold text-[#172033]">
-                                Demo Supplier C
-                                <span class="block text-xs font-normal text-[#526174] font-mono">Location: Ahmedabad, GJ</span>
+                        <tr>
+                            <td>
+                                <strong class="text-[#0F172A] block text-sm">Industrial Power Transmissions</strong>
+                                <span class="text-[#64748B] font-mono">Navi Mumbai MIDC, MH</span>
                             </td>
-                            <td><span class="badge-pending"><i class="fa-solid fa-clock text-[10px] mr-1"></i> Verification: Demo</span></td>
-                            <td class="font-mono text-[#172033]">31 km</td>
-                            <td><span class="text-amber-700 font-bold">Limited Stock (8 Pcs)</span></td>
-                            <td class="font-bold text-[#172033] font-mono text-base">&#8377;44,000</td>
-                            <td class="font-mono text-[#1677FF] font-bold">~30 Mins</td>
-                            <td><a href="~/Account/Login.aspx" runat="server" class="btn-primary text-xs py-2 px-3">Issue RFQ</a></td>
+                            <td><span class="status-pill status-pill-demo">Demo Profile</span></td>
+                            <td><span class="text-[#B45309] font-bold"><i class="fa-solid fa-clock mr-1"></i> Backorder (3 Days)</span></td>
+                            <td class="font-mono font-bold text-sm text-[#0F172A]">&#8377;41,800</td>
+                            <td class="font-mono text-[#64748B]">3 Business Days</td>
+                            <td class="font-mono text-[#64748B]">42 km</td>
+                            <td><a href="~/Account/Login.aspx" runat="server" class="btn-secondary text-xs py-1.5 px-3">Pre-Order</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
         </div>
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 8: EMERGENCY PROCUREMENT DEMO                                      -->
+    <!-- 5. HUMAN-CENTERED TECHNICAL FIELD SUPPORT & BREAKDOWN DESK                   -->
+    <!-- Authentic field engineering photography and direct hotline                   -->
     <!-- ============================================================================ -->
-    <section class="py-20 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-amber-500/10 text-[#172033] border-b border-[#D9E1EA] relative overflow-hidden" id="emergency">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12 relative z-10">
-            <div class="bg-white border-2 border-orange-300 rounded-3xl p-8 sm:p-12 shadow-xl space-y-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                    <div class="lg:col-span-8 space-y-6">
-                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-black bg-[#F97316] text-white uppercase tracking-wider shadow-xs">
-                            <i class="fa-solid fa-triangle-exclamation animate-pulse"></i> Emergency Procurement
-                        </div>
-
-                        <h2 class="text-4xl sm:text-5xl font-black text-[#172033] leading-tight">
-                            MACHINE DOWN? Start an Emergency Request.
-                        </h2>
-
-                        <p class="text-base sm:text-lg text-[#526174] leading-relaxed font-normal max-w-2xl">
-                            Start an urgent spare-part request and provide the part or machine information needed for sourcing.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs font-bold text-[#172033]">
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-[#F97316] text-base"></i>
-                                <span>Urgent Part Sourcing Prompt</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-[#F97316] text-base"></i>
-                                <span>Nearby Supplier Alerting</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-[#F97316] text-base"></i>
-                                <span>Technician Discovery Link</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-4 text-center lg:text-right space-y-4">
-                        <a href="~/Account/Login.aspx?redirect=emergency" runat="server" class="btn-emergency w-full py-5 text-lg font-black rounded-2xl shadow-xl block text-center">
-                            <i class="fa-solid fa-bolt text-xl"></i> Start Emergency Request
-                        </a>
-                        <p class="text-xs text-[#526174] font-medium">
-                            Demo Support: <strong class="text-[#172033] font-mono text-sm">1800-000-0000</strong>
-                        </p>
+    <section class="py-16 bg-white border-b border-[#CBD5E1]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left: Authentic Technician Photograph -->
+                <div class="lg:col-span-5">
+                    <div class="rounded-2xl overflow-hidden border border-[#CBD5E1] shadow-md bg-slate-900 group">
+                        <img src="<%= ResolveUrl("~/Content/images/technician_plc_service.jpg") %>" 
+                             alt="Industrial electrical automation technician diagnosing PLC control cabinet" 
+                             class="w-full h-[360px] sm:h-[400px] object-cover object-top group-hover:scale-105 transition-transform duration-700" 
+                             loading="lazy" />
                     </div>
                 </div>
+
+                <!-- Right: Breakdown Triage & Field Service Integration -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="flex items-center gap-2">
+                        <span class="spec-tag spec-tag-orange"><i class="fa-solid fa-wrench"></i> ON-SITE TECHNICAL EXPERTISE</span>
+                        <span class="spec-tag spec-tag-blue">FIELD SERVICE SPECIALISTS</span>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight m-0">
+                        Parts + Skilled On-Site Labor in One Coordinated Flow
+                    </h2>
+
+                    <p class="text-sm text-[#475569] leading-relaxed m-0">
+                        Securing a replacement component is only half the battle. When critical equipment fails, you need certified diagnostic engineers who understand PLC ladder logic, hydraulic pressure valves, and motor rewinding.
+                    </p>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] flex items-start gap-3">
+                            <i class="fa-solid fa-microchip text-[#1D4ED8] text-base shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="text-[#0F172A] block font-bold">Automation &amp; PLC Diagnostics:</strong>
+                                Specialists in Allen-Bradley, Siemens S7, Mitsubishi, and Delta motion controllers.
+                            </div>
+                        </div>
+                        <div class="p-3 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] flex items-start gap-3">
+                            <i class="fa-solid fa-gears text-[#B45309] text-base shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="text-[#0F172A] block font-bold">Hydraulic &amp; Mechanical Fitting:</strong>
+                                High-pressure line replacement, pump overhaul, laser shaft alignment, and seal fitting.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                        <a href="~/Public/Technicians.aspx" runat="server" class="btn-primary text-xs py-3 px-5 font-bold">
+                            <i class="fa-solid fa-user-gear"></i> Find Field Technicians
+                        </a>
+                        <a href="tel:18000000000" class="btn-secondary text-xs py-3 px-5 font-mono font-bold">
+                            <i class="fa-solid fa-phone text-[#EA580C]"></i> Demo Helpline: 1800-000-0000
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 9: TECHNICIAN NETWORK DEMO                                          -->
+    <!-- 6. CONCISE TRUST & GOVERNANCE ARCHITECTURE                                   -->
+    <!-- Transparent verification explanation + MCA academic defense disclosure       -->
     <!-- ============================================================================ -->
-    <section class="py-20 bg-white border-b border-[#D9E1EA]" id="technicians">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <span class="copper-badge"><i class="fa-solid fa-wrench"></i> Technical Support</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                    Parts + Technical Expertise in One Platform
+    <section class="py-16 bg-[#F8FAFC] border-b border-[#CBD5E1]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            
+            <div class="text-center space-y-2 max-w-2xl mx-auto">
+                <span class="spec-tag spec-tag-emerald"><i class="fa-solid fa-shield-halved"></i> AUDIT &amp; GOVERNANCE</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight m-0">
+                    Platform Verification &amp; Entity Governance
                 </h2>
-                <p class="text-base sm:text-lg text-[#526174] leading-relaxed max-w-2xl mx-auto">
-                    Sample technician profiles demonstrating skill-based and location-based discovery.
+                <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    Designed to ensure legitimate industrial commerce, authentic OEM parts, and transparent accountability across manufacturing plants and vendors.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tech Card 1 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-800 flex items-center justify-center font-bold text-xl">
-                                <i class="fa-solid fa-user-gear"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-[#172033] text-base">Sample Technician A</h4>
-                                <span class="text-xs text-[#526174] font-medium"><i class="fa-solid fa-location-dot text-slate-400"></i> Rajkot, GJ</span>
-                            </div>
-                        </div>
-                        <span class="badge-verified"><i class="fa-solid fa-circle text-[8px] text-emerald-600 mr-1.5"></i> Available — Demo</span>
-                    </div>
-
-                    <div class="bg-[#F8FAFC] p-4 rounded-xl border border-[#D9E1EA] space-y-1 text-xs">
-                        <div class="font-bold text-[#172033]">Specialized Skillset:</div>
-                        <p class="text-[#526174]">Mechanical Maintenance, Pump Overhaul & Alignment</p>
-                    </div>
-
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA] text-xs font-mono">
-                        <span class="text-[#526174]">Status: <strong class="text-[#172033]">Demo Profile</strong></span>
-                        <span class="text-lg font-black text-cyan-800">&#8377;1,200/hr</span>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                
+                <div class="surface-card p-6 space-y-3">
+                    <span class="spec-tag spec-tag-blue">STAGE 1 &middot; REGISTRATION</span>
+                    <h3 class="text-base font-bold text-[#0F172A] m-0">1. Commercial Documentation</h3>
+                    <p class="text-xs text-[#475569] leading-relaxed m-0">
+                        Suppliers and service entities register with verified GSTIN, trade licenses, and authorized distributor credentials for administrator review.
+                    </p>
                 </div>
 
-                <!-- Tech Card 2 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-[#1677FF] flex items-center justify-center font-bold text-xl">
-                                <i class="fa-solid fa-microchip"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-[#172033] text-base">Sample Technician B</h4>
-                                <span class="text-xs text-[#526174] font-medium"><i class="fa-solid fa-location-dot text-slate-400"></i> Ahmedabad, GJ</span>
-                            </div>
-                        </div>
-                        <span class="badge-verified"><i class="fa-solid fa-circle text-[8px] text-emerald-600 mr-1.5"></i> Available — Demo</span>
-                    </div>
-
-                    <div class="bg-[#F8FAFC] p-4 rounded-xl border border-[#D9E1EA] space-y-1 text-xs">
-                        <div class="font-bold text-[#172033]">Specialized Skillset:</div>
-                        <p class="text-[#526174]">Hydraulic Systems, CNC Lathe Servo Motor Servicing</p>
-                    </div>
-
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA] text-xs font-mono">
-                        <span class="text-[#526174]">Status: <strong class="text-[#172033]">Demo Profile</strong></span>
-                        <span class="text-lg font-black text-[#1677FF]">&#8377;1,500/hr</span>
-                    </div>
+                <div class="surface-card p-6 space-y-3">
+                    <span class="spec-tag spec-tag-amber">STAGE 2 &middot; PHYSICAL AUDIT</span>
+                    <h3 class="text-base font-bold text-[#0F172A] m-0">2. Warehouse &amp; Inventory Audit</h3>
+                    <p class="text-xs text-[#475569] leading-relaxed m-0">
+                        Physical facility check and OEM authorization inspection to ensure stocked parts meet genuine manufacturing tolerances.
+                    </p>
                 </div>
 
-                <!-- Tech Card 3 -->
-                <div class="card hover:shadow-lg transition-all border-[#D9E1EA] space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xl">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-[#172033] text-base">Sample Technician C</h4>
-                                <span class="text-xs text-[#526174] font-medium"><i class="fa-solid fa-location-dot text-slate-400"></i> Vadodara, GJ</span>
-                            </div>
-                        </div>
-                        <span class="badge-pending"><i class="fa-solid fa-circle text-[8px] text-amber-600 mr-1.5"></i> Unavailable — Demo</span>
-                    </div>
+                <div class="surface-card p-6 space-y-3">
+                    <span class="spec-tag spec-tag-emerald">STAGE 3 &middot; ACTIVATION</span>
+                    <h3 class="text-base font-bold text-[#0F172A] m-0">3. Verified Status Badging</h3>
+                    <p class="text-xs text-[#475569] leading-relaxed m-0">
+                        Approved entities receive the verified compliance badge, opening access to high-priority emergency breakdown broadcasts and RFQs.
+                    </p>
+                </div>
 
-                    <div class="bg-[#F8FAFC] p-4 rounded-xl border border-[#D9E1EA] space-y-1 text-xs">
-                        <div class="font-bold text-[#172033]">Specialized Skillset:</div>
-                        <p class="text-[#526174]">Industrial Electrical, VFD Inverter Commissioning</p>
-                    </div>
+            </div>
 
-                    <div class="flex justify-between items-center pt-3 border-t border-[#D9E1EA] text-xs font-mono">
-                        <span class="text-[#526174]">Status: <strong class="text-[#172033]">Demo Profile</strong></span>
-                        <span class="text-lg font-black text-amber-800">&#8377;1,000/hr</span>
-                    </div>
+            <!-- Academic viva transparency note -->
+            <div class="bg-amber-50/60 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-amber-700 text-sm mt-0.5 shrink-0"></i>
+                <div class="leading-relaxed">
+                    <strong>Academic Research &amp; Evaluation Scope:</strong>
+                    This portal represents an MCA capstone demonstration. Data displayed within visitor directories consists of curated industrial demonstration profiles. Live commercial payment gateway processing is simulated via mock quotation approval workflows.
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- ============================================================================ -->
-    <!-- SECTION 10: VERIFICATION WORKFLOW CONCEPT                                   -->
+    <!-- 7. CLEAR FINAL CALL TO ACTION                                                -->
+    <!-- Purpose-driven portal onboarding for industrial buyers & suppliers           -->
     <!-- ============================================================================ -->
-    <section class="py-20 bg-[#F8FAFC] border-b border-[#D9E1EA]">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="copper-badge"><i class="fa-solid fa-shield-halved"></i> Verification Concept</span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                        Verification & Governance Workflow
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-900 via-[#1E293B] to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 border border-slate-700">
+                <div class="space-y-3 max-w-2xl text-left">
+                    <span class="spec-tag spec-tag-blue">READY TO STREAMLINE PROCUREMENT?</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white m-0">
+                        Join the SPAREFINDER Industrial Procurement Network
                     </h2>
-                    <p class="text-base text-[#526174] leading-relaxed max-w-xl">
-                        The platform architecture incorporates administrative verification steps for suppliers and technicians.
+                    <p class="text-xs sm:text-sm text-slate-300 m-0 leading-relaxed">
+                        Whether managing a factory maintenance department or operating an industrial spare-parts warehouse, create your portal account today.
                     </p>
-
-                    <div class="space-y-4 text-xs font-medium text-[#172033]">
-                        <div class="flex items-start gap-3.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg shrink-0 mt-0.5"></i>
-                            <div>
-                                <strong class="text-[#172033] block font-bold text-sm">Registration & Profile Submission:</strong>
-                                Suppliers and service providers submit entity details during portal account creation.
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg shrink-0 mt-0.5"></i>
-                            <div>
-                                <strong class="text-[#172033] block font-bold text-sm">Administrator Document Review:</strong>
-                                System administrators review submitted business documentation within the Admin Dashboard.
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg shrink-0 mt-0.5"></i>
-                            <div>
-                                <strong class="text-[#172033] block font-bold text-sm">Verification Status Activation:</strong>
-                                Approved accounts receive verified status badges to build buyer trust across the network.
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="lg:col-span-6">
-                    <div class="bg-white text-[#172033] rounded-3xl p-8 border border-[#D9E1EA] space-y-6 shadow-lg">
-                        <h3 class="text-lg font-bold text-[#172033] flex items-center gap-2">
-                            <i class="fa-solid fa-[#B87333] fa-diagram-project"></i> Verification Process Sequence
-                        </h3>
-
-                        <div class="space-y-4 text-xs">
-                            <div class="p-3.5 bg-slate-50 rounded-xl border border-[#D9E1EA] flex items-center justify-between">
-                                <span class="font-bold">1. Portal Registration</span>
-                                <span class="copper-tag">USER LEVEL</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-50 rounded-xl border border-[#D9E1EA] flex items-center justify-between">
-                                <span class="font-bold">2. Document Submission</span>
-                                <span class="copper-tag">DATA LEVEL</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-50 rounded-xl border border-[#D9E1EA] flex items-center justify-between">
-                                <span class="font-bold">3. Admin Review & Audit</span>
-                                <span class="copper-tag">ADMIN LEVEL</span>
-                            </div>
-                            <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center justify-between text-emerald-900">
-                                <span class="font-bold">4. Verified Status Active</span>
-                                <span class="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded font-bold text-[10px]">APPROVED</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full sm:w-auto">
+                    <a href="~/Account/Register.aspx" runat="server" class="btn-primary text-xs py-3 px-6 font-bold justify-center">
+                        <i class="fa-solid fa-user-plus"></i> Create Portal Account
+                    </a>
+                    <a href="~/Account/Login.aspx" runat="server" class="btn-secondary text-xs py-3 px-6 font-bold justify-center bg-slate-800 text-white border-slate-600 hover:bg-slate-700">
+                        <i class="fa-solid fa-right-to-bracket"></i> Sign In to Workspace
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================================ -->
-    <!-- SECTION 11: INTEGRATED INDUSTRIAL ECOSYSTEM SYSTEM DIAGRAM                  -->
-    <!-- ============================================================================ -->
-    <section class="py-20 bg-white text-[#172033] border-b border-[#D9E1EA]" id="ecosystem">
-        <div class="max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-4">
-            <span class="copper-badge"><i class="fa-solid fa-network-wired"></i> Architecture Flow</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#172033] tracking-tight">
-                Integrated Industrial Ecosystem Diagram
-            </h2>
-            <p class="text-base sm:text-lg text-[#526174] max-w-2xl mx-auto leading-relaxed">
-                System relationship diagram illustrating data and participant flow across the platform.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left pt-10">
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-[#1677FF] transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-[#1677FF] flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-industry"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#172033]">Factory Requirement</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">
-                        Factory buyers initiate spare-part searches or submit emergency breakdown requests.
-                    </p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-emerald-500 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-warehouse"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#172033]">Supplier Quotation</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">
-                        Suppliers review RFQs, verify inventory stock availability, and submit price quotes.
-                    </p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-cyan-500 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-wrench"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#172033]">Technician Link</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">
-                        Field service providers offer technical installation and maintenance assistance.
-                    </p>
-                </div>
-
-                <div class="bg-[#F8FAFC] border border-[#D9E1EA] p-6 rounded-2xl space-y-3 hover:border-amber-500 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-2xl">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#172033]">Admin Oversight</h3>
-                    <p class="text-xs text-[#526174] leading-relaxed">
-                        System administrators manage user verification, complaint tickets, and analytics.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client-Side Script for Indian Rupee Formatting & Filters -->
-    <script>
-        function formatRupee(amount) {
-            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
-        }
-
-        function filterParts(cat) {
-            var cards = document.querySelectorAll('.part-card');
-            cards.forEach(function (card) {
-                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </asp:Content>
-
