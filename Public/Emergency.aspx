@@ -182,20 +182,21 @@
                 <div class="bg-gradient-to-br from-[#0F172A] to-[#1E293B] text-white rounded-2xl p-6 space-y-4 border border-slate-700 shadow-md">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-lg bg-[#EA580C] text-white flex items-center justify-center font-bold text-base shrink-0">
-                            <i class="fa-solid fa-headset"></i>
+                            <i class="fa-solid fa-tower-broadcast"></i>
                         </div>
                         <div>
-                            <span class="text-[10px] text-orange-400 font-mono font-bold uppercase tracking-wider block">DIRECT ASSISTANCE</span>
-                            <h4 class="text-base font-bold text-white m-0">24/7 Breakdown Hotline</h4>
+                            <span class="text-[10px] text-orange-400 font-mono font-bold uppercase tracking-wider block">DISPATCH PROTOCOL</span>
+                            <h4 class="text-base font-bold text-white m-0">Rapid Breakdown Triage</h4>
                         </div>
                     </div>
                     <p class="text-xs text-slate-300 leading-relaxed m-0">
-                        Need immediate phone assistance with a stopped assembly line? Call our demonstration helpline to speak with platform coordinators.
+                        Submitting an emergency request broadcasts machine specifications and stamped OEM part numbers directly to regional suppliers with matching inventory.
                     </p>
                     <div class="pt-1">
-                        <a href="tel:18000000000" class="btn-emergency w-full justify-center text-xs py-3 font-mono font-bold block text-center">
-                            <i class="fa-solid fa-phone mr-1.5"></i> 1800-000-0000 (Toll-Free Demo)
-                        </a>
+                        <div class="p-3 bg-slate-800/80 border border-slate-700 rounded-xl text-xs text-slate-300 text-center font-mono">
+                            <span class="text-orange-400 font-bold block mb-1">Target Response: &lt; 2 Hours</span>
+                            <span class="text-[11px] text-slate-400">Simulated vendor notification active for academic demonstration</span>
+                        </div>
                     </div>
                 </div>
 
@@ -205,3 +206,4 @@
 
     </div>
 </asp:Content>
+

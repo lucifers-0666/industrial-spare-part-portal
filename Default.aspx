@@ -17,13 +17,11 @@
                 <!-- Left Column: Editorial Headline & Value Proposition -->
                 <div class="lg:col-span-7 space-y-6 text-left">
                     
-                    <div class="flex flex-wrap items-center gap-2">
+                    <div class="flex items-center gap-2">
                         <span class="spec-tag spec-tag-blue">
-                            <i class="fa-solid fa-industry"></i> B2B PROCUREMENT NETWORK
+                            <i class="fa-solid fa-industry"></i> B2B INDUSTRIAL PROCUREMENT
                         </span>
-                        <span class="spec-tag spec-tag-amber">
-                            MCA DEMONSTRATION WORKSPACE
-                        </span>
+                        <span class="text-xs text-[#64748B] font-mono">MCA Academic Demonstration</span>
                     </div>
 
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F172A] leading-tight m-0">
@@ -45,22 +43,22 @@
                     </div>
 
                     <!-- Operational Telemetry Indicators -->
-                    <div class="pt-6 border-t border-[#E2E8F0] grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+                    <div class="pt-6 border-t border-[#E2E8F0] grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-left">
                         <div class="space-y-0.5">
-                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Regional Hubs</span>
-                            <span class="font-bold text-[#0F172A] text-sm font-mono">8 Industrial Zones</span>
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Industrial Coverage</span>
+                            <span class="font-bold text-[#0F172A] text-sm font-mono">Gujarat &amp; Maharashtra</span>
                         </div>
                         <div class="space-y-0.5">
-                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Indexed Parts</span>
-                            <span class="font-bold text-[#0F172A] text-sm font-mono">1,400+ Components</span>
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Catalog Sourcing</span>
+                            <span class="font-bold text-[#0F172A] text-sm font-mono">OEM Indexed Data</span>
                         </div>
                         <div class="space-y-0.5">
-                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Avg Response</span>
-                            <span class="font-bold text-[#1D4ED8] text-sm font-mono">&lt; 25 Mins (Demo)</span>
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Quotation Target</span>
+                            <span class="font-bold text-[#1D4ED8] text-sm font-mono">&lt; 2 Hrs Fast-Track</span>
                         </div>
                         <div class="space-y-0.5">
-                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Field Techs</span>
-                            <span class="font-bold text-[#059669] text-sm font-mono">Verified On-Site</span>
+                            <span class="text-[10px] font-mono uppercase text-[#64748B] block">Field Service</span>
+                            <span class="font-bold text-[#059669] text-sm font-mono">Certified Engineers</span>
                         </div>
                     </div>
 
@@ -399,8 +397,8 @@
                         <a href="~/Public/Technicians.aspx" runat="server" class="btn-primary text-xs py-3 px-5 font-bold">
                             <i class="fa-solid fa-user-gear"></i> Find Field Technicians
                         </a>
-                        <a href="tel:18000000000" class="btn-secondary text-xs py-3 px-5 font-mono font-bold">
-                            <i class="fa-solid fa-phone text-[#EA580C]"></i> Demo Helpline: 1800-000-0000
+                        <a href="~/Public/Emergency.aspx" runat="server" class="btn-secondary text-xs py-3 px-5 font-bold">
+                            <i class="fa-solid fa-triangle-exclamation text-[#EA580C]"></i> Emergency Breakdown Desk
                         </a>
                     </div>
 
@@ -496,3 +494,4 @@
     </section>
 
 </asp:Content>
+

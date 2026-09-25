@@ -36,19 +36,20 @@
                 <p class="text-xs sm:text-sm text-[#475569] m-0">How digital part indexing and multi-supplier visibility transform plant maintenance.</p>
             </div>
 
-            <div class="table-container shadow-xs">
+            <!-- Desktop Comparison Table (Hidden on small mobile) -->
+            <div class="hidden md:block table-container shadow-xs">
                 <table class="table-custom">
                     <thead>
                         <tr>
                             <th class="w-1/4">Procurement Parameter</th>
                             <th class="w-3/8 text-red-700 bg-red-50/60"><i class="fa-solid fa-xmark mr-1"></i> Traditional Offline Sourcing</th>
-                            <th class="w-3/8 text-[#1D4ED8] bg-blue-50/60"><i class="fa-solid fa-check mr-1"></i> SPAREFINDER Platform</th>
+                            <th class="w-3/8 text-[#1D4ED8] bg-blue-50/60"><i class="fa-solid fa-check mr-1"></i> SPAREFINDER Platform Architecture</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-[#E2E8F0] text-xs">
                         <tr>
                             <td class="font-bold text-[#0F172A]">Part Identification</td>
-                            <td class="text-[#475569]">Manual physical catalogs, vague verbal descriptions, high error rate</td>
+                            <td class="text-[#475569]">Manual physical catalogs, vague verbal descriptions, high return rate</td>
                             <td class="text-[#0F172A] font-semibold"><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> OEM Part Number &amp; Machine Model cross-indexing</td>
                         </tr>
                         <tr>
@@ -64,7 +65,7 @@
                         <tr>
                             <td class="font-bold text-[#0F172A]">Breakdown Response</td>
                             <td class="text-[#475569]">Days of machine downtime waiting for supplier callbacks</td>
-                            <td class="text-[#0F172A] font-semibold"><i class="fa-solid fa-bolt text-[#EA580C] mr-1.5"></i> High-priority Emergency Breakdown broadcast alerts</td>
+                            <td class="text-[#0F172A] font-semibold"><i class="fa-solid fa-bolt text-[#EA580C] mr-1.5"></i> High-priority Emergency Breakdown broadcast alerts (Planned workflow)</td>
                         </tr>
                         <tr>
                             <td class="font-bold text-[#0F172A]">Technical Installation</td>
@@ -73,6 +74,57 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Mobile Comparison Cards (Shown on small screens) -->
+            <div class="block md:hidden space-y-4">
+                <div class="surface-card p-4 space-y-3 text-left">
+                    <span class="font-bold text-[#0F172A] text-xs uppercase tracking-wider block font-mono">01 · Part Identification</span>
+                    <div class="p-2.5 rounded-lg bg-red-50/70 border border-red-200 text-xs text-red-900 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-red-600 uppercase">Traditional Offline</span>
+                        <p class="m-0 leading-snug">Manual catalogs, vague verbal descriptions, high shipping return rate.</p>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200 text-xs text-blue-950 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-[#1D4ED8] uppercase">SPAREFINDER Platform</span>
+                        <p class="m-0 leading-snug font-medium">OEM Part Number &amp; Machine Model cross-indexing index.</p>
+                    </div>
+                </div>
+
+                <div class="surface-card p-4 space-y-3 text-left">
+                    <span class="font-bold text-[#0F172A] text-xs uppercase tracking-wider block font-mono">02 · Supplier Discovery</span>
+                    <div class="p-2.5 rounded-lg bg-red-50/70 border border-red-200 text-xs text-red-900 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-red-600 uppercase">Traditional Offline</span>
+                        <p class="m-0 leading-snug">Limited to 2–3 local dealers with opaque, unverified shelf inventory.</p>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200 text-xs text-blue-950 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-[#1D4ED8] uppercase">SPAREFINDER Platform</span>
+                        <p class="m-0 leading-snug font-medium">Search across regional registered stockists with stock status.</p>
+                    </div>
+                </div>
+
+                <div class="surface-card p-4 space-y-3 text-left">
+                    <span class="font-bold text-[#0F172A] text-xs uppercase tracking-wider block font-mono">03 · Pricing Transparency</span>
+                    <div class="p-2.5 rounded-lg bg-red-50/70 border border-red-200 text-xs text-red-900 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-red-600 uppercase">Traditional Offline</span>
+                        <p class="m-0 leading-snug">Inconsistent quotes negotiated over disjointed individual calls.</p>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200 text-xs text-blue-950 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-[#1D4ED8] uppercase">SPAREFINDER Platform</span>
+                        <p class="m-0 leading-snug font-medium">Structured Request for Quote (RFQ) comparison matrix.</p>
+                    </div>
+                </div>
+
+                <div class="surface-card p-4 space-y-3 text-left">
+                    <span class="font-bold text-[#0F172A] text-xs uppercase tracking-wider block font-mono">04 · Breakdown Response</span>
+                    <div class="p-2.5 rounded-lg bg-red-50/70 border border-red-200 text-xs text-red-900 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-red-600 uppercase">Traditional Offline</span>
+                        <p class="m-0 leading-snug">Days of machine downtime waiting for supplier callbacks.</p>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200 text-xs text-blue-950 space-y-0.5">
+                        <span class="font-bold block text-[10px] text-[#1D4ED8] uppercase">SPAREFINDER Platform</span>
+                        <p class="m-0 leading-snug font-medium">High-priority Emergency Breakdown broadcast alerts.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -134,3 +186,4 @@
 
     </div>
 </asp:Content>
+

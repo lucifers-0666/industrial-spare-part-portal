@@ -41,15 +41,23 @@ industrial-spare-part-portal/
 │       └── Implementations/AuthService.cs   # Business Logic & Auth Service
 │
 ├── MasterPages/                        # Web Forms Shared Layout Master Pages
-│   ├── Site.Master                     # Main Light Visitor/Public Layout
+│   ├── Site.Master                     # Master Public Shell (Navigation, Dynamic Active Link, Footer)
 │   ├── Admin.Master                    # Admin Governance Portal Layout
 │   ├── Factory.Master                  # Factory Buyer Portal Layout
 │   ├── Supplier.Master                 # Supplier Portal Layout
 │   └── Technician.Master               # Field Technician Portal Layout
 │
+├── Public/                             # Public Visitor Pages
+│   ├── HowItWorks.aspx                 # 3-Phase Industrial Procurement Lifecycle
+│   ├── WhyUs.aspx                      # Responsive Procurement Benchmark & Comparison
+│   ├── Parts.aspx                      # Dynamic Spare Parts Inventory & Quote Engine
+│   ├── Suppliers.aspx                  # Verified Supplier Directory
+│   ├── Technicians.aspx                # Certified Field Technician Directory
+│   └── Emergency.aspx                  # Emergency Breakdown Dispatch Protocol
+│
 ├── Account/                            # Authentication Pages
-│   ├── Login.aspx                      # User Login Page
-│   ├── Register.aspx                   # Multi-Role Registration Page
+│   ├── Login.aspx                      # Two-Column Industrial Login with Accessible Inputs
+│   ├── Register.aspx                   # Multi-Role Registration with Balanced 2-Column Fields
 │   ├── Logout.aspx                     # Session Teardown Page
 │   └── AccessDenied.aspx               # Unauthorized Access Redirect Page
 │
@@ -63,12 +71,16 @@ industrial-spare-part-portal/
 │   └── Dashboard.aspx                  # Service Requests & Duty Status Dashboard
 │
 ├── Content/                            # Production Assets & CSS
-│   └── css/site.css                    # Compiled Tailwind CSS & Industrial System
-├── Tailwind/                           # Tailwind Build Source
-│   ├── tailwind.config.js              # Theme Color Tokens & Container Scale
-│   └── src/input.css                   # Component Classes & Utility Directives
+│   ├── css/
+│   │   ├── site.css                   # Compiled Tailwind CSS Utility Framework
+│   │   └── site-shell.css             # Industrial Design Tokens, Responsive Nav & Footers
+│   └── js/
+│       └── site-shell.js              # Header Sticky Logic, Mobile Drawer & Active Nav Sync
 │
-├── Default.aspx                        # Main Visitor Landing Page (Redesigned Light System)
+├── Scripts/                            # Auxiliary Client Scripts
+│   └── agentation.bundle.js            # [Dev-Only] Feedback annotation helper (not used in runtime)
+│
+├── Default.aspx                        # Main Visitor Landing Page (Industrial Light Shell)
 ├── Global.asax                         # Application Lifecycle & Routing
 ├── Web.config                          # ASP.NET Application Configuration
 ├── IndustrialSparePartPortal.csproj    # Visual Studio Project Manifest
@@ -114,3 +126,10 @@ Authentication is controlled via `SessionHelper.cs` and `BasePage.cs`:
 - Active session variables: `UserID`, `FullName`, `UserRole`, `UserEmail`.
 - Page access rules are enforced in `Page_Init` of section master pages (`Admin.Master`, `Factory.Master`, `Supplier.Master`, `Technician.Master`). Unauthenticated or unauthorized requests redirect to `~/Account/AccessDenied.aspx`.
 
+---
+
+## 4. Auxiliary Script Inventory: `Scripts/agentation.bundle.js`
+
+- **Purpose**: A development-time annotation and design feedback integration script.
+- **Runtime Footprint**: It is **not** included, referenced, or executed by `Site.Master`, any child master page, or any `.aspx` file in the solution.
+- **Policy**: Maintained in the repository for developer tooling workflows without impacting application security, performance, or server rendering.

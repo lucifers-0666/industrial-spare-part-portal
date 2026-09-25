@@ -22,6 +22,13 @@ namespace IndustrialSparePartPortal.Account
             {
                 Response.Redirect(SessionHelper.GetDashboardUrlByRole(SessionHelper.UserRole));
             }
+
+            if (!IsPostBack && Request.QueryString["registered"] == "true")
+            {
+                pnlAlert.Visible = true;
+                pnlAlert.CssClass = "p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-start gap-2.5";
+                litAlertMessage.Text = "Registration completed successfully. Please sign in with your email and password.";
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

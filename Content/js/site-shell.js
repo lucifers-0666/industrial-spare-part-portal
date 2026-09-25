@@ -81,16 +81,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Header Scrolled Elevation State
-    if (headerWrapper) {
-        var updateHeaderElevation = function () {
-            if (window.scrollY > 10) {
-                headerWrapper.classList.add('is-scrolled');
-            } else {
-                headerWrapper.classList.remove('is-scrolled');
+    // Active Navigation Route Synchronizer
+    function syncActiveNav() {
+        var path = window.location.pathname.toLowerCase();
+        var allLinks = document.querySelectorAll('.site-desktop-nav a, .site-mobile-menu a');
+        
+        allLinks.forEach(function (link) {
+            var href = (link.getAttribute('href') || '').toLowerCase();
+            var isCurrent = false;
+
+            if (path.indexOf('parts.aspx') !== -1 && href.indexOf('parts.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('suppliers.aspx') !== -1 && href.indexOf('suppliers.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('technicians.aspx') !== -1 && href.indexOf('technicians.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('howitworks.aspx') !== -1 && href.indexOf('howitworks.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('whyus.aspx') !== -1 && href.indexOf('whyus.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('emergency.aspx') !== -1 && href.indexOf('emergency.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('login.aspx') !== -1 && href.indexOf('login.aspx') !== -1) {
+                isCurrent = true;
+            } else if (path.indexOf('register.aspx') !== -1 && href.indexOf('register.aspx') !== -1) {
+                isCurrent = true;
+            } else if ((path === '/' || path.indexOf('default.aspx') !== -1) && (href === '/' || href.indexOf('default.aspx') !== -1 || href === 'default.aspx')) {
+                isCurrent = true;
             }
-        };
-        window.addEventListener('scroll', updateHeaderElevation, { passive: true });
-        updateHeaderElevation();
+
+            if (isCurrent) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
     }
+    syncActiveNav();
 });
+

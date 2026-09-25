@@ -115,9 +115,13 @@
                         <!-- Card Footer -->
                         <div class="flex justify-between items-center pt-3 border-t border-[#E2E8F0]">
                             <div>
-                                <span class="text-[10px] text-[#64748B] block font-mono">Indicative Unit Price</span>
-                                <span class="text-base font-black text-[#0F172A] font-mono">
-                                    &#8377;<%# Convert.ToDecimal(Eval("UnitPrice")).ToString("N0") %>
+                                <span class="text-[10px] text-[#64748B] block font-mono">
+                                    <%# Eval("UnitPrice") != DBNull.Value && Eval("UnitPrice") != null && Convert.ToDecimal(Eval("UnitPrice")) > 0 ? "Indicative Unit Price" : "Pricing Schedule" %>
+                                </span>
+                                <span class="text-sm sm:text-base font-black text-[#0F172A] font-mono">
+                                    <%# Eval("UnitPrice") != DBNull.Value && Eval("UnitPrice") != null && Convert.ToDecimal(Eval("UnitPrice")) > 0 
+                                        ? "&#8377;" + Convert.ToDecimal(Eval("UnitPrice")).ToString("N0") 
+                                        : "<span class='text-xs text-[#1D4ED8] font-bold'>Quote on Request</span>" %>
                                 </span>
                             </div>
                             <a href='<%# ResolveUrl("~/Account/Login.aspx?returnUrl=" + Server.UrlEncode("~/Public/Parts.aspx")) %>' class="btn-primary text-xs py-2 px-3.5 font-bold">
@@ -161,3 +165,4 @@
 
     </div>
 </asp:Content>
+

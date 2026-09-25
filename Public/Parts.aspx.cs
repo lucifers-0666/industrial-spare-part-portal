@@ -59,7 +59,7 @@ namespace IndustrialSparePartPortal.Public
                 string sql = @"
                     SELECT p.PartId, p.PartNumber, p.PartName, p.Description, p.TechnicalSpecs,
                            c.CategoryName, ISNULL(m.MachineName, 'Universal Machinery') AS MachineName,
-                           ISNULL(si.UnitPrice, 1500.00) AS UnitPrice,
+                           si.UnitPrice,
                            ISNULL(si.AvailabilityStatus, 'InStock') AS AvailabilityStatus,
                            ISNULL(s.CompanyName, 'Verified Regional Supplier') AS SupplierName
                     FROM SpareParts p

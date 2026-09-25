@@ -57,6 +57,16 @@
             </div>
         </header>
 
+        <!-- Unverified Notice Banner -->
+        <asp:PlaceHolder ID="phUnverifiedNotice" runat="server" Visible="false">
+            <div class="bg-amber-50 border-b border-amber-200 text-amber-800 text-xs px-4 py-2.5 flex items-center justify-between">
+                <div class="flex items-center gap-2 max-w-7xl mx-auto w-full">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-600 text-sm"></i>
+                    <span>Your supplier account is awaiting admin verification. RFQ bidding is currently in review mode.</span>
+                </div>
+            </div>
+        </asp:PlaceHolder>
+
         <!-- Main Content -->
         <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8" role="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -80,3 +90,4 @@
     </asp:ContentPlaceHolder>
 </body>
 </html>
+

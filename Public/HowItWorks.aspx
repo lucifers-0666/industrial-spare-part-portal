@@ -57,80 +57,103 @@
             </div>
         </div>
 
-        <!-- 3. Standard 8-Step Sourcing Workflow -->
-        <section class="space-y-6">
+        <!-- 3. Standard 8-Step Sourcing Workflow (Grouped into 3 Architectural Phases) -->
+        <section class="space-y-8">
             <div class="space-y-1 text-left">
-                <span class="spec-tag spec-tag-blue">8-STAGE LIFECYCLE</span>
-                <h2 class="text-xl font-bold text-[#0F172A] m-0">Standard Sourcing &amp; Procurement Sequence</h2>
+                <div class="flex items-center gap-2">
+                    <span class="spec-tag spec-tag-blue">8-STAGE LIFECYCLE</span>
+                    <span class="text-xs text-[#64748B] font-mono">PLANNED B2B ARCHITECTURE</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-[#0F172A] m-0">Standard Sourcing &amp; Procurement Sequence</h2>
+                <p class="text-xs sm:text-sm text-[#475569] m-0">The workflow model conceptualized for the SPAREFINDER procurement ecosystem.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#1D4ED8]">
-                    <span class="font-mono text-xs font-bold text-[#1D4ED8]">STAGE 01</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Identify Requirement</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Plant engineer inspects failed equipment, recording OEM nameplate data and stamped component numbers (e.g. 6210-2RS).
-                    </p>
+            <!-- Phase 1: Technical Discovery (Stages 1-3) -->
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-xs font-bold text-[#1D4ED8] uppercase tracking-wider font-mono">
+                    <span class="w-6 h-6 rounded-full bg-blue-100 text-[#1D4ED8] flex items-center justify-center text-xs">A</span>
+                    <span>Phase 1 · Identification &amp; Directory Discovery</span>
                 </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#1D4ED8]">
-                    <span class="font-mono text-xs font-bold text-[#1D4ED8]">STAGE 02</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Search Indexed Catalog</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Buyer searches the platform by part number or machine model, reviewing mechanical tolerances and compatible cross-references.
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#1D4ED8] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#1D4ED8] block">STAGE 01</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Identify Requirement</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Plant engineer inspects failed equipment, recording OEM nameplate data and stamped component numbers (e.g. 6210-2RS).
+                        </p>
+                    </div>
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#1D4ED8] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#1D4ED8] block">STAGE 02</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Search Indexed Catalog</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Buyer searches the platform by part number or machine model, reviewing mechanical tolerances and compatible cross-references.
+                        </p>
+                    </div>
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#1D4ED8] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#1D4ED8] block">STAGE 03</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Compare Regional Stockists</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Evaluate regional suppliers on confirmed shelf inventory, transit distance, verified compliance, and historical rating.
+                        </p>
+                    </div>
                 </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#1D4ED8]">
-                    <span class="font-mono text-xs font-bold text-[#1D4ED8]">STAGE 03</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Compare Stockists</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Evaluate regional suppliers on confirmed shelf inventory, transit distance, verified compliance, and historical rating.
-                    </p>
-                </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#1D4ED8]">
-                    <span class="font-mono text-xs font-bold text-[#1D4ED8]">STAGE 04</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Submit Structured RFQ</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Issue a formal Request for Quotation specifying required quantity, delivery deadline, and plant receiving location.
-                    </p>
-                </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#059669]">
-                    <span class="font-mono text-xs font-bold text-[#059669]">STAGE 05</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Supplier Quotation</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Stockists submit itemized price quotes detailing unit pricing, freight charges, and estimated dispatch windows.
-                    </p>
-                </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#059669]">
-                    <span class="font-mono text-xs font-bold text-[#059669]">STAGE 06</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Quote Selection &amp; PO</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Factory buyer compares bids side-by-side, selects optimal commercial terms, and confirms procurement order.
-                    </p>
-                </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#EA580C]">
-                    <span class="font-mono text-xs font-bold text-[#EA580C]">STAGE 07</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Dispatch &amp; Technician Mobilize</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Supplier dispatches part via designated courier. Simultaneously, an on-call field technician is scheduled for arrival.
-                    </p>
-                </div>
-
-                <div class="surface-card p-5 space-y-2 border-t-4 border-t-[#EA580C]">
-                    <span class="font-mono text-xs font-bold text-[#EA580C]">STAGE 08</span>
-                    <h3 class="text-sm font-bold text-[#0F172A] m-0">Installation &amp; Sign-Off</h3>
-                    <p class="text-xs text-[#475569] leading-relaxed m-0">
-                        Component is physically inspected, fitted to machine, test-run verified, and delivery confirmed in portal workspace.
-                    </p>
-                </div>
-
             </div>
+
+            <!-- Phase 2: Commercial Quotation (Stages 4-6) -->
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-xs font-bold text-[#059669] uppercase tracking-wider font-mono">
+                    <span class="w-6 h-6 rounded-full bg-emerald-100 text-[#059669] flex items-center justify-center text-xs">B</span>
+                    <span>Phase 2 · RFQ Quotation &amp; Commercial Award</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#059669] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#059669] block">STAGE 04</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Submit Structured RFQ</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Issue a formal Request for Quotation specifying required quantity, delivery deadline, and plant receiving location.
+                        </p>
+                    </div>
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#059669] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#059669] block">STAGE 05</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Supplier Quotation</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Stockists submit itemized price quotes detailing unit pricing, freight charges, and estimated dispatch windows.
+                        </p>
+                    </div>
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#059669] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#059669] block">STAGE 06</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Quote Selection &amp; PO</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Factory buyer compares bids side-by-side, selects optimal commercial terms, and confirms procurement order.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Logistics & Commissioning (Stages 7-8) -->
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-xs font-bold text-[#EA580C] uppercase tracking-wider font-mono">
+                    <span class="w-6 h-6 rounded-full bg-orange-100 text-[#EA580C] flex items-center justify-center text-xs">C</span>
+                    <span>Phase 3 · Dispatch Logistics &amp; On-Site Fitting</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#EA580C] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#EA580C] block">STAGE 07</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Dispatch &amp; Technician Mobilize</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Supplier dispatches part via designated carrier. Simultaneously, an on-call field technician is scheduled for arrival.
+                        </p>
+                    </div>
+                    <div class="surface-card p-5 space-y-2 border-l-4 border-l-[#EA580C] text-left">
+                        <span class="font-mono text-[11px] font-bold text-[#EA580C] block">STAGE 08</span>
+                        <h3 class="text-sm font-bold text-[#0F172A] m-0">Installation &amp; Sign-Off</h3>
+                        <p class="text-xs text-[#475569] leading-relaxed m-0">
+                            Component is physically inspected, fitted to machine, test-run verified, and delivery confirmed in portal workspace.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- 4. Emergency Breakdown Fast-Track vs Standard Sourcing -->
@@ -161,3 +184,4 @@
 
     </div>
 </asp:Content>
+

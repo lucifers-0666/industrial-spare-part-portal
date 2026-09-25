@@ -14,7 +14,7 @@
     <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     
-    <!-- Google Fonts Inter -->
+    <!-- Google Fonts Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 
         <!-- ============================================================================ -->
         <!-- AUTHORITATIVE FIXED MASTER HEADER (.site-header)                             -->
-        <!-- Robust fixed-to-viewport navigation with single maintained content offset    -->
+        <!-- Permanent viewport visibility, zero jump, route-aware active indicators      -->
         <!-- ============================================================================ -->
         <header id="headerWrapper" class="site-header" role="banner">
             <div class="site-header-inner">
@@ -43,31 +43,26 @@
                     </div>
                 </a>
 
-                <!-- Desktop Primary Navigation -->
+                <!-- Desktop Primary Navigation with Route-Aware Active Indicators -->
                 <nav class="site-desktop-nav" aria-label="Main Navigation">
-                    <a href="~/Default.aspx" runat="server" class="site-nav-link">Home</a>
-                    <a href="~/Public/Parts.aspx" runat="server" class="site-nav-link">Spare Parts</a>
-                    <a href="~/Public/Suppliers.aspx" runat="server" class="site-nav-link">Suppliers</a>
-                    <a href="~/Public/Technicians.aspx" runat="server" class="site-nav-link">Technicians</a>
-                    <a href="~/Public/HowItWorks.aspx" runat="server" class="site-nav-link">How It Works</a>
-                    <a href="~/Public/WhyUs.aspx" runat="server" class="site-nav-link">Why Us</a>
-                    <a href="~/Public/Emergency.aspx" runat="server" class="site-nav-link site-nav-link-emergency">
+                    <a href="~/Default.aspx" runat="server" class='<%= ActiveNavKey == "home" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "home" ? "aria-current=\"page\"" : "" %>>Home</a>
+                    <a href="~/Public/Parts.aspx" runat="server" class='<%= ActiveNavKey == "parts" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "parts" ? "aria-current=\"page\"" : "" %>>Spare Parts</a>
+                    <a href="~/Public/Suppliers.aspx" runat="server" class='<%= ActiveNavKey == "suppliers" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "suppliers" ? "aria-current=\"page\"" : "" %>>Suppliers</a>
+                    <a href="~/Public/Technicians.aspx" runat="server" class='<%= ActiveNavKey == "technicians" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "technicians" ? "aria-current=\"page\"" : "" %>>Technicians</a>
+                    <a href="~/Public/HowItWorks.aspx" runat="server" class='<%= ActiveNavKey == "howitworks" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "howitworks" ? "aria-current=\"page\"" : "" %>>How It Works</a>
+                    <a href="~/Public/WhyUs.aspx" runat="server" class='<%= ActiveNavKey == "whyus" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "whyus" ? "aria-current=\"page\"" : "" %>>Why Us</a>
+                    <a href="~/Public/Emergency.aspx" runat="server" class='<%= ActiveNavKey == "emergency" ? "site-nav-link site-nav-link-emergency active" : "site-nav-link site-nav-link-emergency" %>' <%= ActiveNavKey == "emergency" ? "aria-current=\"page\"" : "" %>>
                         <i class="fa-solid fa-bolt text-xs"></i> Emergency Desk
                     </a>
                 </nav>
 
-                <!-- Action Controls & Emergency Telephone Direct Link -->
+                <!-- Action Controls: Workspace Authentication -->
                 <div class="site-header-actions">
-                    <!-- Direct Emergency Support Link -->
-                    <a href="tel:18000000000" class="site-header-phone hidden xl:inline-flex" title="24/7 Breakdown Sourcing Support">
-                        <i class="fa-solid fa-phone text-[#EA580C]"></i> 1800-000-0000
-                    </a>
-
                     <asp:PlaceHolder ID="phAnonymous" runat="server">
-                        <a href="~/Account/Login.aspx" runat="server" class="site-btn-signin">
+                        <a href="~/Account/Login.aspx" runat="server" class='<%= ActiveNavKey == "login" ? "site-btn-signin active" : "site-btn-signin" %>' <%= ActiveNavKey == "login" ? "aria-current=\"page\"" : "" %>>
                             Sign In
                         </a>
-                        <a href="~/Account/Register.aspx" runat="server" class="btn-primary text-xs py-2 px-3.5 font-bold shadow-xs">
+                        <a href="~/Account/Register.aspx" runat="server" class='<%= ActiveNavKey == "register" ? "btn-primary text-xs py-2 px-3.5 font-bold shadow-xs ring-2 ring-white/20" : "btn-primary text-xs py-2 px-3.5 font-bold shadow-xs" %>'>
                             <i class="fa-solid fa-user-plus text-xs"></i> Register
                         </a>
                     </asp:PlaceHolder>
@@ -76,7 +71,7 @@
                         <a id="lnkDashboard" runat="server" href="#" class="btn-secondary text-xs py-2 px-3 font-bold">
                             <i class="fa-solid fa-gauge-high text-xs"></i> Workspace
                         </a>
-                        <a href="~/Account/Logout.aspx" runat="server" class="text-xs text-red-600 hover:text-red-700 font-bold px-2 py-1">Logout</a>
+                        <a href="~/Account/Logout.aspx" runat="server" class="text-xs text-red-400 hover:text-red-300 font-bold px-2 py-1 transition-colors">Logout</a>
                     </asp:PlaceHolder>
                 </div>
 
@@ -87,24 +82,21 @@
 
             </div>
 
-            <!-- Mobile Navigation Drawer Overlay -->
+            <!-- Mobile Navigation Drawer Overlay (< 1024px) -->
             <div id="mobileDrawer" style="display: none;" class="site-mobile-menu" aria-label="Mobile Navigation">
                 <nav class="flex flex-col space-y-1 text-sm font-semibold text-[#0F172A]">
-                    <a href="~/Default.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Home</a>
-                    <a href="~/Public/Parts.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Spare Parts Catalog</a>
-                    <a href="~/Public/Suppliers.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Supplier Directory</a>
-                    <a href="~/Public/Technicians.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Field Technicians</a>
-                    <a href="~/Public/HowItWorks.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">How It Works</a>
-                    <a href="~/Public/WhyUs.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Platform Comparison</a>
-                    <a href="~/Public/Emergency.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg bg-orange-50 text-[#EA580C] font-bold border border-orange-200 mt-1">
+                    <a href="~/Default.aspx" runat="server" class='<%= ActiveNavKey == "home" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "home" ? "aria-current=\"page\"" : "" %>>Home</a>
+                    <a href="~/Public/Parts.aspx" runat="server" class='<%= ActiveNavKey == "parts" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "parts" ? "aria-current=\"page\"" : "" %>>Spare Parts Catalog</a>
+                    <a href="~/Public/Suppliers.aspx" runat="server" class='<%= ActiveNavKey == "suppliers" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "suppliers" ? "aria-current=\"page\"" : "" %>>Supplier Directory</a>
+                    <a href="~/Public/Technicians.aspx" runat="server" class='<%= ActiveNavKey == "technicians" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "technicians" ? "aria-current=\"page\"" : "" %>>Field Technicians</a>
+                    <a href="~/Public/HowItWorks.aspx" runat="server" class='<%= ActiveNavKey == "howitworks" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "howitworks" ? "aria-current=\"page\"" : "" %>>How It Works</a>
+                    <a href="~/Public/WhyUs.aspx" runat="server" class='<%= ActiveNavKey == "whyus" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "whyus" ? "aria-current=\"page\"" : "" %>>Platform Comparison</a>
+                    <a href="~/Public/Emergency.aspx" runat="server" class='<%= ActiveNavKey == "emergency" ? "px-3.5 py-2.5 rounded-lg bg-orange-100 text-[#EA580C] font-bold border border-orange-300 mt-1" : "px-3.5 py-2.5 rounded-lg bg-orange-50 text-[#EA580C] font-bold border border-orange-200 mt-1" %>' <%= ActiveNavKey == "emergency" ? "aria-current=\"page\"" : "" %>>
                         <i class="fa-solid fa-bolt mr-2"></i> Emergency Breakdown Desk
                     </a>
                 </nav>
 
                 <div class="pt-4 mt-4 border-t border-[#CBD5E1] flex flex-col gap-2.5">
-                    <a href="tel:18000000000" class="text-xs font-mono font-bold text-[#475569] flex items-center justify-center gap-2 py-2 bg-slate-100 rounded-lg">
-                        <i class="fa-solid fa-phone text-[#EA580C]"></i> Hotline: 1800-000-0000
-                    </a>
                     <a href="~/Account/Login.aspx" runat="server" class="btn-secondary w-full justify-center text-xs py-2.5 font-bold">Sign In to Account</a>
                     <a href="~/Account/Register.aspx" runat="server" class="btn-primary w-full justify-center text-xs py-2.5 font-bold">Register Portal Account</a>
                 </div>
@@ -123,106 +115,97 @@
         </main>
 
         <!-- ============================================================================ -->
-        <!-- CONCISE PRE-FOOTER EMERGENCY DESK CALLOUT                                    -->
+        <!-- CONTEXTUAL PRE-FOOTER EMERGENCY CALLOUT                                      -->
+        <!-- Shown on high-level discovery pages (Home, Why Us); suppressed on Login/Reg  -->
         <!-- ============================================================================ -->
-        <section class="bg-gradient-to-r from-orange-50 via-white to-amber-50 border-t border-b border-[#CBD5E1] py-10 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <div class="space-y-1.5 max-w-2xl">
-                    <div class="flex items-center gap-2">
-                        <span class="spec-tag spec-tag-orange"><i class="fa-solid fa-bolt"></i> EMERGENCY PROTOCOL</span>
-                        <span class="text-xs text-[#64748B] font-mono">CRITICAL DOWNTIME SOURCING</span>
+        <asp:PlaceHolder ID="phPreFooterEmergency" runat="server">
+            <section class="bg-gradient-to-r from-orange-50 via-white to-amber-50 border-t border-b border-[#CBD5E1] py-10 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="space-y-1.5 max-w-2xl text-left">
+                        <div class="flex items-center gap-2">
+                            <span class="spec-tag spec-tag-orange"><i class="fa-solid fa-bolt"></i> EMERGENCY PROTOCOL</span>
+                            <span class="text-xs text-[#64748B] font-mono">CRITICAL DOWNTIME SOURCING</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0F172A] m-0">Critical machine stopped on your plant floor?</h3>
+                        <p class="text-xs sm:text-sm text-[#475569] m-0 leading-relaxed">
+                            Broadcast urgent OEM replacement requirements across regional verified stockists and on-call field technicians.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0F172A] m-0">Critical machine stopped on your plant floor?</h3>
-                    <p class="text-xs sm:text-sm text-[#475569] m-0 leading-relaxed">
-                        Broadcast urgent OEM part requirements or model specifications to nearby verified stockists and on-call field engineers.
-                    </p>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <a href="~/Public/Emergency.aspx" runat="server" class="btn-emergency text-xs py-2.5 px-5 font-bold shadow-xs whitespace-nowrap">
+                            <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Submit Breakdown Alert
+                        </a>
+                    </div>
                 </div>
-                <div class="flex items-center gap-3 shrink-0">
-                    <a href="tel:18000000000" class="btn-secondary text-xs py-2.5 px-4 font-mono font-bold hidden sm:inline-flex">
-                        <i class="fa-solid fa-phone text-[#EA580C]"></i> 1800-000-0000
-                    </a>
-                    <a href="~/Public/Emergency.aspx" runat="server" class="btn-emergency text-xs py-2.5 px-5 font-bold shadow-xs whitespace-nowrap">
-                        <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Submit Breakdown Alert
-                    </a>
-                </div>
-            </div>
-        </section>
+            </section>
+        </asp:PlaceHolder>
 
         <!-- ============================================================================ -->
-        <!-- CONTROLLED DARK INDUSTRIAL FOOTER (#0F172A)                                  -->
+        <!-- REDESIGNED CONCISE PUBLIC FOOTER (#0F172A)                                   -->
+        <!-- Concise 3-column architecture, honest academic disclosure, clean hierarchy   -->
         <!-- ============================================================================ -->
         <footer id="siteFooter" class="site-footer" role="contentinfo">
             <div class="site-footer-inner">
                 
-                <div class="site-footer-grid">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 py-12">
                     
-                    <!-- Brand Column -->
-                    <div class="space-y-4">
+                    <!-- Column 1: Brand & Academic Project Disclosure (5 cols) -->
+                    <div class="md:col-span-5 space-y-4 text-left">
                         <div class="flex items-center gap-2.5">
                             <div class="w-8 h-8 rounded-lg bg-[#1E293B] border border-slate-700 flex items-center justify-center text-white">
                                 <i class="fa-solid fa-gears text-sm text-[#38BDF8]"></i>
                             </div>
                             <div>
                                 <span class="text-lg font-black tracking-tight text-white leading-none block">SPARE<span class="text-[#38BDF8]">FINDER</span></span>
-                                <span class="text-[9px] font-bold text-[#64748B] tracking-wider uppercase block mt-0.5 font-mono">B2B Industrial Network</span>
+                                <span class="text-[9px] font-bold text-slate-400 tracking-wider uppercase block mt-0.5 font-mono">B2B Industrial Network</span>
                             </div>
                         </div>
-                        <p class="text-xs text-[#94A3B8] leading-relaxed max-w-sm m-0">
-                            Digital spare-part discovery, multi-supplier quotation comparison, emergency breakdown sourcing, and certified technical field assistance in one unified platform.
+                        <p class="text-xs text-slate-400 leading-relaxed max-w-sm m-0">
+                            An academic demonstration platform designed to streamline industrial spare-part discovery, multi-supplier quotation comparison, emergency downtime response, and certified field technician dispatch.
                         </p>
-                        <div>
-                            <span class="spec-tag spec-tag-amber text-[10px]">MCA FINAL ACADEMIC PROJECT</span>
+                        <div class="flex flex-wrap items-center gap-2 pt-1">
+                            <span class="spec-tag spec-tag-amber text-[10px]">MCA FINAL PROJECT DEMONSTRATION</span>
+                            <span class="spec-tag spec-tag-blue text-[10px]">ASP.NET WEB FORMS · C#</span>
                         </div>
                     </div>
 
-                    <!-- Column 1: DIRECTORIES -->
-                    <div>
-                        <h4 class="site-footer-heading">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#38BDF8]"></span> DIRECTORIES
+                    <!-- Column 2: DIRECTORIES & CATALOG (4 cols) -->
+                    <div class="md:col-span-4 text-left">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2 font-mono">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#38BDF8]"></span> Explore Directories
                         </h4>
-                        <ul class="site-footer-links">
-                            <li><a href="~/Public/Parts.aspx" runat="server">Spare-Part Catalog</a></li>
-                            <li><a href="~/Public/Suppliers.aspx" runat="server">Verified Suppliers</a></li>
-                            <li><a href="~/Public/Technicians.aspx" runat="server">Field Service Engineers</a></li>
-                            <li><a href="~/Public/Emergency.aspx" runat="server">Emergency Breakdown Desk</a></li>
+                        <ul class="space-y-2.5 text-xs text-slate-400 list-none p-0 m-0">
+                            <li><a href="~/Public/Parts.aspx" runat="server" class="hover:text-white transition-colors">Spare-Parts Catalog</a></li>
+                            <li><a href="~/Public/Suppliers.aspx" runat="server" class="hover:text-white transition-colors">Regional Supplier Directory</a></li>
+                            <li><a href="~/Public/Technicians.aspx" runat="server" class="hover:text-white transition-colors">Field Service Technicians</a></li>
+                            <li><a href="~/Public/Emergency.aspx" runat="server" class="text-orange-400 hover:text-orange-300 font-semibold transition-colors flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt text-[11px]"></i> Emergency Breakdown Desk
+                            </a></li>
                         </ul>
                     </div>
 
-                    <!-- Column 2: ARCHITECTURE -->
-                    <div>
-                        <h4 class="site-footer-heading">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ARCHITECTURE
+                    <!-- Column 3: PLATFORM & WORKSPACE (3 cols) -->
+                    <div class="md:col-span-3 text-left">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2 font-mono">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Workspace &amp; Info
                         </h4>
-                        <ul class="site-footer-links">
-                            <li><a href="~/Public/HowItWorks.aspx" runat="server">8-Step Procurement Flow</a></li>
-                            <li><a href="~/Public/WhyUs.aspx" runat="server">Platform vs Traditional</a></li>
-                            <li><a href="~/Public/WhyUs.aspx#verification" runat="server">Governance & Audit</a></li>
-                            <li><a href="~/Public/HowItWorks.aspx#protocol" runat="server">Breakdown Protocol</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: WORKSPACE -->
-                    <div>
-                        <h4 class="site-footer-heading">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#EA580C]"></span> WORKSPACE
-                        </h4>
-                        <ul class="site-footer-links">
-                            <li><a href="~/Account/Login.aspx" runat="server">Portal Sign In</a></li>
-                            <li><a href="~/Account/Register.aspx" runat="server">Register Entity Account</a></li>
-                            <li><a href="~/Account/Login.aspx" runat="server">Factory Buyer Console</a></li>
-                            <li><a href="tel:18000000000">Support Desk (1800-000-0000)</a></li>
+                        <ul class="space-y-2.5 text-xs text-slate-400 list-none p-0 m-0">
+                            <li><a href="~/Public/HowItWorks.aspx" runat="server" class="hover:text-white transition-colors">Procurement Workflow</a></li>
+                            <li><a href="~/Public/WhyUs.aspx" runat="server" class="hover:text-white transition-colors">Platform Architecture &amp; Why Us</a></li>
+                            <li><a href="~/Account/Login.aspx" runat="server" class="hover:text-white transition-colors">Workspace Sign In</a></li>
+                            <li><a href="~/Account/Register.aspx" runat="server" class="hover:text-white transition-colors">Register Entity Account</a></li>
                         </ul>
                     </div>
 
                 </div>
 
-                <!-- Footer Bottom Disclaimer & Copyright -->
-                <div class="site-footer-bottom">
+                <!-- Footer Bottom Disclaimer & Stack Reference -->
+                <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                     <div>
                         <span>&copy; <%: DateTime.Now.Year %> SPAREFINDER Industrial Procurement Network &middot; Master of Computer Applications (MCA) Project</span>
                     </div>
-                    <div class="flex items-center gap-4 text-xs">
-                        <span class="text-slate-500">ASP.NET Web Forms &middot; SQL Server &middot; ADO.NET</span>
+                    <div class="flex items-center gap-3 text-[11px] font-mono text-slate-500">
+                        <span>ADO.NET &middot; SQL Server &middot; Forms Auth</span>
                     </div>
                 </div>
 
