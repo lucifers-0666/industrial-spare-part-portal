@@ -45,13 +45,13 @@
 
                 <!-- Desktop Primary Navigation with Route-Aware Active Indicators -->
                 <nav class="site-desktop-nav" aria-label="Main Navigation">
-                    <a href="~/Default.aspx" runat="server" class='<%= ActiveNavKey == "home" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "home" ? "aria-current=\"page\"" : "" %>>Home</a>
-                    <a href="~/Public/Parts.aspx" runat="server" class='<%= ActiveNavKey == "parts" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "parts" ? "aria-current=\"page\"" : "" %>>Spare Parts</a>
-                    <a href="~/Public/Suppliers.aspx" runat="server" class='<%= ActiveNavKey == "suppliers" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "suppliers" ? "aria-current=\"page\"" : "" %>>Suppliers</a>
-                    <a href="~/Public/Technicians.aspx" runat="server" class='<%= ActiveNavKey == "technicians" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "technicians" ? "aria-current=\"page\"" : "" %>>Technicians</a>
-                    <a href="~/Public/HowItWorks.aspx" runat="server" class='<%= ActiveNavKey == "howitworks" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "howitworks" ? "aria-current=\"page\"" : "" %>>How It Works</a>
-                    <a href="~/Public/WhyUs.aspx" runat="server" class='<%= ActiveNavKey == "whyus" ? "site-nav-link active" : "site-nav-link" %>' <%= ActiveNavKey == "whyus" ? "aria-current=\"page\"" : "" %>>Why Us</a>
-                    <a href="~/Public/Emergency.aspx" runat="server" class='<%= ActiveNavKey == "emergency" ? "site-nav-link site-nav-link-emergency active" : "site-nav-link site-nav-link-emergency" %>' <%= ActiveNavKey == "emergency" ? "aria-current=\"page\"" : "" %>>
+                    <a id="navHome" href="~/Default.aspx" runat="server" class="site-nav-link">Home</a>
+                    <a id="navParts" href="~/Public/Parts.aspx" runat="server" class="site-nav-link">Spare Parts</a>
+                    <a id="navSuppliers" href="~/Public/Suppliers.aspx" runat="server" class="site-nav-link">Suppliers</a>
+                    <a id="navTechnicians" href="~/Public/Technicians.aspx" runat="server" class="site-nav-link">Technicians</a>
+                    <a id="navHowItWorks" href="~/Public/HowItWorks.aspx" runat="server" class="site-nav-link">How It Works</a>
+                    <a id="navWhyUs" href="~/Public/WhyUs.aspx" runat="server" class="site-nav-link">Why Us</a>
+                    <a id="navEmergency" href="~/Public/Emergency.aspx" runat="server" class="site-nav-link site-nav-link-emergency">
                         <i class="fa-solid fa-bolt text-xs"></i> Emergency Desk
                     </a>
                 </nav>
@@ -59,10 +59,10 @@
                 <!-- Action Controls: Workspace Authentication -->
                 <div class="site-header-actions">
                     <asp:PlaceHolder ID="phAnonymous" runat="server">
-                        <a href="~/Account/Login.aspx" runat="server" class='<%= ActiveNavKey == "login" ? "site-btn-signin active" : "site-btn-signin" %>' <%= ActiveNavKey == "login" ? "aria-current=\"page\"" : "" %>>
+                        <a id="navLogin" href="~/Account/Login.aspx" runat="server" class="site-btn-signin">
                             Sign In
                         </a>
-                        <a href="~/Account/Register.aspx" runat="server" class='<%= ActiveNavKey == "register" ? "btn-primary text-xs py-2 px-3.5 font-bold shadow-xs ring-2 ring-white/20" : "btn-primary text-xs py-2 px-3.5 font-bold shadow-xs" %>'>
+                        <a id="navRegister" href="~/Account/Register.aspx" runat="server" class="btn-primary text-xs py-2 px-3.5 font-bold shadow-xs">
                             <i class="fa-solid fa-user-plus text-xs"></i> Register
                         </a>
                     </asp:PlaceHolder>
@@ -85,13 +85,13 @@
             <!-- Mobile Navigation Drawer Overlay (< 1024px) -->
             <div id="mobileDrawer" style="display: none;" class="site-mobile-menu" aria-label="Mobile Navigation">
                 <nav class="flex flex-col space-y-1 text-sm font-semibold text-[#0F172A]">
-                    <a href="~/Default.aspx" runat="server" class='<%= ActiveNavKey == "home" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "home" ? "aria-current=\"page\"" : "" %>>Home</a>
-                    <a href="~/Public/Parts.aspx" runat="server" class='<%= ActiveNavKey == "parts" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "parts" ? "aria-current=\"page\"" : "" %>>Spare Parts Catalog</a>
-                    <a href="~/Public/Suppliers.aspx" runat="server" class='<%= ActiveNavKey == "suppliers" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "suppliers" ? "aria-current=\"page\"" : "" %>>Supplier Directory</a>
-                    <a href="~/Public/Technicians.aspx" runat="server" class='<%= ActiveNavKey == "technicians" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "technicians" ? "aria-current=\"page\"" : "" %>>Field Technicians</a>
-                    <a href="~/Public/HowItWorks.aspx" runat="server" class='<%= ActiveNavKey == "howitworks" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "howitworks" ? "aria-current=\"page\"" : "" %>>How It Works</a>
-                    <a href="~/Public/WhyUs.aspx" runat="server" class='<%= ActiveNavKey == "whyus" ? "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]" : "px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors" %>' <%= ActiveNavKey == "whyus" ? "aria-current=\"page\"" : "" %>>Platform Comparison</a>
-                    <a href="~/Public/Emergency.aspx" runat="server" class='<%= ActiveNavKey == "emergency" ? "px-3.5 py-2.5 rounded-lg bg-orange-100 text-[#EA580C] font-bold border border-orange-300 mt-1" : "px-3.5 py-2.5 rounded-lg bg-orange-50 text-[#EA580C] font-bold border border-orange-200 mt-1" %>' <%= ActiveNavKey == "emergency" ? "aria-current=\"page\"" : "" %>>
+                    <a id="navMobHome" href="~/Default.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Home</a>
+                    <a id="navMobParts" href="~/Public/Parts.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Spare Parts Catalog</a>
+                    <a id="navMobSuppliers" href="~/Public/Suppliers.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Supplier Directory</a>
+                    <a id="navMobTechnicians" href="~/Public/Technicians.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Field Technicians</a>
+                    <a id="navMobHowItWorks" href="~/Public/HowItWorks.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">How It Works</a>
+                    <a id="navMobWhyUs" href="~/Public/WhyUs.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors">Platform Comparison</a>
+                    <a id="navMobEmergency" href="~/Public/Emergency.aspx" runat="server" class="px-3.5 py-2.5 rounded-lg bg-orange-50 text-[#EA580C] font-bold border border-orange-200 mt-1">
                         <i class="fa-solid fa-bolt mr-2"></i> Emergency Breakdown Desk
                     </a>
                 </nav>
@@ -220,3 +220,4 @@
     </asp:ContentPlaceHolder>
 </body>
 </html>
+

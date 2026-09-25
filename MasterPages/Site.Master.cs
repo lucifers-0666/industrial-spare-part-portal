@@ -81,6 +81,50 @@ namespace IndustrialSparePartPortal.MasterPages
             {
                 phPreFooterEmergency.Visible = (ActiveNavKey == "home" || ActiveNavKey == "whyus");
             }
+
+            ApplyActiveNav();
+        }
+
+        private void ApplyActiveNav()
+        {
+            ApplyDesktopActive(navHome, ActiveNavKey == "home");
+            ApplyDesktopActive(navParts, ActiveNavKey == "parts");
+            ApplyDesktopActive(navSuppliers, ActiveNavKey == "suppliers");
+            ApplyDesktopActive(navTechnicians, ActiveNavKey == "technicians");
+            ApplyDesktopActive(navHowItWorks, ActiveNavKey == "howitworks");
+            ApplyDesktopActive(navWhyUs, ActiveNavKey == "whyus");
+            ApplyDesktopActive(navEmergency, ActiveNavKey == "emergency");
+            ApplyDesktopActive(navLogin, ActiveNavKey == "login");
+            ApplyDesktopActive(navRegister, ActiveNavKey == "register");
+
+            ApplyMobileActive(navMobHome, ActiveNavKey == "home");
+            ApplyMobileActive(navMobParts, ActiveNavKey == "parts");
+            ApplyMobileActive(navMobSuppliers, ActiveNavKey == "suppliers");
+            ApplyMobileActive(navMobTechnicians, ActiveNavKey == "technicians");
+            ApplyMobileActive(navMobHowItWorks, ActiveNavKey == "howitworks");
+            ApplyMobileActive(navMobWhyUs, ActiveNavKey == "whyus");
+            ApplyMobileActive(navMobEmergency, ActiveNavKey == "emergency");
+        }
+
+        private void ApplyDesktopActive(System.Web.UI.HtmlControls.HtmlAnchor link, bool isActive)
+        {
+            if (link == null) return;
+            if (isActive)
+            {
+                link.Attributes["class"] = (link.Attributes["class"] ?? "").Trim() + " active";
+                link.Attributes["aria-current"] = "page";
+            }
+        }
+
+        private void ApplyMobileActive(System.Web.UI.HtmlControls.HtmlAnchor link, bool isActive)
+        {
+            if (link == null) return;
+            if (isActive)
+            {
+                link.Attributes["class"] = "px-3.5 py-2.5 rounded-lg bg-slate-100 text-[#1D4ED8] font-bold border-l-4 border-[#1D4ED8]";
+                link.Attributes["aria-current"] = "page";
+            }
         }
     }
 }
+

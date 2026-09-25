@@ -133,3 +133,4 @@ Authentication is controlled via `SessionHelper.cs` and `BasePage.cs`:
 - **Purpose**: A development-time annotation and design feedback integration script.
 - **Runtime Footprint**: It is **not** included, referenced, or executed by `Site.Master`, any child master page, or any `.aspx` file in the solution.
 - **Policy**: Maintained in the repository for developer tooling workflows without impacting application security, performance, or server rendering.
+

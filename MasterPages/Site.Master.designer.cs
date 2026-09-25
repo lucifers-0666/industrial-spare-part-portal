@@ -33,6 +33,86 @@ namespace IndustrialSparePartPortal.MasterPages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// navHome control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navHome;
+
+        /// <summary>
+        /// navParts control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navParts;
+
+        /// <summary>
+        /// navSuppliers control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navSuppliers;
+
+        /// <summary>
+        /// navTechnicians control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navTechnicians;
+
+        /// <summary>
+        /// navHowItWorks control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navHowItWorks;
+
+        /// <summary>
+        /// navWhyUs control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navWhyUs;
+
+        /// <summary>
+        /// navEmergency control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navEmergency;
+
+        /// <summary>
+        /// navLogin control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navLogin;
+
+        /// <summary>
+        /// navRegister control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navRegister;
+
+        /// <summary>
+        /// navMobHome control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobHome;
+
+        /// <summary>
+        /// navMobParts control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobParts;
+
+        /// <summary>
+        /// navMobSuppliers control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobSuppliers;
+
+        /// <summary>
+        /// navMobTechnicians control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobTechnicians;
+
+        /// <summary>
+        /// navMobHowItWorks control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobHowItWorks;
+
+        /// <summary>
+        /// navMobWhyUs control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobWhyUs;
+
+        /// <summary>
+        /// navMobEmergency control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navMobEmergency;
+
+        /// <summary>
         /// phAnonymous control.
         /// </summary>
         /// <remarks>
@@ -60,15 +140,6 @@ namespace IndustrialSparePartPortal.MasterPages
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkDashboard;
 
         /// <summary>
-        /// phPreFooterEmergency control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phPreFooterEmergency;
-
-        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
@@ -76,6 +147,15 @@ namespace IndustrialSparePartPortal.MasterPages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+
+        /// <summary>
+        /// phPreFooterEmergency control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phPreFooterEmergency;
 
         /// <summary>
         /// ScriptsContent control.
