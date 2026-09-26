@@ -1,0 +1,615 @@
+/* ==========================================================================
+   SPAREFINDER — SIGN-IN PAGE SPECIFIC STYLES (BEM)
+   Refined Light Industrial Two-Column Architecture, Compact Spacing,
+   Responsive Gutters & Transparent Academic Demonstration Labeling
+   ========================================================================== */
+
+/* Page Outer Section */
+.p-signin-section {
+    background-color: var(--color-bg-page);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .p-signin-section {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .p-signin-section {
+        padding: 2.25rem 2rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .p-signin-section {
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* Two-Column Master Card (Substantial, Balanced Desktop Width) */
+.p-signin-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1220px;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lifted);
+}
+
+@media (min-width: 1024px) {
+    .p-signin-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
+
+/* Left Column: Focused Authentication Form */
+.p-signin-form-col {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-bg-surface);
+}
+
+@media (min-width: 640px) {
+    .p-signin-form-col {
+        padding: 2.5rem 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .p-signin-form-col {
+        width: 50%;
+        flex-shrink: 0;
+        padding: 2.5rem 2.5rem;
+        border-right: 1px solid var(--color-border-subtle);
+    }
+}
+
+@media (min-width: 1280px) {
+    .p-signin-form-col {
+        width: 49%;
+        padding: 2.75rem 3rem;
+    }
+}
+
+/* Constrained Inner Form Container (Optimal Reading & Form Line-Length) */
+.p-signin-form-wrap {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Console Header & Node Indicator */
+.p-signin-meta-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.p-signin-node {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+}
+
+.p-signin-node-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--color-brand-primary);
+    flex-shrink: 0;
+}
+
+.p-signin-node-text {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.p-signin-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--color-status-success);
+    background-color: var(--color-status-success-bg);
+    padding: 0.25rem 0.55rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-status-success-border);
+    line-height: 1;
+}
+
+/* Form Heading & Subhead */
+.p-signin-heading-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.p-signin-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-brand-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.p-signin-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+}
+
+.p-signin-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Role Context Segmented Selector */
+.p-signin-roles {
+    margin-bottom: 1.15rem;
+}
+
+.p-signin-roles__label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.45rem;
+}
+
+.p-signin-roles__selected {
+    color: var(--color-brand-primary);
+    font-weight: 800;
+}
+
+.p-signin-roles__segments {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.375rem;
+    background-color: var(--color-bg-subtle);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border-subtle);
+}
+
+@media (max-width: 360px) {
+    .p-signin-roles__segments {
+        grid-template-columns: 1fr;
+    }
+}
+
+.p-signin-role-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.5rem 0.35rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    transition: all var(--transition-fast);
+    line-height: 1;
+}
+
+.p-signin-role-btn:hover {
+    color: var(--color-text-primary);
+    background-color: #FFFFFF;
+}
+
+.p-signin-role-btn.active {
+    background-color: #FFFFFF;
+    color: var(--color-brand-primary);
+    border-color: var(--color-border-default);
+    box-shadow: var(--shadow-subtle);
+    font-weight: 700;
+}
+
+.p-signin-role-btn:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 1px;
+}
+
+.p-signin-roles__hint {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 0.4rem;
+    min-height: 1.15rem;
+    line-height: 1.4;
+}
+
+/* Authentication Fields Form Wrap */
+.p-signin-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    text-align: left;
+}
+
+/* Form Groups Internal Spacing */
+.p-signin-fields .c-form-group {
+    margin-bottom: 0.95rem;
+}
+
+.p-signin-fields .c-form-header {
+    margin-bottom: 0.35rem;
+}
+
+.p-signin-fields .c-form-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.p-signin-fields .c-form-label__hint {
+    font-size: 0.6875rem;
+}
+
+.p-signin-fields .c-form-input {
+    height: 2.75rem;
+    font-size: 0.875rem;
+}
+
+/* Remember Me & Help Row */
+.p-signin-remember-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.p-signin-remember-row .c-checkbox-label {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+}
+
+.p-signin-remember-row .c-checkbox {
+    margin-right: 0.45rem;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+}
+
+.p-signin-help-link {
+    font-size: 0.8125rem;
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.p-signin-help-link:hover {
+    color: var(--color-brand-primary);
+    text-decoration: underline;
+}
+
+/* Submit Action Button Container */
+.p-signin-action-wrap {
+    padding-top: 0.5rem;
+}
+
+.p-signin-submit-btn {
+    width: 100%;
+    height: 2.875rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(22, 119, 255, 0.28);
+}
+
+.p-signin-submit-btn:hover {
+    box-shadow: 0 4px 12px rgba(22, 119, 255, 0.38);
+}
+
+/* Auxiliary Navigation Links */
+.p-signin-footer-links {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+}
+
+@media (min-width: 480px) {
+    .p-signin-footer-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.p-signin-register-link {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.p-signin-register-link:hover {
+    text-decoration: underline;
+}
+
+.p-signin-guide-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+}
+
+.p-signin-guide-link:hover {
+    color: var(--color-text-primary);
+}
+
+/* Live Operational Status Strip */
+.p-signin-status-strip {
+    margin-top: 1.25rem;
+    padding: 0.5rem 0.875rem;
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.2;
+}
+
+.p-signin-status-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.p-signin-status-strip strong {
+    color: var(--color-text-primary);
+    font-weight: 700;
+}
+
+/* Right Column: Industrial Context Panel */
+.p-signin-visual-col {
+    width: 100%;
+    background-color: var(--color-bg-subtle);
+    border-top: 1px solid var(--color-border-subtle);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .p-signin-visual-col {
+        padding: 2.5rem 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .p-signin-visual-col {
+        width: 50%;
+        flex-grow: 1;
+        border-top: none;
+        padding: 2.5rem 2.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .p-signin-visual-col {
+        width: 51%;
+        padding: 2.75rem 3rem;
+    }
+}
+
+/* Workshop Backdrop Imagery + Directional Scrim Overlay */
+.p-signin-visual-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.p-signin-visual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    opacity: 0.10;
+}
+
+.p-signin-visual-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(241, 245, 249, 0.97) 0%, rgba(248, 250, 252, 0.92) 100%);
+}
+
+/* Visual Panel Content */
+.p-signin-visual-content {
+    position: relative;
+    z-index: 5;
+    max-width: 520px;
+}
+
+.p-signin-visual-badge {
+    margin-bottom: 1rem;
+}
+
+.p-signin-visual-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.65rem;
+}
+
+@media (min-width: 640px) {
+    .p-signin-visual-title {
+        font-size: 1.75rem;
+    }
+}
+
+.p-signin-visual-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* Demonstration Telemetry Feed Card (Light Theme) */
+.p-signin-telemetry {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border-default);
+    border-radius: 0.75rem;
+    padding: 0.95rem 1.15rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+.p-signin-telemetry__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.p-signin-telemetry__title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    line-height: 1;
+}
+
+.p-signin-telemetry__tag {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+}
+
+.p-signin-telemetry__feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-height: 3.75rem;
+}
+
+.p-signin-telemetry__row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-body);
+}
+
+.p-signin-telemetry__time {
+    color: var(--color-text-dim);
+    font-size: 0.6875rem;
+    white-space: nowrap;
+}
+
+.p-signin-telemetry__msg {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Metric Row */
+.p-signin-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+}
+
+@media (max-width: 440px) {
+    .p-signin-metrics {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+.p-signin-metrics .c-stat-card {
+    padding: 0.75rem 0.875rem;
+}
+
+.p-signin-metrics .c-stat-card__value {
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+}
+
+.p-signin-metrics .c-stat-card__label {
+    font-size: 0.6875rem;
+}
+
+/* Visual Panel Subordinate Footer */
+.p-signin-visual-footer {
+    position: relative;
+    z-index: 5;
+    padding-top: 1.25rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--color-border-default);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--color-text-muted);
+}
+
+.p-signin-visual-security {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+

@@ -1,0 +1,96 @@
+/* ==========================================================================
+   SPAREFINDER — BUTTON COMPONENTS (BEM)
+   Consistent Heights, Padding, Hover & Active Micro-interactions
+   ========================================================================== */
+
+.c-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.625rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color var(--transition-fast), 
+                border-color var(--transition-fast), 
+                box-shadow var(--transition-fast), 
+                transform 100ms ease;
+}
+
+.c-btn:active {
+    transform: scale(0.99);
+}
+
+.c-btn:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+}
+
+/* Primary Brand Action Button */
+.c-btn--primary {
+    background-color: var(--color-brand-primary);
+    color: #FFFFFF;
+    border-color: var(--color-brand-primary);
+    box-shadow: 0 1px 3px rgba(22, 119, 255, 0.25);
+}
+
+.c-btn--primary:hover {
+    background-color: var(--color-brand-primary-hover);
+    border-color: var(--color-brand-primary-hover);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(22, 119, 255, 0.35);
+}
+
+/* Secondary Button */
+.c-btn--secondary {
+    background-color: #FFFFFF;
+    color: var(--color-text-primary);
+    border-color: var(--color-border-default);
+}
+
+.c-btn--secondary:hover {
+    background-color: var(--color-bg-subtle);
+    border-color: var(--color-border-strong);
+    color: var(--color-text-primary);
+}
+
+/* Emergency Breakdown Action */
+.c-btn--emergency {
+    background-color: var(--color-emergency);
+    color: #FFFFFF;
+    border-color: var(--color-emergency);
+    box-shadow: 0 1px 3px rgba(234, 88, 12, 0.25);
+}
+
+.c-btn--emergency:hover {
+    background-color: var(--color-emergency-hover);
+    border-color: var(--color-emergency-hover);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+}
+
+/* Utility Sizes */
+.c-btn--full {
+    width: 100%;
+}
+
+.c-btn--lg {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+    border-radius: 0.75rem;
+}
+
+.c-btn--sm {
+    padding: 0.45rem 0.875rem;
+    font-size: 0.8125rem;
+    border-radius: 0.5rem;
+}
+

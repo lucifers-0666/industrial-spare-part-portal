@@ -42,6 +42,7 @@ yarn-error.log*
 # ASP.NET temporary files
 App_Data/*.ldf
 App_Data/*.mdf
+TempAspNet/
 
 # Operating System files
 .DS_Store

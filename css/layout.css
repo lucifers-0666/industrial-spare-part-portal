@@ -1,0 +1,94 @@
+/* ==========================================================================
+   SPAREFINDER — LAYOUT & STRUCTURAL GRID
+   Container Max-Widths, Page Shell, Responsive Column Systems
+   ========================================================================== */
+
+/* Main Page Container */
+.l-container {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .l-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .l-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.l-container--narrow {
+    max-width: 1120px;
+}
+
+.l-container--prose {
+    max-width: 768px;
+}
+
+/* Page Section Wrappers */
+.l-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+    .l-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+}
+
+.l-section--subtle {
+    background-color: var(--color-bg-subtle);
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Two-Column Split Architecture (Immune to Tailwind Purge/Grid collapse) */
+.l-split-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    box-shadow: var(--shadow-lifted);
+}
+
+@media (min-width: 1024px) {
+    .l-split-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .l-split-card__left {
+        width: 52%;
+        flex-shrink: 0;
+    }
+
+    .l-split-card__right {
+        width: 48%;
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 1280px) {
+    .l-split-card__left {
+        width: 50%;
+    }
+    .l-split-card__right {
+        width: 50%;
+    }
+}
+

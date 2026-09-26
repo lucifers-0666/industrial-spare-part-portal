@@ -1,0 +1,67 @@
+/* ==========================================================================
+   SPAREFINDER INDUSTRIAL PROCUREMENT NETWORK — DESIGN TOKENS
+   Single Source of Truth for Brand Palette & Layout Scale (Light Industrial Theme)
+   ========================================================================== */
+
+:root {
+    /* Brand & Primary Actions (From Logo & Main CTAs) */
+    --color-brand-primary: #1677FF;
+    --color-brand-primary-hover: #0958D9;
+    --color-brand-primary-dark: #003EB3;
+    --color-brand-primary-light: #E6F4FF;
+    --color-brand-primary-ring: rgba(22, 119, 255, 0.20);
+
+    /* Emergency Breakdown Accent (Safety Orange) */
+    --color-emergency: #EA580C;
+    --color-emergency-hover: #C2410C;
+    --color-emergency-bg: #FFF7ED;
+    --color-emergency-border: #FED7AA;
+    --color-emergency-text: #9A3412;
+
+    /* Light Industrial Surfaces & Page Canvas (Step 4 Requirement) */
+    --color-bg-page: #F8FAFC;
+    --color-bg-surface: #FFFFFF;
+    --color-bg-subtle: #F1F5F9;
+    --color-bg-muted: #E2E8F0;
+    --color-bg-input: #FFFFFF;
+    --color-bg-input-focus: #FFFFFF;
+
+    /* Structural Borders & Dividers */
+    --color-border-subtle: #E2E8F0;
+    --color-border-default: #CBD5E1;
+    --color-border-strong: #94A3B8;
+    --color-border-focus: #1677FF;
+
+    /* High-Contrast Typography */
+    --color-text-primary: #0F172A;     /* 100% Dark Slate Headings */
+    --color-text-body: #334155;        /* Slate-700 High-Readability Body */
+    --color-text-secondary: #475569;   /* Slate-600 Supporting Text */
+    --color-text-muted: #64748B;       /* Slate-500 Form Placeholders & Hints */
+    --color-text-dim: #94A3B8;         /* Slate-400 Subtle Accents */
+    --color-text-inverse: #FFFFFF;
+
+    /* Operational Status Signals */
+    --color-status-success: #059669;
+    --color-status-success-bg: #ECFDF5;
+    --color-status-success-border: #A7F3D0;
+    --color-status-warning: #D97706;
+    --color-status-warning-bg: #FFFBEB;
+    --color-status-warning-border: #FDE68A;
+    --color-status-error: #DC2626;
+    --color-status-error-bg: #FEF2F2;
+    --color-status-error-border: #FECACA;
+
+    /* Typography Stacks */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Shadows & Elevation */
+    --shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+    --shadow-lifted: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+
+    /* Transitions & Dynamics */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
